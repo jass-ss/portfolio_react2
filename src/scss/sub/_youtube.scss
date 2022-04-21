@@ -1,0 +1,336 @@
+.content.youtube {
+	.cate {
+		width: 100%;
+		margin: 0 auto;
+		position: absolute;
+		top: -25vmin;
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: #333;
+			position: absolute;
+			bottom: -2vmin;
+		}
+		span {
+			display: inline-block;
+			width: 50%;
+			text-align: center;
+			font: bold 3vmin 'Poppins';
+			cursor: pointer;
+		}
+	}
+
+	.inner {
+		width: 1180px;
+		margin: 35vmin auto;
+		position: relative;
+		.list {
+			width: 100%;
+			position: relative;
+			.youtube {
+				width: 100%;
+				position: relative;
+				.sponsorship {
+					.main {
+						display: flex;
+						position: relative;
+						margin: 30px 0;
+						height: 45vmin;
+						cursor: pointer;
+						> .pic {
+							width: 50%;
+							padding: 10px;
+							position: relative;
+							overflow: hidden;
+							img {
+								width: 100%;
+								height: 180%;
+								margin-top: -30%;
+								object-fit: cover;
+							}
+						}
+						.txt {
+							width: 70%;
+							height: 95%;
+							position: absolute;
+							right: 0;
+							bottom: -10%;
+							text-align: left;
+							background-color: #ededed;
+							z-index: -1;
+							.txt_box {
+								position: absolute;
+								height: 100%;
+								left: 25%;
+								top: 10%;
+								padding: 2vmin;
+								> h1 {
+									font: bold 4vmin 'Poppins';
+									margin-top: 5vmin;
+									margin-bottom: 4vmin;
+									margin-left: 5vmin;
+								}
+								h2 {
+									font: bold 2vmin 'Poppins';
+									position: absolute;
+									left: 2vmin;
+									top: 3vmin;
+									margin-left: 5vmin;
+								}
+								> p {
+									font: 3vmin/1.5 'Lora';
+									margin-left: 5vmin;
+								}
+							}
+						}
+					}
+					.videos {
+						width: 100%;
+						margin-bottom: 25vmin;
+						margin-top: 20vmin;
+						cursor: pointer;
+						> .pic {
+							width: 90%;
+							height: 25vmin;
+							margin-bottom: 10vmin;
+							margin-left: 5vmin;
+							display: inline-block;
+							position: relative;
+							font-size: 0;
+							overflow: hidden;
+							img {
+								width: 50%;
+								height: 50vmin;
+								padding: 30px;
+								margin-top: -12vmin;
+							}
+							p {
+								font: 2vmin/1.5 'Poppins';
+								position: absolute;
+								top: 15%;
+								left: 50%;
+							}
+						}
+					}
+					.frame {
+						width: 100%;
+						position: relative;
+						span {
+							font: italic 4vmin/1 'Lora';
+							position: absolute;
+							top: -6vmin;
+							right: 0;
+							&::before {
+								content: '';
+								display: block;
+								width: 150%;
+								height: 2px;
+								background-color: #333;
+								position: absolute;
+								right: 0;
+								top: -1vmin;
+							}
+						}
+						.pics {
+							width: 100%;
+							overflow: hidden;
+							.slide {
+								width: calc((1180px / 3) * 7);
+								img {
+									width: calc(1180px / 3);
+									height: 30vmin;
+									padding: 0 5px;
+								}
+							}
+							.play,
+							.stop {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								display: none;
+								font: bold 7vmin/1 'Poppins';
+								color: #fff;
+							}
+						}
+						.prev {
+							position: absolute;
+							top: 50%;
+							left: -10%;
+							transform: translate(0%, -50%);
+							color: #666;
+							font: bold 5vmin/1 'Poppins';
+						}
+						.next {
+							position: absolute;
+							top: 50%;
+							right: -10%;
+							transform: translate(0%, -50%);
+							color: #666;
+							font: bold 5vmin/1 'Poppins';
+						}
+					}
+				}
+				.advertisement {
+					width: 100%;
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					.main {
+						width: 100%;
+						display: flex;
+						position: relative;
+						height: 45vmin;
+						margin-bottom: 15vmin;
+						cursor: pointer;
+						> .pic {
+							width: 50%;
+							padding: 10px;
+							position: relative;
+							overflow: hidden;
+							img {
+								width: 100%;
+								height: 180%;
+								margin-top: -30%;
+								object-fit: cover;
+							}
+						}
+						.txt {
+							width: 70%;
+							height: 95%;
+							position: absolute;
+							right: 0;
+							bottom: -10%;
+							text-align: left;
+							background-color: #ededed;
+							z-index: -1;
+							.txt_box {
+								position: absolute;
+								height: 100%;
+								left: 25%;
+								top: 10%;
+								padding: 2vmin;
+								> h1 {
+									font: bold 4vmin 'Poppins';
+									margin-top: 5vmin;
+									margin-bottom: 4vmin;
+									margin-left: 5vmin;
+								}
+								h2 {
+									font: bold 2vmin 'Poppins';
+									position: absolute;
+									left: 2vmin;
+									top: 3vmin;
+									margin-left: 5vmin;
+								}
+								> p {
+									font: 3vmin/1.5 'Lora';
+									margin-left: 5vmin;
+								}
+							}
+						}
+					}
+					article {
+						width: 50%;
+						height: 35vmin;
+						padding: 50px;
+						float: left;
+						display: block;
+						position: relative;
+
+						&:nth-of-type(even) {
+							margin-top: 17vmin;
+						}
+
+						p {
+							font: bold 7vmin/1 'Poppins';
+						}
+						.title {
+							font: 2vmin/1 'Poppins';
+							position: absolute;
+							right: 5vmin;
+						}
+
+						> .pic {
+							width: 100%;
+							height: 100%;
+							overflow: hidden;
+							display: inline-block;
+							position: relative;
+							img {
+								width: 110%;
+								height: 150%;
+								position: absolute;
+								top: -25%;
+								left: -5%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.content.youtube {
+		figure {
+			display: none;
+		}
+		.inner {
+			width: 100%;
+			padding-top: 12vmin;
+			.list {
+				width: 100%;
+				position: relative;
+				> article {
+					display: inline-block;
+					position: relative;
+					width: 50%;
+					height: 50vmin;
+					text-align: center;
+					background: none;
+					padding: 0;
+					margin-right: 0;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+					> P {
+						position: absolute;
+						bottom: 5%;
+						left: 5%;
+						color: #fff;
+						font: 3vmin 'arial';
+					}
+				}
+				.data {
+					width: 100%;
+					margin-top: 10vmin;
+					margin-bottom: 20vmin;
+					> article {
+						display: inline-block;
+						width: 33%;
+						height: 35vmin;
+						margin-right: 0.5%;
+						margin-top: 10%;
+						border-radius: 5px;
+						&:nth-of-type(3n) {
+							margin-right: 0;
+						}
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+	}
+}

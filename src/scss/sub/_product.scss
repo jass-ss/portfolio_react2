@@ -1,0 +1,377 @@
+.content.product {
+	width: 100%;
+
+	.one {
+		width: 100%;
+		//height: 100vh;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			.intro {
+				padding: 50px 25% 0 25%;
+				font: italic 24px/2 'Poppins';
+				color: #333;
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				margin-bottom: 150px;
+
+				&::before {
+					content: '';
+					display: block;
+					width: 200px;
+					height: 2px;
+					background-color: #000;
+					transform: translateX(100%);
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	.two1,
+	.two2 {
+		width: 100%;
+		height: 100vh;
+
+		& article:nth-of-type(1) {
+			//opacity: 0;
+			opacity: 1;
+			margin-top: 120px;
+			transition: all 0.4s;
+		}
+		& article:nth-of-type(2) {
+			margin-top: 300px;
+			//opacity: 0;
+			opacity: 1;
+			transition: all 0.5s 0.2s;
+		}
+
+		&.on article:nth-of-type(1) {
+			opacity: 1;
+			margin-top: 50px;
+		}
+		&.on article:nth-of-type(2) {
+			opacity: 1;
+			margin-top: 250px;
+		}
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+			position: relative;
+
+			.wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				article {
+					width: 50%;
+					text-align: center;
+
+					img {
+						padding: 0 50px;
+						width: 100%;
+						height: 450px;
+						object-fit: cover;
+					}
+					h2 {
+						padding: 30px;
+						font: bold 24px/1.5 'Poppins';
+						color: #333;
+					}
+					p {
+						padding: 0 50px;
+						font: normal 18px/1.5 'Poppins';
+						color: #333;
+					}
+				}
+			}
+		}
+	}
+
+	/* .two2 {
+    width: 100%;
+    height: 100vh;
+    .inner {
+      width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        article {
+          margin-top: 50px;
+          width: 50%;
+          text-align: center;
+          &:nth-of-type(2){
+            margin-top: 300px;
+          }
+          img {
+            padding: 0 50px;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+          }
+          h2 {
+            padding: 30px;
+            font: bold 24px/1.5 "Poppins";
+            color: #333;
+          }
+          p {
+            padding: 0 50px;
+            font: normal 18px/1.5 "Poppins";
+            color: #333;
+          }
+        }
+      }
+    }
+  } */
+
+	.three {
+		width: 100%;
+		height: 100vh;
+		padding-top: 50px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			h2 {
+				margin: 30px 0px 50px 0px;
+				text-align: center;
+				font: bold 30px/1.5 'Poppins';
+				color: #222;
+			}
+			article {
+				width: 100%;
+				text-align: center;
+				ul {
+					font-size: 0;
+
+					li {
+						display: inline-block;
+						margin: 30px 20px 75px 0px;
+						width: 280px;
+						&:nth-of-type(4) {
+							margin-right: 0;
+						}
+
+						&::before {
+							margin: 0 auto;
+							content: '';
+							display: block;
+							width: 100px;
+							height: 100px;
+							clip-path: polygon(
+								25% 5%,
+								75% 5%,
+								100% 50%,
+								75% 95%,
+								25% 95%,
+								0% 50%
+							);
+						}
+
+						&:nth-of-type(1)::before {
+							background-color: #3c393c;
+						}
+						&:nth-of-type(2)::before {
+							background-color: #53585f;
+						}
+						&:nth-of-type(3)::before {
+							background-color: #64696f;
+						}
+						&:nth-of-type(4)::before {
+							background-color: #ede0d3;
+						}
+						p {
+							width: 100%;
+							height: 100px;
+							padding: 0;
+							margin-top: 10px;
+							text-align: center;
+							font: bold 16px/1.5 'Lora';
+							color: #444;
+						}
+					}
+				}
+			}
+			.pics {
+				display: flex;
+				justify-content: center;
+				.pic {
+					overflow: hidden;
+					margin-right: 20px;
+					width: 280px;
+					height: 300px;
+					img {
+						width: 100%;
+						height: 100%;
+						transition: all 0.5s;
+						&:hover {
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+			a {
+				position: absolute;
+				bottom: -5%;
+				left: 50%;
+				transform: translateX(-50%);
+				color: #333;
+				font: bold 30px/1 'Poppins';
+
+				&:hover {
+					color: rgb(194, 156, 110);
+					font: italic bold 30px/1 'Poppins';
+				}
+			}
+		}
+	}
+
+	.four {
+		width: 100%;
+		height: 100vh;
+
+		.banner {
+			width: 100%;
+			height: 500px;
+
+			h2 {
+				font: bold 70px/1 'Poppins';
+				padding-top: 225px;
+				text-align: center;
+				color: #fff;
+			}
+
+			img {
+				width: calc(100vw - 20px);
+				height: 500px;
+				position: absolute;
+				left: 0;
+				z-index: -1;
+				object-fit: cover;
+			}
+		}
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+
+			.intro {
+				padding: 50px 25% 0 25%;
+				font: italic 24px/2 'Poppins';
+				color: #333;
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				margin-bottom: 150px;
+
+				&::before {
+					content: '';
+					display: block;
+					width: 200px;
+					height: 2px;
+					background-color: #000;
+					transform: translateX(100%);
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	.five {
+		width: 100%;
+		height: 75vh;
+
+		& article {
+			&:nth-of-type(1) {
+				transition: all 1s;
+			}
+			&:nth-of-type(2) {
+				transition: all 1s 0.3s;
+			}
+			&:nth-of-type(3) {
+				transition: all 1s 0.6s;
+			}
+			//	opacity: 0;
+			opacity: 1;
+		}
+
+		&.on article {
+			opacity: 1;
+		}
+
+		.inner {
+			width: 1180px;
+			margin: 0 auto;
+			position: relative;
+
+			.wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+
+				article {
+					display: block;
+					width: calc(100% / 3);
+					img {
+						width: 100%;
+						padding: 0 10px;
+						margin-top: 50px;
+						height: 250px;
+						object-fit: cover;
+					}
+					h2 {
+						margin-top: 20px;
+						padding: 0 10px;
+						text-align: center;
+						font: bold 24px/1.5 'Poppins';
+						color: #333;
+					}
+				}
+			}
+
+			#mail {
+				width: 100%;
+				margin: 150px 0 100px 0;
+
+				#mailForm {
+					width: 40%;
+					margin: 30px auto;
+				}
+				p {
+					text-align: center;
+					font: 24px/1 'Lora';
+					color: #444;
+				}
+				div {
+					width: 100%;
+					border-bottom: 1px solid #444;
+
+					#mailBox {
+						width: 80%;
+						margin: 0 auto;
+						height: 25px;
+						border: none;
+					}
+					#submit {
+						border: none;
+						font: 22px/1.5 'Poppins';
+						background-color: #fff;
+						color: #444;
+					}
+				}
+			}
+		}
+	}
+}

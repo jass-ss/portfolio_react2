@@ -1,0 +1,373 @@
+.join {
+	width: 100%;
+	margin-bottom: 100px;
+	font-family: 'Poppins';
+	font-size: 16px;
+	/*.join_visual{
+        width: 100%; height: 400px;
+        border: 1px solid black;
+     }*/
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+
+		.h {
+			opacity: 0;
+			position: absolute;
+			top: -99999;
+		}
+		span {
+			display: block;
+			font: 1.5vmin/1 'Poppins';
+		}
+
+		.wrap {
+			width: 100%;
+			p {
+				font-size: 14px;
+				margin-top: 10px;
+				color: brown;
+			}
+			h1 {
+				padding: 100px 100px 50px 100px;
+				font: bold 50px/1 'Poppins';
+				/*span{
+                font:normal 30px/1 'Poppins';
+            }*/
+			}
+
+			article.welcome_box {
+				width: 200px;
+				height: 100%;
+				display: inline-block;
+				margin: 50px 50px 80px 50px;
+
+				.circle {
+					clip-path: circle(50% at 50% 50%);
+					width: 100%;
+					height: 200px;
+					background-color: #444;
+					color: white;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				p {
+					margin-top: 30px;
+					width: 100%;
+					color: #444;
+					font: 14px/1.5 'Lora';
+				}
+			}
+
+			form {
+				width: 100%;
+				fieldset {
+					border: none;
+				}
+
+				.wrapper1 {
+					width: 100%;
+					display: flex;
+					flex-direction: row-reverse;
+					background: #f8f5f0;
+					h2 {
+						position: absolute;
+						left: 25%;
+						padding-top: 50px;
+					}
+					span {
+						font: 16px/1.35 'Poppins';
+						color: rgb(105, 13, 13);
+						margin-top: 10px;
+					}
+					.wrap {
+						width: 50%;
+						padding: 100px 5% 5% 0%;
+						textarea {
+							width: 100%;
+							height: 45vmin;
+							padding: 10px;
+							resize: none;
+							font: normal 16px/1.35 'Poppins';
+							margin-bottom: 30px;
+						}
+						.agreement {
+							text-align: center;
+							label[for='agree'] {
+								font-size: 12px;
+							}
+						} //input[[type=radio] 이런 식으로 input태그도 선택할 수 있다. 속성으로 찾는거는 [] 안에 쓰기.
+					}
+					table {
+						width: 50%;
+						margin: 100px 100px 50px;
+						padding: 50px;
+						text-align: left;
+						border-collapse: collapse;
+						tr {
+							width: 100%;
+							border-bottom: 1px solid #ddd;
+							&:nth-of-type(1) {
+								border-top: 1px solid #ddd;
+							}
+							th {
+								width: 30%;
+								font: bold 16px/1.35 'Poppins';
+							}
+							td {
+								padding: 10px 0 10px 0px;
+								#id,
+								#pwd1,
+								#pwd2 {
+									width: 100%;
+									height: 30px;
+									font: 16px 'arial';
+								}
+								#name {
+									width: 50%;
+								}
+								#birth {
+									width: 50%;
+								}
+								#address {
+									width: 80%;
+								}
+								#address2 {
+									width: 100%;
+								}
+								button {
+									margin: 0 10px;
+									padding: 2px 5px;
+									font-size: 16px;
+								}
+								#phone2,
+								#phone3 {
+									width: 35%;
+								}
+								#email {
+									width: 100%;
+								}
+								label[for='sms1'],
+								label[for='sms2'] {
+									margin-right: 10px;
+								}
+							}
+						}
+						input[type='text'] {
+							font: 16px 'arial';
+							height: 30px;
+							border: none;
+						}
+						input[type='radio'] {
+							font: 16px 'arial';
+							margin-left: 10px;
+						}
+					}
+				}
+
+				.wrapper2 {
+					position: relative;
+					display: flex;
+					text-align: left;
+					margin-bottom: 100px;
+					background: #f8f5f0;
+					h2 {
+						position: absolute;
+						left: 70%;
+						top: 7vmin;
+						transform: translateX(-50%);
+					}
+
+					table {
+						width: 60%;
+						margin: 120px 110px 280px 110px;
+						border-collapse: collapse;
+
+						tr {
+							border-bottom: 1px solid #ddd;
+							&:nth-of-type(1) {
+								border-top: 1px solid #ddd;
+								border-bottom: none;
+								th {
+									padding-top: 15px;
+									vertical-align: top;
+								}
+								td {
+									padding-top: 10px;
+								}
+							}
+							th {
+								padding: 0;
+							}
+							td {
+								padding: 10px 0px;
+							}
+							button {
+								margin: 0 10px;
+								padding: 2px;
+								font-size: 20px;
+								font: 16px 'arial';
+							}
+							select {
+								font-size: 20px;
+								margin: 0 5px;
+							}
+							input[type='text'] {
+								margin: 0 5px;
+								font: 16px 'arial';
+								height: 30px;
+								border: none;
+							}
+							input[type='radio'] {
+								font: 16px 'arial';
+								margin-left: 10px;
+							}
+							& #submit {
+								position: absolute;
+								bottom: 5vmin;
+								background: #a7a39e;
+								right: 50%;
+								color: white;
+								margin: 0 10px;
+								border: none;
+								padding: 10px;
+							}
+							& #reset {
+								position: absolute;
+								bottom: 5vmin;
+								background: #a7a39e;
+								left: 50%;
+								color: white;
+								margin: 0 10px;
+								border: none;
+								padding: 10px;
+							}
+						}
+					}
+
+					.pic {
+						width: 50%;
+						font-size: 0;
+						margin-bottom: 20vmin;
+						img {
+							width: 100%;
+							height: 450px;
+							padding: 50px 0px 0px 80px;
+							object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	.join {
+		.inner {
+			width: 100%;
+			.wrap {
+				h1 {
+					padding: 100px;
+					font: bold 5vmin/1 'Poppins';
+					/*span{
+                font:normal 30px/1 'Poppins';
+            }*/
+				}
+
+				form {
+					.wrapper1 {
+						flex-wrap: wrap;
+						flex-direction: column;
+						.wrap {
+							width: 100%;
+							padding: 5%;
+						}
+						table {
+							width: 100%;
+							margin: 50px 0px 50px;
+							padding: 50px;
+							text-align: left;
+							//border-top: 1px solid #444;
+							//border-bottom: 1px solid #444;
+
+							th {
+								padding-left: 70px;
+							}
+							td {
+								width: 70%;
+								padding: 10px 0 10px 50px;
+								#id,
+								#pwd1,
+								#pwd2 {
+									width: 70%;
+								}
+								#name {
+									width: 30%;
+								}
+								#address {
+									width: 50%;
+								}
+								#phone2,
+								#phone3 {
+									width: 20%;
+								}
+								label[for='sms1'],
+								label[for='sms2'] {
+									margin-right: 10px;
+								}
+							}
+						}
+					}
+
+					.wrapper2 {
+						position: relative;
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: column;
+						text-align: left;
+						margin: 100px 0;
+						background: #f8f5f0;
+						h2 {
+							position: absolute;
+							left: 50%;
+							top: 50px;
+							transform: translateX(-50%);
+						}
+
+						table {
+							width: 80%;
+							margin: 0px 0 50px 100px;
+							tr:nth-of-type(1) td {
+								padding: 0;
+							}
+							th {
+								padding: 0;
+							}
+							td {
+								padding: 10px 0px;
+							}
+						}
+
+						.pic {
+							width: 100%;
+							font-size: 0;
+							img {
+								width: 100%;
+								height: 450px;
+								padding: 100px 50px 50px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
