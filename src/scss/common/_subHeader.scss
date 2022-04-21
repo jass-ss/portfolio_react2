@@ -1,0 +1,39 @@
+.subHeader {
+	width: 100%;
+	height: 100vh;
+	margin: -11vmin auto 0;
+
+	.sub_inner {
+		width: 100%;
+		height: 50vh;
+		margin: 0 auto;
+		padding: 5vmin;
+		position: relative;
+		z-index: -1;
+
+		> h2 {
+			font: bold 15vmin/1 'Poppins';
+			color: #333;
+			position: absolute;
+			bottom: 3vmin;
+			left: 10vmin;
+		}
+
+		p {
+			font: bold 2.2vmin/1.5 'Lora';
+			color: #333;
+			position: absolute;
+			bottom: 3vmin;
+			right: 10vmin;
+			width: 25%;
+		}
+	}
+	img {
+		width: 100%;
+		height: 50vh;
+		object-fit: cover;
+	}
+}
+
+@media screen and(max-width:1179px) {
+}
