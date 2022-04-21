@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import SubHeader from '../common/SubHeader';
+import Poptext from '../common/PopText';
 
 const path = process.env.PUBLIC_URL;
 
@@ -28,6 +29,8 @@ function Help() {
 	const [index, setIndex] = useState(null);
 	const [open, setOpen] = useState(false);
 	const [write, setWrite] = useState(false);
+	const [update, setUpdate] = useState(false);
+	const [val, setVal] = useState();
 
 	useEffect(() => {
 		console.log(index);
@@ -53,6 +56,7 @@ function Help() {
 		console.log(data);
 		input.current.value = '';
 		textarea.current.value = '';
+		setWrite(false);
 	};
 
 	const del = (index) => {
@@ -64,18 +68,19 @@ function Help() {
 		setData(newData);
 	};
 
-	const update = (index) => {
+	const update2 = (index) => {
 		console.log(data);
 		const newData = data.map((d, idx) => {
 			//새로운 배열을 만들어서
 			if (index === idx) {
-				d = { ...d, change: true }; //업데이트 해주고
+				d = { ...d, title: input.current.value, text: textarea.current.value }; //업데이트 해주고
 				console.log(d);
 			}
 			return d; //반환
 		});
 		console.log(newData);
 		setData(newData); //set.
+		setUpdate(false);
 	};
 	const back = (index) => {
 		console.log(data);
@@ -98,6 +103,12 @@ function Help() {
 			setOpen(idx);
 		}
 	};
+	const edit = (idx) => {
+		setUpdate(true);
+		//console.log(data[idx]);
+		setVal(data[idx]);
+		setIndex(idx);
+	};
 
 	return (
 		<>
@@ -114,7 +125,50 @@ function Help() {
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. IpsNumquam
 					aliquid, incidunt magni alias saepe quidem
 				</span>
-				{write ? (
+				{data.map((d, idx) => {
+					return (
+						<React.Fragment key={idx}>
+							<div
+								className='box'
+								onClick={(e) => {
+									setIndex(idx);
+									handleOpen(e, idx);
+								}}>
+								<React.Fragment key={idx}>
+									<span>{open === idx ? `-` : `+`}</span>
+									<h2>{d.title}</h2>
+									{open === idx ? (
+										<div className='hidden_box'>
+											<p>{d.text}</p>
+											<button
+												onClick={() => {
+													setIndex(idx);
+													del(idx);
+												}}>
+												delete
+											</button>
+											<button
+												onClick={() => {
+													{
+														/*setIndex(idx);
+													update(idx);*/
+														//setIndex(idx);
+														edit(idx);
+													}
+												}}>
+												edit
+											</button>
+										</div>
+									) : null}
+								</React.Fragment>
+							</div>
+						</React.Fragment>
+					);
+				})}
+				<button onClick={() => setWrite(true)}>WRITE</button>
+			</Layout>
+			{write && (
+				<Poptext>
 					<>
 						<input type='text' name='title' ref={input}></input>
 						<textarea
@@ -126,72 +180,28 @@ function Help() {
 						<button onClick={create}>create</button>
 						<button onClick={() => setWrite(false)}>cancel</button>
 					</>
-				) : null}
-				{data.map((d, idx) => {
-					return (
-						<React.Fragment key={idx}>
-							<div
-								className='box'
-								onClick={(e) => {
-									setIndex(idx);
-									handleOpen(e, idx);
-								}}>
-								{d.change ? (
-									<React.Fragment key={idx}>
-										<input
-											type='text'
-											defaultValue={data[idx].title}
-											ref={input}></input>
-										<textarea
-											defaultValue={data[idx].text}
-											ref={textarea}></textarea>
-										<button
-											onClick={() => {
-												setIndex(idx);
-												back(idx);
-											}}>
-											cancle
-										</button>
-										<button
-											onClick={() => {
-												setIndex(idx);
-												update(idx);
-												create();
-											}}>
-											save
-										</button>
-									</React.Fragment>
-								) : (
-									<React.Fragment key={idx}>
-										<span>{open === idx ? `-` : `+`}</span>
-										<h2>{d.title}</h2>
-										{open === idx ? (
-											<div className='hidden_box'>
-												<p>{d.text}</p>
-												<button
-													onClick={() => {
-														setIndex(idx);
-														del(idx);
-													}}>
-													delete
-												</button>
-												<button
-													onClick={() => {
-														setIndex(idx);
-														update(idx);
-													}}>
-													edit
-												</button>
-											</div>
-										) : null}
-									</React.Fragment>
-								)}
-							</div>
-						</React.Fragment>
-					);
-				})}
-				<button onClick={() => setWrite(true)}>WRITE</button>
-			</Layout>
+				</Poptext>
+			)}
+			{update && (
+				<Poptext>
+					<>
+						<input
+							type='text'
+							name='title'
+							ref={input}
+							defaultValue={val.title}></input>
+						<textarea
+							name='text'
+							id=''
+							cols='30'
+							rows='10'
+							ref={textarea}
+							defaultValue={val.text}></textarea>
+						<button onClick={() => update2(index)}>save</button>
+						<button onClick={() => setUpdate(false)}>cancel</button>
+					</>
+				</Poptext>
+			)}
 		</>
 	);
 }
