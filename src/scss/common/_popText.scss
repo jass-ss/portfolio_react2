@@ -1,2 +1,35 @@
 .popText {
+	width: 50%;
+	height: 80vh;
+	padding: 5vw;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(255, 255, 255, 0.726);
+	z-index: 10;
+
+	> .wrap {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		> input {
+			width: 50%;
+			margin: 5vmin auto;
+		}
+		> textarea {
+			width: 70%;
+			margin: 0 auto;
+		}
+		button {
+			position: absolute;
+			bottom: -10vmin;
+			&:nth-of-type(1) {
+				right: 40%;
+			}
+			&:nth-of-type(2) {
+				left: 40%;
+			}
+		}
+	}
 }

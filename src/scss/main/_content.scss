@@ -361,4 +361,12 @@
 			}
 		}
 	}
+	#fetch {
+		width: 100%;
+		position: relative;
+		.text {
+			width: 30%;
+			height: 15vmin;
+		}
+	}
 }

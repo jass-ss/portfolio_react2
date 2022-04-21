@@ -59,3 +59,139 @@
 		}
 	}
 }
+
+@media screen and(max-width: 1179px) {
+	.help {
+		width: 100%;
+
+		.inner {
+			width: 100%;
+			margin: 15vmin auto 10vmin;
+			position: relative;
+
+			.list {
+				h1 {
+					font: bold 8vmin/1 'Lora';
+					margin: 5vmin 0 3vmin 15vmin;
+				}
+				span.intro {
+					width: 80%;
+					display: inline-block;
+					font: 2.5vmin/1 'Poppins';
+					margin: 3vmin 0 10vmin 15vmin;
+				}
+				.box {
+					width: 80%;
+					font: 2.5vmin/1 'arial';
+					border-bottom: 1px solid #ddd;
+					margin: 0 auto;
+					padding: 2vmin;
+					position: relative;
+					span {
+						margin-left: 10vmin;
+					}
+					h2 {
+						display: inline-block;
+						margin: 0 2vmin;
+						font: bold 3vmin/1 'Poppins';
+					}
+					.hidden_box {
+						margin: 5vmin 0 5vmin 15vmin;
+						position: relative;
+						> p {
+							font: 2vmin/1 'Poppins';
+							width: 80%;
+						}
+						> button {
+							position: absolute;
+							bottom: -5vmin;
+							right: 10vmin;
+							padding: 3px 5px;
+							font: 2vmin/1 'Poppins';
+							&:nth-of-type(2) {
+								right: 20vmin;
+							}
+						}
+					}
+				}
+				> button {
+					position: absolute;
+					margin-top: auto;
+					margin-left: auto;
+					right: 15vmin;
+					bottom: -5vmin;
+					padding: 2px 5px;
+					font: 2vmin/1 'Poppins';
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 550px) {
+	.help {
+		width: 100%;
+
+		.inner {
+			width: 100%;
+			margin: 15vmin auto 10vmin;
+			position: relative;
+
+			.list {
+				h1 {
+					font: bold 8vmin/1 'Lora';
+					margin: 5vmin 0 3vmin 10vmin;
+				}
+				span.intro {
+					width: 80%;
+					display: inline-block;
+					font: 2.5vmin/1 'Poppins';
+					margin: 3vmin 0 10vmin 10vmin;
+				}
+				.box {
+					width: 80%;
+					font: 2.5vmin/1 'arial';
+					border-bottom: 1px solid #ddd;
+					margin: 0 auto;
+					padding: 2vmin;
+					position: relative;
+					span {
+						margin-left: 10vmin;
+					}
+					h2 {
+						display: inline-block;
+						margin: 0 2vmin;
+						font: bold 3vmin/1 'Poppins';
+					}
+					.hidden_box {
+						margin: 5vmin 0 5vmin 15vmin;
+						position: relative;
+						> p {
+							font: 2vmin/1 'Poppins';
+							width: 80%;
+						}
+						> button {
+							position: absolute;
+							bottom: -5vmin;
+							right: 3vmin;
+							padding: 3px 5px;
+							font: 2vmin/1 'Poppins';
+							&:nth-of-type(2) {
+								right: 18vmin;
+							}
+						}
+					}
+				}
+				> button {
+					position: absolute;
+					margin-top: auto;
+					margin-left: auto;
+					right: 15vmin;
+					bottom: -5vmin;
+					padding: 2px 5px;
+					font: 2vmin/1 'Poppins';
+				}
+			}
+		}
+	}
+}

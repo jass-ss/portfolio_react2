@@ -2,30 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import SubHeader from '../common/SubHeader';
 import Poptext from '../common/PopText';
+import { useSelector } from 'react-redux';
 
 const path = process.env.PUBLIC_URL;
 
 function Help() {
 	const input = useRef(null);
 	const textarea = useRef(null);
-
-	useEffect(() => {
-		const res = JSON.parse(localStorage.getItem('posts'));
-		console.log(res);
-		if (!res) {
-			console.log('>>???');
-			localStorage.setItem(
-				'posts',
-				JSON.stringify([
-					{ title: 'dummy', text: 'loremlorem' },
-					{ title: 'dummy2', text: 'loremlorem2' },
-				]) //저장된 값 없으면 더미데이터 셋.
-			);
-		}
-	}, []);
-
-	const res = JSON.parse(localStorage.getItem('posts'));
-	const [data, setData] = useState(res ? res : []);
+	const dummy = useSelector((state) => state.textReducer.dummy);
+	const [data, setData] = useState([]);
 	const [index, setIndex] = useState(null);
 	const [open, setOpen] = useState(false);
 	const [write, setWrite] = useState(false);
@@ -33,14 +18,23 @@ function Help() {
 	const [val, setVal] = useState();
 
 	useEffect(() => {
-		console.log(index);
-	}, [index]);
-
+		const res = JSON.parse(localStorage.getItem('posts'));
+		if (res) setData(res);
+		else {
+			setData(dummy);
+		}
+	}, []);
 	useEffect(() => {
-		console.log('data:', data);
-		if (data == []) return;
+		console.log('data', data);
+		if (!data) {
+			return;
+		}
 		localStorage.setItem('posts', JSON.stringify(data));
 	}, [data]);
+
+	useEffect(() => {
+		console.log(index);
+	}, [index]);
 
 	const create = (e) => {
 		const title = input.current.value.trim();
@@ -81,18 +75,6 @@ function Help() {
 		console.log(newData);
 		setData(newData); //set.
 		setUpdate(false);
-	};
-	const back = (index) => {
-		console.log(data);
-		const newData = data.map((d, idx) => {
-			if (index === idx) {
-				d = { ...d, change: false };
-				console.log(d);
-			}
-			return d;
-		});
-		console.log(newData);
-		setData(newData);
 	};
 	const handleOpen = (e, idx) => {
 		const innerText = e.currentTarget.children[0].innerText;
@@ -169,7 +151,7 @@ function Help() {
 			</Layout>
 			{write && (
 				<Poptext>
-					<>
+					<div className='wrap'>
 						<input type='text' name='title' ref={input}></input>
 						<textarea
 							name='text'
@@ -179,12 +161,12 @@ function Help() {
 							ref={textarea}></textarea>
 						<button onClick={create}>create</button>
 						<button onClick={() => setWrite(false)}>cancel</button>
-					</>
+					</div>
 				</Poptext>
 			)}
 			{update && (
 				<Poptext>
-					<>
+					<div className='wrap'>
 						<input
 							type='text'
 							name='title'
@@ -199,7 +181,7 @@ function Help() {
 							defaultValue={val.text}></textarea>
 						<button onClick={() => update2(index)}>save</button>
 						<button onClick={() => setUpdate(false)}>cancel</button>
-					</>
+					</div>
 				</Poptext>
 			)}
 		</>

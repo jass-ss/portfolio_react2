@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import anime from '../../class/anime';
+import { useSelector } from 'react-redux';
 
 const path = process.env.PUBLIC_URL;
 
 function Content() {
+	const vid = useSelector((state) => state.vidReducer.vid);
+	const dummy = useSelector((state) => state.textReducer.dummy);
+
+	const [tap, setTap] = useState(true);
+	const [news, setNews] = useState([]);
+	console.log(dummy);
+
+	if (vid && dummy) {
+		if (!localStorage.getItem('posts')) {
+			localStorage.setItem('posts', JSON.stringify(dummy));
+		}
+	}
+
 	return (
-		<section className='content main'>
+		<main className='content main'>
 			<div className='inner'>
 				<section id='service'>
 					<h1>ABOUT CHROME KITCHEN</h1>
@@ -167,9 +181,26 @@ function Content() {
 						</div>
 					</div>
 				</section>
-				{/* <Help/> */}
+
+				<section id='fetch'>
+					<div className='tap'>
+						<span onClick={() => setTap(true)}>NEWS</span>
+						<span onClick={() => setTap(false)}>YOUTUBE</span>
+					</div>
+					{tap ? (
+						<>
+							<h1>LATEST NEWS</h1>
+							{news.map((m, idx) => {
+								<div className='text'>
+									<h2>{m.title}</h2>
+									<p>{m.text}</p>
+								</div>;
+							})}
+						</>
+					) : null}
+				</section>
 			</div>
-		</section>
+		</main>
 	);
 }
 

@@ -11,10 +11,9 @@ function Main() {
 		if (ref) {
 			console.log(ref.current.querySelectorAll('section'));
 			const secs = ref.current.querySelectorAll('section');
-			secs.forEach((s, idx) => offs.push(s.offsetTop + 1034));
-			offs.shift();
+			secs.forEach((s, idx) => offs.push(s.offsetTop));
 			console.log(offs);
-			//window.scrollTo(0, offs[3]);
+			window.scrollTo(0, offs[4]);
 		}
 	}, []);
 	/*

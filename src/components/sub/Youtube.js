@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../common/Layout';
-import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Popup2 from '../common/Popup2';
 import SubHeader from '../common/SubHeader';
 import Advertisement from './Advertisement';
 import Sponsorship from './Sponsorship';
+import { useSelector } from 'react-redux';
 
 const path = process.env.PUBLIC_URL;
 
 function Youtube() {
+	const vid = useSelector((state) => state.vidReducer.vid);
+	console.log(vid);
 	const [on, setOn] = useState('advertisement');
 
-	const [arr, setArr] = useState([]);
 	const [ele, setEle] = useState(null);
 	const [ad, setAd] = useState(null);
 	const [sps, setSps] = useState([]);
@@ -22,31 +23,15 @@ function Youtube() {
 	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
 
-	const youtube_key = 'AIzaSyCK9lW6syZHNw0hLhSpWzUcjnQzmoebEQM';
-	const playListId = 'PLgRXT2p63sR2XX3SUYVo57tpYJxmNIhm-';
-	const num = 13;
-	const youtube_url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${youtube_key}&playlistId=${playListId}&maxResults=${num}`;
-
 	useEffect(() => {
-		axios
-			.get(youtube_url)
-			.then((json) => json.data.items)
-			.then((data) => setArr(data));
-
-		//setEle(arr[0].snippet.thumbnails.standard.url);
-	}, []); // 첫 렌더링때에만 데이터 가져오기.
-
-	console.log(arr);
-
-	useEffect(() => {
-		if (arr[0]) {
-			setEle(arr[0]);
-			setAd(arr[11]);
-			setSps(arr.slice(1, 4));
-			setAdv(arr.slice(6, 10));
+		console.log(vid);
+		if (vid) {
+			setEle(vid[0]);
+			setAd(vid[11]);
+			setSps(vid.slice(1, 4));
+			setAdv(vid.slice(6, 10));
 		}
-	}, [arr]);
-	console.log(adv);
+	}, []);
 
 	return (
 		<>
@@ -87,7 +72,7 @@ function Youtube() {
 					<iframe
 						src={
 							`https://www.youtube.com/embed/` +
-							arr[index].snippet.resourceId.videoId
+							vid[index].snippet.resourceId.videoId
 						}
 						frameborder='0'></iframe>
 				</Popup2>
