@@ -20,10 +20,10 @@ function App() {
 			<Switch>
 				{/* 같은 경로의 router 연결시 구체적인 라우터 하나만 적용.*/}
 				<Route exact path='/'>
-					<Main>y</Main>
+					<Main>test</Main>
 				</Route>
 				<Route path='/'>
-					<Header type={'sub'} />
+					<Header type={'main'} />
 				</Route>
 			</Switch>
 			<Route path='/youtube' component={Youtube} />

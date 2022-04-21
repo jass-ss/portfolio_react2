@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import Menu from '../common/Menu';
 
 function Header({ type }) {
 	const active = { color: '#aaa' };
+	const [on, setOn] = useState(false);
+
 	return (
 		<header className={type}>
 			<h1>
@@ -49,7 +52,14 @@ function Header({ type }) {
 					</NavLink>
 				</li>
 			</ul>
-			<FontAwesomeIcon icon={faBars} className='icon' />
+			<FontAwesomeIcon
+				icon={faBars}
+				className='icon'
+				onClick={() => {
+					on ? setOn(false) : setOn(true);
+				}}
+			/>
+			{on ? <Menu setOn={setOn}></Menu> : null}
 		</header>
 	);
 }

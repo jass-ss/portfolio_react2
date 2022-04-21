@@ -1,12 +1,12 @@
-header.main {
+header {
 	width: 100%;
 	height: 11vmin;
 	position: relative;
 	z-index: 5;
 	> h1 {
 		position: absolute;
-		top: 50px;
-		left: 100px;
+		top: 5vmin;
+		left: 10vmin;
 		line-height: 0px;
 
 		> a {
@@ -34,94 +34,35 @@ header.main {
 	}
 	.icon {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 2vmin;
 		right: 0;
 		display: none;
-		color: beige;
-	}
-}
-header.sub {
-	width: 100%;
-	height: 11vmin;
-	position: relative;
-	z-index: 5;
-	> h1 {
-		position: absolute;
-		top: 50px;
-		left: 100px;
-		line-height: 0px;
-
-		> a {
-			font: bold 24px/1 'Poppins';
-			color: #333;
-		}
-	}
-
-	#gnb {
-		position: absolute;
-		top: 50px;
-		left: 50%;
-		transform: translateX(-50%);
-		line-height: 0px;
-
-		li {
-			float: left;
-			margin-left: 20px;
-			line-height: 10px;
-			a {
-				font: 20px/1 'Poppins';
-				color: #333;
-			}
-		}
-	}
-	.icon {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 0;
-		display: none;
-		color: beige;
+		color: #333;
 	}
 }
 
 @media screen and (max-width: 1179px) {
 	header.main {
 		height: 12vmin;
-		h1 a {
-			top: 5vmin;
-			color: beige;
-			font: bold 6vmin/0 'arial';
+		h1 {
+			top: 3vmin;
+			left: auto;
+			right: 10vmin;
+			a {
+				top: 0vmin;
+				color: #333;
+				font: bold 4vmin/1 'arial';
+			}
 		}
 		#gnb {
 			display: none;
 		}
 		.icon {
-			top: 5vmin;
+			top: 3vmin;
 			display: block;
-			transform: translate(10vmin, -50%);
-			right: auto;
-			left: 50%;
-			color: beige;
-		}
-	}
-	header.sub {
-		height: 12vmin;
-		h1 a {
-			top: 6vmin;
-			color: #222;
-			font: bold 6vmin/0 'arial';
-		}
-		#gnb {
-			display: none;
-		}
-		.icon {
-			top: 6vmin;
-			display: block;
-			transform: translate(10vmin, -50%);
-			right: auto;
-			left: 50%;
-			color: #222;
+			right: 5vmin;
+			color: #333;
+			font: bold 4vmin/0 'arial';
 		}
 	}
 }
@@ -129,40 +70,23 @@ header.sub {
 @media screen and (max-width: 539px) {
 	header.main {
 		height: 12vmin;
-		h1 a {
-			top: 5vmin;
-			color: beige;
-			font: bold 6vmin/0 'arial';
+		h1 {
+			top: 3vmin;
+			left: auto;
+			right: 10vmin;
+			a {
+				top: 0vmin;
+				font: bold 6vmin/1 'arial';
+			}
 		}
 		#gnb {
 			display: none;
 		}
 		.icon {
-			top: 5vmin;
+			top: 3vmin;
 			display: block;
-			transform: translate(10vmin, -50%);
-			right: auto;
-			left: 50%;
-			color: beige;
-		}
-	}
-	header.sub {
-		height: 12vmin;
-		h1 a {
-			top: 6vmin;
-			color: #222;
+			right: 3vmin;
 			font: bold 6vmin/0 'arial';
-		}
-		#gnb {
-			display: none;
-		}
-		.icon {
-			top: 6vmin;
-			display: block;
-			transform: translate(10vmin, -50%);
-			right: auto;
-			left: 50%;
-			color: #222;
 		}
 	}
 }
