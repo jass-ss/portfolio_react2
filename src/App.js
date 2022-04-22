@@ -36,7 +36,7 @@ function App() {
 	};
 	useEffect(() => {
 		get();
-		dispatch(
+		/*dispatch(
 			dummy([
 				{
 					title: 'dummy1',
@@ -51,7 +51,28 @@ function App() {
 					text: 'it is dummy text3',
 				},
 			])
-		);
+		); */
+		if (!localStorage.getItem('posts')) {
+			localStorage.setItem(
+				'posts',
+				JSON.stringify([
+					{
+						title: 'dummy1',
+						text: 'it is dummy text1',
+					},
+					{
+						title: 'dummy2',
+						text: 'it is dummy text2',
+					},
+					{
+						title: 'dummy3',
+						text: 'it is dummy text3',
+					},
+				])
+			);
+		} else {
+			console.log('had');
+		}
 	}, []);
 
 	return (

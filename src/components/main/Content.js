@@ -9,16 +9,22 @@ const path = process.env.PUBLIC_URL;
 function Content() {
 	const vid = useSelector((state) => state.vidReducer.vid);
 	const dummy = useSelector((state) => state.textReducer.dummy);
+	const data = JSON.parse(localStorage.getItem('posts'));
+	console.log(data);
 
 	const [tap, setTap] = useState(true);
-	const [news, setNews] = useState([]);
+	const [news, setNews] = useState(data ? data : []);
+	const [videos, setVideos] = useState(data ? data : []);
 	console.log(dummy);
 
-	if (vid && dummy) {
-		if (!localStorage.getItem('posts')) {
-			localStorage.setItem('posts', JSON.stringify(dummy));
+	useEffect(() => {
+		if (vid) {
+			const data = vid.slice(0, 3);
+			setVideos(data);
 		}
-	}
+	}, [vid]);
+
+	console.log(videos);
 
 	return (
 		<main className='content main'>
@@ -191,13 +197,25 @@ function Content() {
 						<>
 							<h1>LATEST NEWS</h1>
 							{news.map((m, idx) => {
-								<div className='text'>
-									<h2>{m.title}</h2>
-									<p>{m.text}</p>
-								</div>;
+								return (
+									<div className='text' key={idx}>
+										<h2>{m.title}</h2>
+										<p>{m.text}</p>
+									</div>
+								);
 							})}
 						</>
-					) : null}
+					) : (
+						<>
+							{videos.map((v, idx) => {
+								return (
+									<article>
+										<img src={v.snippet.thumbnails.default.url} alt='' />
+									</article>
+								);
+							})}
+						</>
+					)}
 				</section>
 			</div>
 		</main>
