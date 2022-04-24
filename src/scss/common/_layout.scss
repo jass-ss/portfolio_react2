@@ -2,7 +2,7 @@
 	width: 100%;
 	position: relative;
 
-	.inner {
+	> .inner {
 		width: 1180px;
 		min-height: 30vmin;
 		margin: 0 auto;
@@ -11,9 +11,31 @@
 	}
 
 	&.on {
-		.inner {
+		> .inner {
 			transform: translateY(0px);
 			opacity: 1;
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.content {
+		width: 100%;
+		position: relative;
+
+		> .inner {
+			width: 100%;
+			min-height: 30vmin;
+			margin: 0 auto;
+			position: relative;
+			transition: 0.5s;
+		}
+
+		&.on {
+			> .inner {
+				transform: translateY(0px);
+				opacity: 1;
+			}
 		}
 	}
 }

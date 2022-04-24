@@ -95,7 +95,12 @@ function Content() {
 				</section>
 
 				<section id='banner'>
-					<div className='aniLogo'></div>
+					<div className='aniLogo'>
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+							mollitia maiores quas.
+						</p>
+					</div>
 					<div className='inner'>
 						<article>
 							<img src={`${path}/img/chrome2.jpg`} alt='opened pot' />
