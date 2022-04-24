@@ -16,57 +16,48 @@ import SignUp from './components/sub/SignUp';
 import { useEffect } from 'react';
 
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { vids, dummy } from '../src/redux/actions';
+import { useDispatch } from 'react-redux';
 
 function App() {
 	const dispatch = useDispatch();
-	const vid = useSelector((state) => state.vidReducer);
-	console.log(vid);
 
-	const youtube_key = 'AIzaSyCK9lW6syZHNw0hLhSpWzUcjnQzmoebEQM';
-	const playListId = 'PLgRXT2p63sR2XX3SUYVo57tpYJxmNIhm-';
-	const num = 13;
-	const youtube_url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${youtube_key}&playlistId=${playListId}&maxResults=${num}`;
-
-	const get = async () => {
-		const res = await axios.get(youtube_url);
-		const data = await res.data.items;
-		dispatch(vids(data));
-	};
 	useEffect(() => {
-		get();
-		/*dispatch(
-			dummy([
-				{
-					title: 'dummy1',
-					text: 'it is dummy text1',
-				},
-				{
-					title: 'dummy2',
-					text: 'it is dummy text2',
-				},
-				{
-					title: 'dummy3',
-					text: 'it is dummy text3',
-				},
-			])
-		); */
+		dispatch({ type: 'YOUTUBE_START' });
+		dispatch({ type: 'FLICKR_START' });
 		if (!localStorage.getItem('posts')) {
 			localStorage.setItem(
 				'posts',
 				JSON.stringify([
 					{
-						title: 'dummy1',
-						text: 'it is dummy text1',
+						title: 'Nulla a quam ac mauris sollicitudin aliquam in sed turpi?',
+						text: 'it is dummy text7',
 					},
 					{
-						title: 'dummy2',
+						title: 'Integer porta sapien eu magna pharetra rhoncus.?',
+						text: 'it is dummy text6',
+					},
+					{
+						title:
+							'Mauris aliquam lobortis lacus, vitae tempus risus commodo vel?',
+						text: 'it is dummy text5',
+					},
+					{
+						title:
+							'Aenean iaculis erat sit amet leo feugiat, ut cursus quam ornare?',
+						text: 'it is dummy text4',
+					},
+					{
+						title: 'laoreet odio tortor, et porta dui elementum at?',
+						text: 'it is dummy text3',
+					},
+					{
+						title:
+							'Ut volutpat sapien eu nisi faucibus, mollis congue est molestie?',
 						text: 'it is dummy text2',
 					},
 					{
-						title: 'dummy3',
-						text: 'it is dummy text3',
+						title: 'Nam hendrerit justo quis massa luctus suscipi?',
+						text: 'it is dummy text1',
 					},
 				])
 			);

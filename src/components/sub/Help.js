@@ -2,14 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import SubHeader from '../common/SubHeader';
 import Poptext from '../common/PopText';
-import { useSelector } from 'react-redux';
 
 const path = process.env.PUBLIC_URL;
 
 function Help() {
 	const input = useRef(null);
 	const textarea = useRef(null);
-	const dummy = useSelector((state) => state.textReducer.dummy);
 	const [data, setData] = useState([]);
 	const [index, setIndex] = useState(null);
 	const [open, setOpen] = useState(false);
@@ -20,9 +18,6 @@ function Help() {
 	useEffect(() => {
 		const res = JSON.parse(localStorage.getItem('posts'));
 		if (res) setData(res);
-		else {
-			setData(dummy);
-		}
 	}, []);
 	useEffect(() => {
 		console.log('data', data);
@@ -119,51 +114,56 @@ function Help() {
 								<React.Fragment key={idx}>
 									<span>{open === idx ? `-` : `+`}</span>
 									<h2>{d.title}</h2>
-									{open === idx ? (
-										<div className='hidden_box'>
-											<p>{d.text}</p>
-											<button
-												onClick={() => {
-													setIndex(idx);
-													del(idx);
-												}}>
-												delete
-											</button>
-											<button
-												onClick={() => {
-													{
-														/*setIndex(idx);
-													update(idx);*/
-														//setIndex(idx);
-														edit(idx);
-													}
-												}}>
-												edit
-											</button>
-										</div>
-									) : null}
 								</React.Fragment>
 							</div>
+							{open === idx ? (
+								<div className='hidden_box'>
+									<p>{d.text}</p>
+									<button
+										onClick={() => {
+											setIndex(idx);
+											del(idx);
+										}}>
+										delete
+									</button>
+									<button
+										onClick={() => {
+											{
+												/*setIndex(idx);
+													update(idx);*/
+												//setIndex(idx);
+												edit(idx);
+											}
+										}}>
+										edit
+									</button>
+								</div>
+							) : null}
 						</React.Fragment>
 					);
 				})}
-				<button onClick={() => setWrite(true)}>WRITE</button>
-			</Layout>
-			{write && (
-				<Poptext>
-					<div className='wrap'>
-						<input type='text' name='title' ref={input}></input>
-						<textarea
-							name='text'
-							id=''
-							cols='30'
-							rows='10'
-							ref={textarea}></textarea>
+				{write ? null : <button onClick={() => setWrite(true)}>WRITE</button>}
+				{write && (
+					<div className='writeBox'>
+						<div className='title'>
+							<label htmlFor='title'>title: </label>
+							<input type='text' name='title' ref={input} />
+						</div>
+						<div className='text'>
+							{' '}
+							<label htmlFor='text'>text: </label>
+							<textarea
+								name='text'
+								id=''
+								cols='30'
+								rows='10'
+								ref={textarea}></textarea>
+						</div>
 						<button onClick={create}>create</button>
 						<button onClick={() => setWrite(false)}>cancel</button>
 					</div>
-				</Poptext>
-			)}
+				)}
+			</Layout>
 			{update && (
 				<Poptext>
 					<div className='wrap'>

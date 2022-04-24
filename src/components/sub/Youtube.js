@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 const path = process.env.PUBLIC_URL;
 
 function Youtube() {
-	const vid = useSelector((state) => state.vidReducer.vid);
+	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	console.log(vid);
 	const [on, setOn] = useState('advertisement');
 

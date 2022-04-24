@@ -13,39 +13,47 @@
 			span.intro {
 				width: 80%;
 				display: inline-block;
-				font: 2.5vmin/1 'Poppins';
+				font: 2.5vmin/1.5 'Poppins';
 				margin: 3vmin 0 10vmin 15vmin;
 			}
 			.box {
 				width: 80%;
 				font: 2.5vmin/1 'arial';
-				border-bottom: 1px solid #ddd;
+				border-top: 1px solid #ddd;
 				margin: 0 auto;
 				padding: 2vmin;
 				position: relative;
+				display: flex;
+				&:last-of-type {
+					border-bottom: 1px solid #ddd;
+				}
 				span {
 					margin-left: 10vmin;
 				}
 				h2 {
 					display: inline-block;
 					margin: 0 2vmin;
-					font: bold 3vmin/1 'Poppins';
+					font: bold 2.5vmin/1 'Poppins';
 				}
-				.hidden_box {
-					margin: 5vmin 0 5vmin 15vmin;
-					position: relative;
-					> p {
-						font: 2vmin/1 'Poppins';
-						width: 80%;
-					}
-					> button {
-						position: absolute;
-						bottom: -5vmin;
-						right: 10vmin;
-						padding: 2px 5px;
-						&:nth-of-type(2) {
-							right: 20vmin;
-						}
+			}
+			.hidden_box {
+				width: 80%;
+				margin: 0 auto;
+				margin: 1vmin 0 10vmin 15vmin;
+				position: relative;
+				> p {
+					font: 2vmin/1 'Poppins';
+					width: 80%;
+					padding: 1vmin 3vmin;
+					margin: 0 auto;
+				}
+				> button {
+					position: absolute;
+					bottom: -8vmin;
+					right: 10vmin;
+					padding: 2px 5px;
+					&:nth-of-type(2) {
+						right: 20vmin;
 					}
 				}
 			}
@@ -53,8 +61,54 @@
 				display: inline-block;
 				margin-top: 5vmin;
 				margin-left: 100vmin;
-				padding: 2px 5px;
-				font: 2vmin/1 'Poppins';
+				padding: 5px 20px;
+				border: 2px solid #222;
+				background: #fff;
+				font: bold 2vmin/1 'Poppins';
+			}
+			.writeBox {
+				width: 80%;
+				margin: 10vmin auto;
+				border: 1px solid #aaa;
+				padding: 5vmin 0 8vmin;
+				position: relative;
+				> .title {
+					width: 80%;
+					margin: 2vmin auto;
+					label {
+						display: inline-block;
+						padding-right: 10px;
+					}
+					input[type='text'] {
+						width: 50%;
+						margin: 0 auto;
+						display: inline-block;
+					}
+				}
+				> .text {
+					width: 80%;
+					margin: 2vmin auto;
+					label {
+						display: inline-block;
+						padding-right: 10px;
+						vertical-align: top;
+					}
+					textarea {
+						width: 90%;
+						height: 10vmin;
+						margin: 0 auto;
+						display: inline-block;
+					}
+				}
+				> button {
+					position: absolute;
+					bottom: 5vmin;
+					right: 10vmin;
+					padding: 2px 10px;
+					&:nth-of-type(1) {
+						right: 20vmin;
+					}
+				}
 			}
 		}
 	}
