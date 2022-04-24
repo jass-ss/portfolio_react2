@@ -83,7 +83,7 @@
 						padding-top: 3vmin;
 					}
 					span {
-						font: 2.5vmin/1.35 'Poppins';
+						font: 1.5vmin/1.35 'Poppins';
 						color: rgb(105, 13, 13);
 						margin-top: 10px;
 					}
@@ -93,9 +93,9 @@
 						textarea {
 							width: 100%;
 							height: 45vmin;
-							padding: 10px;
+							padding: 20px;
 							resize: none;
-							font: normal 2.5vmin/1.35 'Poppins';
+							font: normal 2vmin/1.35 'Poppins';
 							margin-bottom: 30px;
 						}
 						.agreement {
@@ -119,7 +119,7 @@
 							}
 							th {
 								width: 30%;
-								font: bold 2.5vmin/1.35 'Poppins';
+								font: bold 2vmin/1.35 'Poppins';
 							}
 							td {
 								padding: 10px 0 10px 0px;
@@ -128,31 +128,36 @@
 								#pwd2 {
 									width: 100%;
 									height: 30px;
-									font: 2.5vmin 'arial';
+									font: 1.5vmin 'arial';
 								}
 								#name {
 									width: 50%;
 								}
 								#birth {
 									width: 50%;
+									font: 1.5vmin 'arial';
 								}
 								#address {
 									width: 80%;
+									font: 1.5vmin 'arial';
 								}
 								#address2 {
 									width: 100%;
+									font: 1.5vmin 'arial';
 								}
 								button {
 									margin: 0 10px;
-									padding: 2px 5px;
-									font-size: 2.5vmin;
+									padding: 2px 2px;
+									font-size: 2vmin;
 								}
 								#phone2,
 								#phone3 {
 									width: 35%;
+									font: 1.5vmin 'arial';
 								}
 								#email {
 									width: 100%;
+									font: 1.5vmin 'arial';
 								}
 								label[for='sms1'],
 								label[for='sms2'] {
@@ -161,12 +166,11 @@
 							}
 						}
 						input[type='text'] {
-							font: 2.5vmin 'arial';
 							height: 30px;
 							border: none;
 						}
 						input[type='radio'] {
-							font: 2.5vmin 'arial';
+							font: 2vmin 'arial';
 							margin-left: 10px;
 						}
 					}
@@ -189,6 +193,7 @@
 						width: 60%;
 						margin: 120px 110px 280px 110px;
 						border-collapse: collapse;
+						font: 2vmin 'arial';
 
 						tr {
 							border-bottom: 1px solid #ddd;
@@ -212,8 +217,7 @@
 							button {
 								margin: 0 10px;
 								padding: 2px;
-								font-size: 20px;
-								font: 2.5vmin 'arial';
+								font: 2vmin 'arial';
 							}
 							select {
 								font-size: 20px;
@@ -221,7 +225,7 @@
 							}
 							input[type='text'] {
 								margin: 0 5px;
-								font: 2.5vmin 'arial';
+								font: 2vmin 'arial';
 								height: 30px;
 								border: none;
 							}

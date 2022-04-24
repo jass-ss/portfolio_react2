@@ -3,27 +3,24 @@ import { combineReducers } from 'redux';
 const initVids = [];
 const initText = [];
 
-const vidReducer = (state = { initVids: [] }, action) => {
+const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
-		case 'YOUTUBE':
-			return { ...state, vid: action.payload };
-		default:
-			return state;
-	}
-};
+		case 'YOUTUBE_START':
+			return { ...state };
 
-const textReducer = (state = initText, action) => {
-	switch (action.type) {
-		case 'DUMMY_TEXT':
-			return { ...state, dummy: action.payload };
+		case 'YOUTUBE_SUCCESS':
+			return { ...state, youtube: action.payload };
+
+		case 'YOUTUBE_ERROR':
+			return { ...state, error: action.payload };
+
 		default:
 			return state;
 	}
 };
 
 const allReducer = combineReducers({
-	vidReducer,
-	textReducer,
+	youtubeReducer,
 });
 
 export default allReducer;

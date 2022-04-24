@@ -364,9 +364,58 @@
 	#fetch {
 		width: 100%;
 		position: relative;
-		.text {
-			width: 30%;
-			height: 15vmin;
+		h1 {
+			font: bold 5vmin 'Poppins';
+		}
+		.prevNews {
+			width: 100%;
+			margin: 5vmin;
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.text {
+				float: left;
+				width: 30%;
+				border: 3px solid #222;
+				border-radius: 15px;
+				margin: 1%;
+				padding: 10px;
+				h2 {
+					font: bold 3vmin/1 'Poppins';
+					color: #222;
+				}
+				p {
+					font: 2vmin/1 'Poppins';
+					padding: 10px 10px 0px 10px;
+				}
+			}
+		}
+		.prevVid {
+			width: 100%;
+			margin: 10vmin 5vmin;
+			&::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+			> article {
+				width: 30%;
+				float: left;
+				margin: 1%;
+				> .wrap {
+					width: 100%;
+					height: 22vmin;
+					overflow: hidden;
+					> img {
+						width: 100%;
+						height: 150%;
+						margin-top: -5vmin;
+						object-fit: cover;
+					}
+				}
+			}
 		}
 	}
 }

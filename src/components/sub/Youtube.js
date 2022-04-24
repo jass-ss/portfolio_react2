@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 const path = process.env.PUBLIC_URL;
 
 function Youtube() {
-	const vid = useSelector((state) => state.vidReducer.vid);
+	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	console.log(vid);
 	const [on, setOn] = useState('advertisement');
 
@@ -31,7 +31,7 @@ function Youtube() {
 			setSps(vid.slice(1, 4));
 			setAdv(vid.slice(6, 10));
 		}
-	}, []);
+	}, [vid]);
 
 	return (
 		<>

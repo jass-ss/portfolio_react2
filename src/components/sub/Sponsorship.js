@@ -13,10 +13,6 @@ function Sponsorship({ ele, sps, setOpen, setIndex }) {
 				<article className='main'>
 					<div className='pic'>
 						<img
-							onClick={() => {
-								setIndex(0);
-								setOpen(true);
-							}}
 							src={ele ? ele.snippet.thumbnails.standard.url : null}
 							alt=''
 						/>

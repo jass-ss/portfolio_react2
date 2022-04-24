@@ -2,10 +2,11 @@
 	width: 100%;
 
 	.inner {
-		margin: 15vmin auto 10vmin;
+		margin: 15vmin auto 0vmin;
 		position: relative;
 
 		.list {
+			padding: 5vmin 0 10vmin;
 			h1 {
 				font: bold 8vmin/1 'Lora';
 				margin: 5vmin 0 3vmin 15vmin;
@@ -18,34 +19,42 @@
 			}
 			.box {
 				width: 80%;
-				font: 2.5vmin/1 'arial';
-				border-bottom: 1px solid #ddd;
+				font: 2vmin/1 'arial';
+				border-top: 1px solid #ddd;
 				margin: 0 auto;
 				padding: 2vmin;
 				position: relative;
+				display: flex;
+				&:last-of-type {
+					border-bottom: 1px solid #ddd;
+				}
 				span {
-					margin-left: 10vmin;
+					margin-left: 5%;
 				}
 				h2 {
+					width: 80%;
 					display: inline-block;
 					margin: 0 2vmin;
-					font: bold 3vmin/1 'Poppins';
+					font: bold 2vmin/1 'Poppins';
 				}
-				.hidden_box {
-					margin: 5vmin 0 5vmin 15vmin;
-					position: relative;
-					> p {
-						font: 2vmin/1 'Poppins';
-						width: 80%;
-					}
-					> button {
-						position: absolute;
-						bottom: -5vmin;
-						right: 10vmin;
-						padding: 2px 5px;
-						&:nth-of-type(2) {
-							right: 20vmin;
-						}
+			}
+			.hidden_box {
+				width: 80%;
+				margin: 0vmin auto 10vmin;
+				border-top: 1px solid #eee;
+				position: relative;
+				> p {
+					font: 2vmin/1 'Poppins';
+					width: 80%;
+					margin: 2vmin auto;
+				}
+				> button {
+					position: absolute;
+					bottom: -5vmin;
+					right: 10vmin;
+					padding: 2px 5px;
+					&:nth-of-type(2) {
+						right: 19vmin;
 					}
 				}
 			}
@@ -53,9 +62,26 @@
 				display: inline-block;
 				margin-top: 5vmin;
 				margin-left: 100vmin;
-				padding: 2px 5px;
-				font: 2vmin/1 'Poppins';
+				padding: 5px 20px;
+				font: bold 2vmin/1 'Poppins';
+				border: 2px solid black;
+				background: #fff;
 			}
+		}
+	}
+
+	.writeBox {
+		width: 80%;
+		margin: 15vmin auto 0;
+		padding: 3vmin 10% 5vmin;
+		border: 1px solid #aaa;
+		input[type='text'] {
+			display: block;
+		}
+		textarea {
+			display: block;
+			width: 100%;
+			height: 10vmin;
 		}
 	}
 }
@@ -106,7 +132,7 @@
 							position: absolute;
 							bottom: -5vmin;
 							right: 10vmin;
-							padding: 3px 5px;
+							padding: 2px 5px;
 							font: 2vmin/1 'Poppins';
 							&:nth-of-type(2) {
 								right: 20vmin;
@@ -120,8 +146,23 @@
 					margin-left: auto;
 					right: 15vmin;
 					bottom: -5vmin;
-					padding: 2px 5px;
-					font: 2vmin/1 'Poppins';
+					padding: 10px 20px;
+					font: bold 2vmin/1 'Poppins';
+				}
+			}
+
+			.writeBox {
+				width: 80%;
+				margin: 15vmin auto 0;
+				padding: 3vmin 10% 5vmin;
+				border: 1px solid #aaa;
+				input[type='text'] {
+					display: block;
+				}
+				textarea {
+					display: block;
+					width: 100%;
+					height: 10vmin;
 				}
 			}
 		}
@@ -190,6 +231,24 @@
 					bottom: -5vmin;
 					padding: 2px 5px;
 					font: 2vmin/1 'Poppins';
+				}
+			}
+
+			.writeBox {
+				width: 80%;
+				margin: 15vmin auto 0;
+				padding: 3vmin 10% 5vmin;
+				font: 4vmin/1 'Poppins';
+				border: 1px solid #aaa;
+				input[type='text'] {
+					display: block;
+					width: 80%;
+				}
+				textarea {
+					display: block;
+					font: 3vmin/1 'Poppins';
+					width: 100%;
+					height: 10vmin;
 				}
 			}
 		}

@@ -7,20 +7,23 @@ import { useSelector } from 'react-redux';
 const path = process.env.PUBLIC_URL;
 
 function Content() {
-	const vid = useSelector((state) => state.vidReducer.vid);
-	const dummy = useSelector((state) => state.textReducer.dummy);
-	const data = JSON.parse(localStorage.getItem('posts'));
-	console.log(data);
+	const vid = useSelector((state) => state.youtubeReducer.youtube);
+	const posts = JSON.parse(localStorage.getItem('posts'));
+	console.log(posts);
 
 	const [tap, setTap] = useState(true);
-	const [news, setNews] = useState(data ? data : []);
-	const [videos, setVideos] = useState(data ? data : []);
-	console.log(dummy);
+	const [news, setNews] = useState([]);
+	const [videos, setVideos] = useState([]);
 
 	useEffect(() => {
 		if (vid) {
-			const data = vid.slice(0, 3);
+			const data = vid.slice(1, 4);
 			setVideos(data);
+		}
+
+		if (posts) {
+			const prevPosts = posts.slice(0, 3);
+			setNews(prevPosts);
 		}
 	}, [vid]);
 
@@ -189,33 +192,29 @@ function Content() {
 				</section>
 
 				<section id='fetch'>
-					<div className='tap'>
-						<span onClick={() => setTap(true)}>NEWS</span>
-						<span onClick={() => setTap(false)}>YOUTUBE</span>
+					<div className='prevNews'>
+						<h1>LATEST NEWS</h1>
+						{news.map((m, idx) => {
+							return (
+								<div className='text' key={idx}>
+									<h2>{m.title}</h2>
+									<p>{m.text}</p>
+								</div>
+							);
+						})}
 					</div>
-					{tap ? (
-						<>
-							<h1>LATEST NEWS</h1>
-							{news.map((m, idx) => {
-								return (
-									<div className='text' key={idx}>
-										<h2>{m.title}</h2>
-										<p>{m.text}</p>
+					<div className='prevVid'>
+						<h1>YOUTUBE CLIP</h1>
+						{videos.map((v, idx) => {
+							return (
+								<article>
+									<div className='wrap'>
+										<img src={v.snippet.thumbnails.standard.url} alt='' />
 									</div>
-								);
-							})}
-						</>
-					) : (
-						<>
-							{videos.map((v, idx) => {
-								return (
-									<article>
-										<img src={v.snippet.thumbnails.default.url} alt='' />
-									</article>
-								);
-							})}
-						</>
-					)}
+								</article>
+							);
+						})}
+					</div>
 				</section>
 			</div>
 		</main>
