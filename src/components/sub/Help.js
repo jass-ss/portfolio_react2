@@ -118,25 +118,48 @@ function Help() {
 							</div>
 							{open === idx ? (
 								<div className='hidden_box'>
-									<p>{d.text}</p>
-									<button
-										onClick={() => {
-											setIndex(idx);
-											del(idx);
-										}}>
-										delete
-									</button>
-									<button
-										onClick={() => {
-											{
-												/*setIndex(idx);
-													update(idx);*/
-												//setIndex(idx);
-												edit(idx);
-											}
-										}}>
-										edit
-									</button>
+									{update ? (
+										<div className='writeBox'>
+											{' '}
+											<div className='title'>
+												<label htmlFor='title'>title: </label>
+												<input
+													type='text'
+													name='title'
+													ref={input}
+													defaultValue={val.title}></input>
+											</div>{' '}
+											<div className='text'>
+												<label htmlFor='text'>text: </label>
+												<textarea
+													name='text'
+													id=''
+													cols='30'
+													rows='10'
+													ref={textarea}
+													defaultValue={val.text}></textarea>
+											</div>
+											<button onClick={() => update2(index)}>save</button>
+											<button onClick={() => setUpdate(false)}>cancel</button>
+										</div>
+									) : (
+										<>
+											<p>{d.text}</p>
+											<button
+												onClick={() => {
+													setIndex(idx);
+													del(idx);
+												}}>
+												delete
+											</button>
+											<button
+												onClick={() => {
+													edit(idx);
+												}}>
+												edit
+											</button>
+										</>
+									)}
 								</div>
 							) : null}
 						</React.Fragment>
@@ -150,7 +173,6 @@ function Help() {
 							<input type='text' name='title' ref={input} />
 						</div>
 						<div className='text'>
-							{' '}
 							<label htmlFor='text'>text: </label>
 							<textarea
 								name='text'
@@ -164,26 +186,6 @@ function Help() {
 					</div>
 				)}
 			</Layout>
-			{update && (
-				<Poptext>
-					<div className='wrap'>
-						<input
-							type='text'
-							name='title'
-							ref={input}
-							defaultValue={val.title}></input>
-						<textarea
-							name='text'
-							id=''
-							cols='30'
-							rows='10'
-							ref={textarea}
-							defaultValue={val.text}></textarea>
-						<button onClick={() => update2(index)}>save</button>
-						<button onClick={() => setUpdate(false)}>cancel</button>
-					</div>
-				</Poptext>
-			)}
 		</>
 	);
 }

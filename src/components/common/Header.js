@@ -21,7 +21,7 @@ function Header({ type }) {
 						BRAND
 					</NavLink>
 				</li>
-				<li>
+				{/*	<li>
 					<NavLink to='/product' activeStyle={active}>
 						PRODUCT
 					</NavLink>
@@ -30,7 +30,7 @@ function Header({ type }) {
 					<NavLink to='/store' activeStyle={active}>
 						STORE
 					</NavLink>
-				</li>
+	</li> */}
 				<li>
 					<NavLink to='/gallery' activeStyle={active}>
 						GALLERY

@@ -49,7 +49,7 @@ function Sponsorship({ ele, sps, setOpen, setIndex }) {
 						);
 					})}
 				</div>
-
+				{/*}
 				<div className='frame'>
 					<span>SNAP SHOT </span>
 					<article className='pics'>
@@ -61,7 +61,7 @@ function Sponsorship({ ele, sps, setOpen, setIndex }) {
 							<img src={`${path}/img/tv5.jpg`} alt='' />
 							<img src={`${path}/img/tv6.jpg`} alt='' />
 							<img src={`${path}/img/tv7.jpg`} alt='' />
-						</div>
+				</div> 
 
 						<a href='#' className='stop'>
 							STOP
@@ -72,7 +72,7 @@ function Sponsorship({ ele, sps, setOpen, setIndex }) {
 					</article>
 					<FontAwesomeIcon icon={faAngleRight} className='next' />
 					<FontAwesomeIcon icon={faAngleLeft} className='prev' />
-				</div>
+				</div> */}
 			</div>
 		</Layout>
 	);

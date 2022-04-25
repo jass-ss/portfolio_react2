@@ -104,10 +104,10 @@
 		.aniLogo {
 			overflow: hidden;
 			width: 20%;
-			height: 20vmin;
-			border: 1px solid black;
-			font: bold 10vmin 'Poppins';
+			height: 10vmin;
+			font: bold 7vmin 'Poppins';
 			margin-left: calc((100vw - 1180px) / -2);
+			transition: 0.2s;
 		}
 		> .inner {
 			width: 1180px;
@@ -124,7 +124,7 @@
 			}
 			h1 {
 				position: absolute;
-				top: 20%;
+				top: 20vmin;
 				width: 50%;
 				margin-left: 5vmin;
 				transform: translateY(-50%);

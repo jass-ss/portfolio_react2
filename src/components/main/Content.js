@@ -120,12 +120,9 @@ function Content({ scr, pos }) {
 					<div
 						className='aniLogo'
 						style={
-							scr >= pos[2] + base ? { width: `${(scr - 2000) * 0.2}%` } : null
+							scr >= pos[2] + base ? { width: `${(scr - 2000) * 0.3}%` } : null
 						}>
-						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-							mollitia maiores quas.
-						</p>
+						<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
 					</div>
 					<div className='inner'>
 						<article>
