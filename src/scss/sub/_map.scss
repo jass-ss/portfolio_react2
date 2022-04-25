@@ -1,0 +1,239 @@
+.mapCompo {
+	width: 1180px;
+	margin: 30vmin auto;
+	> span {
+		font: bold 4vmin/1 'Poppins';
+	}
+	.wrap {
+		width: 100%;
+		position: relative;
+		margin-top: 5vmin;
+		font-size: 0;
+		#map1 {
+			display: inline-block;
+			width: 55%;
+			height: 40vmin;
+			filter: grayscale(0.7);
+			z-index: 2;
+		}
+		.txt {
+			text-align: center;
+			display: inline-block;
+			width: 55%;
+			height: calc(40vmin + 4vmin);
+			background: #222;
+			color: #ddd;
+			position: absolute;
+			top: 4vmin;
+			right: 0%;
+			font: 2vmin/1 'Poppins';
+			h1 {
+				margin-top: 7vmin;
+				margin-left: 5vmin;
+			}
+			form {
+				width: 70%;
+				margin-left: 30%;
+				fieldset {
+					border: none;
+					position: relative;
+				}
+				.h {
+					opacity: 0;
+				}
+				input[type='text'] {
+					width: 120%;
+					height: 4vmin;
+					font: 1.5vmin/1 'Poppins';
+					margin: 1vmin 0;
+				}
+				select {
+					margin-left: 5vmin;
+					margin-top: 1vmin;
+				}
+				input[type='submit'] {
+					margin-top: 5vmin;
+					width: 35vmin;
+					height: 5vmin;
+					position: absolute;
+					left: 0;
+				}
+			}
+		}
+	}
+	.btnBox {
+		width: 55%;
+		text-align: left;
+		position: relative;
+		z-index: 2;
+		button {
+			width: 25%;
+			height: 5vmin;
+			border: none;
+			font: 1.5vmin/2 'Poppins';
+			cursor: pointer;
+			border-right: rgb(255, 255, 255) solid 1px;
+		}
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	.mapCompo {
+		width: 100%;
+		margin: 30vmin auto;
+		> span {
+			font: bold 4vmin/1 'Poppins';
+		}
+		.wrap {
+			width: 100%;
+			position: relative;
+			margin-top: 5vmin;
+			font-size: 0;
+			#map1 {
+				display: inline-block;
+				width: 55%;
+				height: 40vmin;
+				filter: grayscale(0.7);
+				z-index: 2;
+			}
+			.txt {
+				text-align: center;
+				display: inline-block;
+				width: 55%;
+				height: calc(40vmin + 4vmin);
+				background: #222;
+				color: #ddd;
+				position: absolute;
+				bottom: 0vmin;
+				right: 0%;
+				font: 2vmin/1 'Poppins';
+				h1 {
+					margin-top: 5vmin;
+					margin-left: 5vmin;
+				}
+				form {
+					width: 50%;
+					margin: 0 auto;
+					fieldset {
+						border: none;
+					}
+					.h {
+						opacity: 0;
+					}
+					input[type='text'] {
+						width: 100%;
+						height: 4vmin;
+						font: 1.5vmin/1 'Poppins';
+						margin: 1.5vmin 0;
+					}
+					select {
+						margin-left: 5vmin;
+						margin-top: 1vmin;
+					}
+					input[type='submit'] {
+						margin-top: 3vmin;
+						width: 35vmin;
+						height: 5vmin;
+					}
+				}
+			}
+		}
+		.btnBox {
+			width: 55%;
+			text-align: left;
+			position: relative;
+			z-index: 2;
+			button {
+				width: 25%;
+				height: 5vmin;
+				border: none;
+				font: 1.5vmin/2 'Poppins';
+				cursor: pointer;
+				border-right: rgb(255, 255, 255) solid 1px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 539px) {
+	.mapCompo {
+		width: 100%;
+		margin: 30vmin auto 0;
+		> span {
+			font: bold 4vmin/1 'Poppins';
+			margin-left: 5vmin;
+		}
+		.wrap {
+			width: 100%;
+			position: relative;
+			margin-top: 5vmin;
+			font-size: 0;
+			#map1 {
+				display: inline-block;
+				width: 100%;
+				height: 40vmin;
+				filter: grayscale(0.7);
+				z-index: 2;
+			}
+			.txt {
+				text-align: center;
+				display: inline-block;
+				width: 100%;
+				height: calc(40vmin + 4vmin);
+				background: #222;
+				color: #ddd;
+				position: relative;
+				top: 4vmin;
+				right: 0%;
+				bottom: 0;
+				font: 2vmin/1 'Poppins';
+				h1 {
+					margin-top: 5vmin;
+					margin-left: 5vmin;
+				}
+				form {
+					width: 50%;
+					margin: 0 auto;
+					fieldset {
+						border: none;
+						width: 100%;
+					}
+					.h {
+						opacity: 0;
+					}
+					input[type='text'] {
+						width: 100%;
+						height: 4vmin;
+						font: 1.5vmin/1 'Poppins';
+						margin: 1.5vmin 0;
+						text-align: center;
+					}
+					select {
+						margin-left: 5vmin;
+						margin-top: 1vmin;
+					}
+					input[type='submit'] {
+						margin-top: 3vmin;
+						width: 46vmin;
+						height: 5vmin;
+					}
+				}
+			}
+		}
+		.btnBox {
+			width: 100%;
+			text-align: left;
+			position: absolute;
+			bottom: 40vmin;
+			z-index: 2;
+			button {
+				width: 25%;
+				height: 8vmin;
+				border: none;
+				font: 1.5vmin/2 'Poppins';
+				cursor: pointer;
+				border-right: rgb(255, 255, 255) solid 1px;
+			}
+		}
+	}
+}

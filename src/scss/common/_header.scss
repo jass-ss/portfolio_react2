@@ -1,0 +1,92 @@
+header {
+	width: 100%;
+	height: 11vmin;
+	position: relative;
+	z-index: 5;
+	> h1 {
+		position: absolute;
+		top: 5vmin;
+		left: 10vmin;
+		line-height: 0px;
+
+		> a {
+			font: bold 24px/1 'Poppins';
+			color: #333;
+		}
+	}
+
+	#gnb {
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		line-height: 0px;
+
+		li {
+			float: left;
+			margin-left: 20px;
+			line-height: 10px;
+			a {
+				font: 20px/1 'Poppins';
+				color: #222;
+			}
+		}
+	}
+	.icon {
+		position: absolute;
+		top: 2vmin;
+		right: 0;
+		display: none;
+		color: #333;
+	}
+}
+
+@media screen and (max-width: 1179px) {
+	header.main {
+		height: 12vmin;
+		h1 {
+			top: 3vmin;
+			left: auto;
+			right: 10vmin;
+			a {
+				top: 0vmin;
+				color: #333;
+				font: bold 4vmin/1 'arial';
+			}
+		}
+		#gnb {
+			display: none;
+		}
+		.icon {
+			top: 3vmin;
+			display: block;
+			right: 5vmin;
+			color: #333;
+			font: bold 4vmin/0 'arial';
+		}
+	}
+}
+
+@media screen and (max-width: 539px) {
+	header.main {
+		height: 12vmin;
+		h1 {
+			top: 3vmin;
+			left: auto;
+			right: 10vmin;
+			a {
+				top: 0vmin;
+				font: bold 6vmin/1 'arial';
+			}
+		}
+		#gnb {
+			display: none;
+		}
+		.icon {
+			top: 3vmin;
+			display: block;
+			right: 3vmin;
+			font: bold 6vmin/0 'arial';
+		}
+	}
+}

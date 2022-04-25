@@ -1,0 +1,268 @@
+.content.store {
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+
+		.wrap {
+			border-bottom: 2px solid black;
+			h1 {
+				flex: 1;
+				font: bold 4vmin/1 'arial';
+				margin: 10vmin 10vmin 5vmin 0;
+			}
+			.store_list {
+				margin-bottom: 3vmin;
+				ul {
+					display: flex;
+					justify-content: space-evenly;
+					li {
+						a {
+							color: #222;
+							font: bold 2.5vmin/1 'Poppins';
+						}
+
+						&.on a {
+							color: darkorange;
+						}
+					}
+				}
+			}
+		}
+		.store_product {
+			width: 1180px;
+			margin-top: 10vmin;
+			margin-bottom: 10vmin;
+			display: flex;
+			flex-wrap: wrap;
+			article {
+				width: 24%;
+				height: 34vmin;
+				margin-right: 1%;
+				margin-bottom: 5vmin;
+				filter: contrast(0.9);
+				background: #aaa;
+				overflow: hidden;
+				cursor: pointer;
+				&:hover {
+					& img {
+						opacity: 0;
+					}
+					& .txt {
+						li:nth-of-type(1),
+						li:nth-of-type(2) {
+							opacity: 1;
+						}
+					}
+				}
+
+				.txt {
+					li {
+						height: 0px;
+						position: absolute;
+						top: 30%;
+						padding: 0 20px;
+						font: 2.5vmin/1.5 'Lora';
+						color: #fff;
+						opacity: 0;
+						height: 0;
+						transition: 0.3s;
+						&:nth-of-type(2) {
+							top: 42%;
+						}
+					}
+				}
+
+				img {
+					width: 100%;
+					height: 35vmin;
+					transition: 0.2s;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.content.store {
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+
+			.wrap {
+				border-bottom: 2px solid black;
+				h1 {
+					flex: 1;
+					font: bold 4vmin/1 'arial';
+					margin: 10vmin 10vmin 5vmin 0;
+				}
+				.store_list {
+					margin-bottom: 3vmin;
+					ul {
+						display: flex;
+						justify-content: space-evenly;
+						li {
+							a {
+								color: #222;
+								font: bold 2.5vmin/1 'Poppins';
+							}
+
+							&.on a {
+								color: darkorange;
+							}
+						}
+					}
+				}
+			}
+			.store_product {
+				width: 100%;
+				margin-top: 10vmin;
+				margin-bottom: 10vmin;
+				display: flex;
+				flex-wrap: wrap;
+				article {
+					width: 33%;
+					height: 34vmin;
+					margin-right: 0.5%;
+					margin-bottom: 5vmin;
+					filter: contrast(0.9);
+					background: #aaa;
+					overflow: hidden;
+					cursor: pointer;
+					&:nth-of-type(3n) {
+						margin-right: 0;
+					}
+					&:hover {
+						& img {
+							opacity: 0;
+						}
+						& .txt {
+							li:nth-of-type(1),
+							li:nth-of-type(2) {
+								opacity: 1;
+							}
+						}
+					}
+
+					.txt {
+						li {
+							height: 0px;
+							position: absolute;
+							top: 30%;
+							padding: 0 20px;
+							font: 2.5vmin/1.5 'Lora';
+							color: #fff;
+							opacity: 0;
+							height: 0;
+							transition: 0.3s;
+							&:nth-of-type(2) {
+								top: 42%;
+							}
+						}
+					}
+
+					img {
+						width: 100%;
+						height: 35vmin;
+						transition: 0.2s;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 539px) {
+	.content.store {
+		.inner {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+
+			.wrap {
+				border-bottom: 2px solid black;
+				h1 {
+					flex: 1;
+					font: bold 4vmin/1 'arial';
+					margin: 10vmin 10vmin 5vmin 0;
+				}
+				.store_list {
+					margin-bottom: 3vmin;
+					ul {
+						display: flex;
+						justify-content: space-evenly;
+						li {
+							a {
+								width: 30%;
+								color: #222;
+								font: bold 2.5vmin/1 'Poppins';
+							}
+
+							&.on a {
+								color: darkorange;
+							}
+						}
+					}
+				}
+			}
+			.store_product {
+				width: 100%;
+				margin-top: 10vmin;
+				margin-bottom: 10vmin;
+				display: flex;
+				flex-wrap: wrap;
+				article {
+					width: 49%;
+					height: 34vmin;
+					margin-right: 2%;
+					margin-bottom: 5vmin;
+					filter: contrast(0.9);
+					background: #aaa;
+					overflow: hidden;
+					cursor: pointer;
+
+					&:nth-of-type(2n) {
+						margin-right: 0;
+					}
+					&:nth-of-type(3n) {
+						margin-right: auto;
+					}
+					&:hover {
+						& img {
+							opacity: 0;
+						}
+						& .txt {
+							li:nth-of-type(1),
+							li:nth-of-type(2) {
+								opacity: 1;
+							}
+						}
+					}
+
+					.txt {
+						li {
+							height: 0px;
+							position: absolute;
+							top: 30%;
+							padding: 0 20px;
+							font: 2.5vmin/1.5 'Lora';
+							color: #fff;
+							opacity: 0;
+							height: 0;
+							transition: 0.3s;
+							&:nth-of-type(2) {
+								top: 42%;
+							}
+						}
+					}
+
+					img {
+						width: 100%;
+						height: 35vmin;
+						transition: 0.2s;
+					}
+				}
+			}
+		}
+	}
+}
