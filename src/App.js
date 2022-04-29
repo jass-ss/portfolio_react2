@@ -8,7 +8,7 @@ import Footer from './components/common/Footer';
 //sub
 import Youtube from './components/sub/Youtube';
 import Gallery from './components/sub/Gallery';
-import Help from './components/sub/Help';
+import Board from './components/sub/Board';
 import Product from './components/sub/Product';
 import Store from './components/sub/Store';
 import Brand from './components/sub/Brand';
@@ -79,7 +79,7 @@ function App() {
 			</Switch>
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/gallery' component={Gallery} />
-			<Route path='/help' component={Help} />
+			<Route path='/board' component={Board} />
 			<Route path='/product' component={Product} />
 			<Route path='/brand' component={Brand} />
 			<Route path='/store' component={Store} />

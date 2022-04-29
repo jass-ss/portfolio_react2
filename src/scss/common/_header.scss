@@ -11,7 +11,7 @@ header {
 
 		> a {
 			font: bold 24px/1 'Poppins';
-			color: #333;
+			color: #222;
 		}
 	}
 
@@ -26,9 +26,39 @@ header {
 			float: left;
 			margin-left: 20px;
 			line-height: 10px;
+			padding-bottom: 20px;
+			position: relative;
+			font: bold 20px/1 'Poppins';
+			color: #444;
 			a {
-				font: 20px/1 'Poppins';
-				color: #222;
+				font: bold 20px/1 'Poppins';
+				color: #444;
+			}
+			&:hover {
+				> .sec {
+					height: 170px;
+				}
+			}
+			.sec {
+				width: 200%;
+				height: 0;
+				margin-left: -20px;
+				padding-top: 10px;
+				transition: 0.4s;
+				position: absolute;
+				overflow: hidden;
+				> li {
+					margin-top: 10px;
+					margin-bottom: 10px;
+					margin-left: 20px;
+					padding-bottom: 0;
+					display: block;
+					width: 100%;
+					> a {
+						font: 16px/1 'Poppins';
+						color: #222;
+					}
+				}
 			}
 		}
 	}
@@ -43,11 +73,10 @@ header {
 
 @media screen and (max-width: 1179px) {
 	header.main {
-		height: 12vmin;
+		height: 11vmin;
 		h1 {
 			top: 3vmin;
-			left: auto;
-			right: 10vmin;
+			left: 6vmin;
 			a {
 				top: 0vmin;
 				color: #333;
@@ -60,7 +89,7 @@ header {
 		.icon {
 			top: 3vmin;
 			display: block;
-			right: 5vmin;
+			left: 1vmin;
 			color: #333;
 			font: bold 4vmin/0 'arial';
 		}
@@ -69,11 +98,10 @@ header {
 
 @media screen and (max-width: 539px) {
 	header.main {
-		height: 12vmin;
+		height: 11vmin;
 		h1 {
-			top: 3vmin;
-			left: auto;
-			right: 10vmin;
+			top: 3vh;
+			left: 7vmin;
 			a {
 				top: 0vmin;
 				font: bold 6vmin/1 'arial';
@@ -83,7 +111,7 @@ header {
 			display: none;
 		}
 		.icon {
-			top: 3vmin;
+			top: 3vh;
 			display: block;
 			right: 3vmin;
 			font: bold 6vmin/0 'arial';

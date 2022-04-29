@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Menu({ setOn }) {
+function Menu({ setOn, on }) {
 	const active = { color: '#aaa' };
 	return (
-		<div className='menu'>
+		<div className={` menu ${on}`}>
 			<div id='mob'>
 				<ul>
 					<li>
@@ -33,7 +33,7 @@ function Menu({ setOn }) {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/help' activeStyle={active}>
+						<NavLink to='/board' activeStyle={active}>
 							HELP
 						</NavLink>
 					</li>

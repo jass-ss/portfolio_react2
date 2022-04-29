@@ -1,4 +1,4 @@
-class Anim {
+export class Anim {
 	constructor(selector, option) {
 		this.selector = selector;
 		this.option = option;

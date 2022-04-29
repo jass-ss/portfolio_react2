@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../common/Layout';
 import SubHeader from '../common/SubHeader';
-import Poptext from '../common/PopText';
 
 const path = process.env.PUBLIC_URL;
 
-function Help() {
+function Board() {
 	const input = useRef(null);
 	const textarea = useRef(null);
 	const [data, setData] = useState([]);
@@ -96,7 +95,7 @@ function Help() {
 					incidunt magni alias saepe quidem
 				</p>
 			</SubHeader>
-			<Layout name={'help'}>
+			<Layout name={'board'}>
 				<h1>Q&amp;A</h1>
 				<span className='intro'>
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit. IpsNumquam
@@ -118,25 +117,48 @@ function Help() {
 							</div>
 							{open === idx ? (
 								<div className='hidden_box'>
-									<p>{d.text}</p>
-									<button
-										onClick={() => {
-											setIndex(idx);
-											del(idx);
-										}}>
-										delete
-									</button>
-									<button
-										onClick={() => {
-											{
-												/*setIndex(idx);
-													update(idx);*/
-												//setIndex(idx);
-												edit(idx);
-											}
-										}}>
-										edit
-									</button>
+									{update ? (
+										<div className='writeBox'>
+											{' '}
+											<div className='title'>
+												<label htmlFor='title'>title: </label>
+												<input
+													type='text'
+													name='title'
+													ref={input}
+													defaultValue={val.title}></input>
+											</div>{' '}
+											<div className='text'>
+												<label htmlFor='text'>text: </label>
+												<textarea
+													name='text'
+													id=''
+													cols='30'
+													rows='10'
+													ref={textarea}
+													defaultValue={val.text}></textarea>
+											</div>
+											<button onClick={() => update2(index)}>save</button>
+											<button onClick={() => setUpdate(false)}>cancel</button>
+										</div>
+									) : (
+										<>
+											<p>{d.text}</p>
+											<button
+												onClick={() => {
+													setIndex(idx);
+													del(idx);
+												}}>
+												delete
+											</button>
+											<button
+												onClick={() => {
+													edit(idx);
+												}}>
+												edit
+											</button>
+										</>
+									)}
 								</div>
 							) : null}
 						</React.Fragment>
@@ -150,7 +172,6 @@ function Help() {
 							<input type='text' name='title' ref={input} />
 						</div>
 						<div className='text'>
-							{' '}
 							<label htmlFor='text'>text: </label>
 							<textarea
 								name='text'
@@ -164,28 +185,8 @@ function Help() {
 					</div>
 				)}
 			</Layout>
-			{update && (
-				<Poptext>
-					<div className='wrap'>
-						<input
-							type='text'
-							name='title'
-							ref={input}
-							defaultValue={val.title}></input>
-						<textarea
-							name='text'
-							id=''
-							cols='30'
-							rows='10'
-							ref={textarea}
-							defaultValue={val.text}></textarea>
-						<button onClick={() => update2(index)}>save</button>
-						<button onClick={() => setUpdate(false)}>cancel</button>
-					</div>
-				</Poptext>
-			)}
 		</>
 	);
 }
 
-export default Help;
+export default Board;

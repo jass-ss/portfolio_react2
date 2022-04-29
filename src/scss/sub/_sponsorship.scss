@@ -1,0 +1,458 @@
+.sponsorship {
+	width: 100%;
+	.main {
+		display: flex;
+		position: relative;
+		margin: 3vmin 0 27vmin;
+		height: 45vmin;
+		> .pic {
+			width: 50%;
+			padding: 10px;
+			position: relative;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 180%;
+				margin-top: -30%;
+				object-fit: cover;
+			}
+		}
+		.txt {
+			width: 70%;
+			height: 95%;
+			position: absolute;
+			right: 0;
+			bottom: -10%;
+			text-align: left;
+			background-color: #ededed;
+			z-index: -1;
+			.txt_box {
+				position: absolute;
+				height: 100%;
+				left: 25%;
+				top: 10%;
+				padding: 2vmin;
+				> h1 {
+					font: bold 4vmin 'Poppins';
+					margin-top: 5vmin;
+					margin-bottom: 4vmin;
+					margin-left: 5vmin;
+				}
+				h2 {
+					font: bold 2vmin 'Poppins';
+					position: absolute;
+					left: 2vmin;
+					top: 3vmin;
+					margin-left: 5vmin;
+				}
+				> p {
+					font: 3vmin/1.5 'Lora';
+					margin-left: 5vmin;
+				}
+			}
+		}
+	}
+	.videos {
+		width: 100%;
+		margin-bottom: 25vmin;
+		margin-top: 20vmin;
+		> .pic {
+			width: 90%;
+			height: 25vmin;
+			margin-bottom: 10vmin;
+			margin-left: 5vmin;
+			display: inline-block;
+			position: relative;
+			font-size: 0;
+			cursor: pointer;
+			overflow: hidden;
+			img {
+				width: 50%;
+				height: 50vmin;
+				padding: 30px;
+				margin-top: -12vmin;
+			}
+			p {
+				font: 2vmin/1.5 'Poppins';
+				position: absolute;
+				top: 15%;
+				left: 50%;
+			}
+		}
+	}
+
+	.frame {
+		width: 100%;
+		position: relative;
+		span {
+			font: italic 4vmin/1 'Lora';
+			position: absolute;
+			top: -6vmin;
+			right: 0;
+			&::before {
+				content: '';
+				display: block;
+				width: 150%;
+				height: 2px;
+				background-color: #333;
+				position: absolute;
+				right: 0;
+				top: -1vmin;
+			}
+		}
+		.pics {
+			width: 100%;
+			overflow: hidden;
+			.slide {
+				width: calc((1180px / 3) * 7);
+				margin-left: calc(1180px / -3);
+				img {
+					width: calc(1180px / 3);
+					height: 30vmin;
+					padding: 0 5px;
+				}
+			}
+			.play,
+			.stop {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: none;
+				font: bold 7vmin/1 'Poppins';
+				color: #fff;
+			}
+		}
+		.prev {
+			position: absolute;
+			top: 50%;
+			left: -5vmin;
+			transform: translate(0%, -50%);
+			color: #666;
+			font: bold 5vmin/1 'Poppins';
+		}
+		.next {
+			position: absolute;
+			top: 50%;
+			right: -5vmin;
+			transform: translate(0%, -50%);
+			color: #666;
+			font: bold 5vmin/1 'Poppins';
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.sponsorship {
+		width: 100%;
+		.main {
+			display: flex;
+			position: relative;
+			margin: 3vmin 0 27vmin;
+			height: 45vmin;
+
+			> .pic {
+				width: 50%;
+				padding: 10px;
+				position: relative;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 180%;
+					margin-top: -30%;
+					object-fit: cover;
+				}
+			}
+			.txt {
+				width: 70%;
+				height: 95%;
+				position: absolute;
+				right: 0;
+				bottom: -10%;
+				text-align: left;
+				background-color: #ededed;
+				z-index: -1;
+				.txt_box {
+					position: absolute;
+					height: 100%;
+					left: 25%;
+					top: 10%;
+					padding: 2vmin;
+					> h1 {
+						font: bold 4vmin 'Poppins';
+						margin-top: 5vmin;
+						margin-bottom: 4vmin;
+						margin-left: 5vmin;
+					}
+					h2 {
+						font: bold 2vmin 'Poppins';
+						position: absolute;
+						left: 2vmin;
+						top: 3vmin;
+						margin-left: 5vmin;
+					}
+					> p {
+						font: 3vmin/1.5 'Lora';
+						margin-left: 5vmin;
+					}
+				}
+			}
+		}
+		.videos {
+			width: 100%;
+			margin-bottom: 25vmin;
+			margin-top: 20vmin;
+			cursor: pointer;
+			> .pic {
+				width: 90%;
+				height: 25vmin;
+				margin-bottom: 10vmin;
+				margin-left: 5vmin;
+				display: inline-block;
+				position: relative;
+				font-size: 0;
+				overflow: hidden;
+				img {
+					width: 50%;
+					height: 50vmin;
+					padding: 30px;
+					margin-top: -12vmin;
+				}
+				p {
+					font: 2vmin/1.5 'Poppins';
+					position: absolute;
+					top: 15%;
+					left: 50%;
+				}
+			}
+		}
+		.frame {
+			width: 100%;
+			position: relative;
+			span {
+				font: italic 4vmin/1 'Lora';
+				position: absolute;
+				top: -6vmin;
+				right: 5vmin;
+				&::before {
+					content: '';
+					display: block;
+					width: 150%;
+					height: 2px;
+					background-color: #333;
+					position: absolute;
+					right: 0;
+					top: -1vmin;
+				}
+			}
+			.pics {
+				width: 90%;
+				overflow: hidden;
+				margin: 0 auto;
+				.slide {
+					width: calc((90vw / 3) * 7);
+					margin-left: calc(90vw / -3);
+					img {
+						width: calc(90vw / 3);
+						height: 30vmin;
+						padding: 0 5px;
+					}
+				}
+				.play,
+				.stop {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					display: none;
+					font: bold 7vmin/1 'Poppins';
+					color: #fff;
+				}
+			}
+			.prev {
+				position: absolute;
+				top: 50%;
+				left: 2vmin;
+				transform: translate(0%, -50%);
+				color: #666;
+				font: bold 5vmin/1 'Poppins';
+			}
+			.next {
+				position: absolute;
+				top: 50%;
+				right: 2vmin;
+				transform: translate(0%, -50%);
+				color: #666;
+				font: bold 5vmin/1 'Poppins';
+			}
+		}
+	}
+}
+
+@media screen and(max-width:549px) {
+	.sponsorship {
+		width: 100%;
+		.main {
+			display: flex;
+			position: relative;
+			margin: 3vmin 0 27vmin;
+			height: 45vmin;
+
+			> .pic {
+				width: 50%;
+				padding: 10px;
+				position: relative;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 180%;
+					margin-top: -30%;
+					object-fit: cover;
+				}
+			}
+			.txt {
+				width: 70%;
+				height: 95%;
+				position: absolute;
+				right: 0;
+				bottom: -10%;
+				text-align: left;
+				background-color: #ededed;
+				z-index: -1;
+				.txt_box {
+					position: absolute;
+					height: 100%;
+					left: 25%;
+					top: 10%;
+					padding: 2vmin;
+					> h1 {
+						font: bold 4vmin 'Poppins';
+						margin-top: 5vmin;
+						margin-bottom: 4vmin;
+						margin-left: 5vmin;
+					}
+					h2 {
+						font: bold 2vmin 'Poppins';
+						position: absolute;
+						left: 2vmin;
+						top: 3vmin;
+						margin-left: 5vmin;
+					}
+					> p {
+						font: 3vmin/1.5 'Lora';
+						margin-left: 5vmin;
+					}
+				}
+			}
+		}
+		.videos {
+			width: 100%;
+			margin-bottom: 25vmin;
+			margin-top: 20vmin;
+			cursor: pointer;
+			> .pic {
+				width: 90%;
+				height: 25vmin;
+				margin-bottom: 10vmin;
+				margin-left: 5vmin;
+				display: inline-block;
+				position: relative;
+				font-size: 0;
+				overflow: hidden;
+				img {
+					width: 50%;
+					height: 50vmin;
+					padding: 30px;
+					margin-top: -12vmin;
+				}
+				p {
+					font: 2vmin/1.5 'Poppins';
+					position: absolute;
+					top: 15%;
+					left: 50%;
+				}
+			}
+		}
+		.frame {
+			width: 100%;
+			position: relative;
+			span {
+				font: italic 4vmin/1 'Lora';
+				position: absolute;
+				top: -6vmin;
+				right: 5vmin;
+				&::before {
+					content: '';
+					display: block;
+					width: 150%;
+					height: 2px;
+					background-color: #333;
+					position: absolute;
+					right: 0;
+					top: -1vmin;
+				}
+			}
+			.pics {
+				width: 70vw;
+				overflow: hidden;
+				margin: 0 auto;
+				.slide {
+					width: 70vw;
+					height: 35vmin;
+					position: relative;
+					margin: 0 auto;
+					img {
+						position: absolute;
+						width: 70vw;
+						height: 35vmin;
+						padding: 0 5px;
+						opacity: 0;
+						left: 0%;
+						transform: translateX(0%);
+						&.on {
+							opacity: 1;
+						}
+					}
+				}
+				.index {
+					margin-left: 50%;
+					transform: translateX(-25%);
+
+					> li {
+						display: inline-block;
+						width: 2vmin;
+						height: 2vmin;
+						background-color: #aaa;
+						border-radius: 50%;
+					}
+				}
+				.play,
+				.stop {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					display: none;
+					font: bold 7vmin/1 'Poppins';
+					color: #fff;
+				}
+			}
+			.prev {
+				position: absolute;
+				top: 50%;
+				left: 2vmin;
+				transform: translate(0%, -50%);
+				color: #666;
+				font: bold 5vmin/1 'Poppins';
+			}
+			.next {
+				position: absolute;
+				top: 50%;
+				right: 2vmin;
+				transform: translate(0%, -50%);
+				color: #666;
+				font: bold 5vmin/1 'Poppins';
+			}
+		}
+	}
+}

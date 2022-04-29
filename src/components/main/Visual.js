@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const path = process.env.PUBLIC_URL;
 
 function Visual() {
+	const ref = useRef(null);
+	const show = (e) => {
+		ref.current.querySelector('img').style.opacity = 0;
+		ref.current.querySelector('video').style.opacity = 1;
+		ref.current.querySelector('video').play();
+	};
+	const pause = (e) => {
+		ref.current.querySelector('img').style.opacity = 0.3;
+		ref.current.querySelector('video').style.opacity = 0;
+		ref.current.querySelector('video').pause();
+	};
 	return (
 		<div className='main_visual'>
 			<div className='pic one'>
@@ -29,7 +40,11 @@ function Visual() {
 					<span>A QUESTION OF STYLE</span>
 				</div>
 			</div>
-			<div className='pic three'>
+			<div
+				className='pic three'
+				ref={ref}
+				onMouseEnter={show}
+				onMouseLeave={pause}>
 				<img src={`${path}/img/product3_Moment.jpg`} alt='' />
 				<video src={`${path}/img/product3.mp4`} muted loop></video>
 				<div className='box'>
@@ -47,7 +62,7 @@ function Visual() {
 				<div className='box'>
 					<span>
 						<a href='#'>
-							S<span>PONSORSHIP</span>
+							Y<span>OUTUBE</span>
 						</a>
 					</span>
 					<span>BEYOUND THE STYLE</span>

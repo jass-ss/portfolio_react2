@@ -6,12 +6,14 @@ import { useSelector } from 'react-redux';
 
 const path = process.env.PUBLIC_URL;
 
-function Content() {
+function Content({ scr, pos }) {
 	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	const posts = JSON.parse(localStorage.getItem('posts'));
+	const base = -900;
+	console.log(pos[1] + base);
 
-	const [tap, setTap] = useState(true);
 	const [news, setNews] = useState([]);
+	const [on, setOn] = useState(false);
 	const [videos, setVideos] = useState([]);
 	useEffect(() => {
 		if (vid) {
@@ -25,6 +27,14 @@ function Content() {
 	}, [vid]);
 
 	console.log(videos);
+	console.log(scr);
+	useEffect(() => {
+		console.log('시작');
+		if (scr >= pos[1]) {
+			setOn(true);
+			console.log('111111111111');
+		}
+	}, []);
 
 	return (
 		<main className='content main'>
@@ -34,7 +44,13 @@ function Content() {
 					<h2>PRODUCT</h2>
 					<div className='inner'>
 						<div className='wrap'>
-							<div className='box'>
+							<div
+								className='box'
+								style={
+									scr >= pos[1] + base
+										? { transform: 'translateY(-100px)' }
+										: null
+								}>
 								<article className='odd'>
 									<img src={`${path}/img/detail0.jpg`} alt='area induction' />
 									<h3>DETAILS AND CHROMING</h3>
@@ -61,7 +77,13 @@ function Content() {
 								</article>
 							</div>
 
-							<div className='box'>
+							<div
+								className='box'
+								style={
+									scr >= pos[1] + (base + 300)
+										? { transform: 'translateY(-100px)' }
+										: null
+								}>
 								<article className='even'>
 									<img src={`${path}/img/detail2.jpg`} alt='kitchen' />
 									<h3>CONNECTED HOUSEHOLD APPLIANCES</h3>
@@ -95,11 +117,14 @@ function Content() {
 				</section>
 
 				<section id='banner'>
-					<div className='aniLogo'>
-						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-							mollitia maiores quas.
-						</p>
+					<div
+						className='aniLogo'
+						style={
+							scr <= pos[3] && scr >= pos[2] + base
+								? { width: `${(scr - 2000) * 0.1}%` }
+								: null
+						}>
+						<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
 					</div>
 					<div className='inner'>
 						<article>

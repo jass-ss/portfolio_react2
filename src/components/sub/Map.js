@@ -63,18 +63,24 @@ function Map() {
 		});
 	}, []);
 
+	function getCenter() {
+		console.log('resize');
+		map.setCenter(mapInfo[index].latlng);
+	}
+
 	useEffect(() => {
-		window.addEventListener('resize', () => {
-			map.setCenter(mapInfo[index].latlng);
-		});
+		if (map) {
+			window.addEventListener('resize', () => {
+				map.setCenter(mapInfo[index].latlng);
+			});
+		}
 
 		return () => {
 			window.removeEventListener('resize', () => {
 				map.setCenter(mapInfo[index].latlng);
-				console.log('clear');
 			});
 		};
-	});
+	}, [map]);
 
 	useEffect(() => {
 		handleTraffic();

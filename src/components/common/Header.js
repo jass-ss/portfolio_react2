@@ -7,29 +7,35 @@ import Menu from '../common/Menu';
 function Header({ type }) {
 	const active = { color: '#aaa' };
 	const [on, setOn] = useState(false);
+	const color = { color: '#fff', position: 'fixed', top: '3vh' };
 
 	return (
 		<header className={type}>
 			<h1>
-				<NavLink exact to='/'>
+				<NavLink exact to='/' style={on ? color : null}>
 					CHROME KITCHEN
 				</NavLink>
 			</h1>
 			<ul id='gnb'>
 				<li>
-					<NavLink to='/brand' activeStyle={active}>
-						BRAND
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/product' activeStyle={active}>
-						PRODUCT
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/store' activeStyle={active}>
-						STORE
-					</NavLink>
+					ABOUT
+					<ul className='sec'>
+						<li>
+							<NavLink to='/brand' activeStyle={active}>
+								BRAND
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/product' activeStyle={active}>
+								PRODUCT
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/store' activeStyle={active}>
+								STORE
+							</NavLink>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<NavLink to='/gallery' activeStyle={active}>
@@ -42,8 +48,8 @@ function Header({ type }) {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/help' activeStyle={active}>
-						HELP
+					<NavLink to='/board' activeStyle={active}>
+						BOARD
 					</NavLink>
 				</li>
 				<li>
@@ -52,14 +58,16 @@ function Header({ type }) {
 					</NavLink>
 				</li>
 			</ul>
-			<FontAwesomeIcon
-				icon={faBars}
-				className='icon'
-				onClick={() => {
-					on ? setOn(false) : setOn(true);
-				}}
-			/>
-			{on ? <Menu setOn={setOn}></Menu> : null}
+			<Menu setOn={setOn} on={on ? 'on' : 'off'}></Menu>
+			{on ? null : (
+				<FontAwesomeIcon
+					icon={faBars}
+					className='icon'
+					onClick={() => {
+						on ? setOn(false) : setOn(true);
+					}}
+				/>
+			)}
 		</header>
 	);
 }

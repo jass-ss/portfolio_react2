@@ -2,7 +2,7 @@ import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Popup = forwardRef((props, ref) => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(props.open);
 
 	useImperativeHandle(ref, () => {
 		return {

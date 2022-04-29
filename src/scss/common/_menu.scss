@@ -1,78 +1,88 @@
 .menu {
 	position: relative;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	&.on {
+		#mob {
+			margin-left: 0;
+			> span {
+				opacity: 1;
+			}
+		}
+	}
 	#mob {
-		width: 50%;
-		position: absolute;
-		right: 0;
-		top: 10vmin;
-		li {
-			width: calc(100% / 3);
-			display: inline-block;
-			font: 2vmin/1 'Poppins';
-			text-align: center;
-			a {
-				color: #333;
+		position: fixed;
+		width: 50vw;
+		margin-left: -50vw;
+		height: 100vh;
+		background-color: #333;
+		transition: 0.5s;
+		ul {
+			position: absolute;
+			margin-top: 10vmin;
+			li {
+				width: 100%;
+				display: block;
+				font: 3vmin/1 'Poppins';
+				margin-left: 8vw;
+				margin-top: 3vh;
+				a {
+					color: #fff;
+				}
 			}
 		}
 		> span {
 			position: absolute;
-			bottom: -5vmin;
-			right: 5vmin;
+			opacity: 0;
+			top: 3vmin;
+			left: 2vmin;
 			font: bold 4vmin/1 'Poppins';
-		}
-	}
-}
-
-@media screen and(max-width:1179px) {
-	.menu {
-		position: relative;
-		#mob {
-			width: 100%;
-			position: absolute;
-			right: 0;
-			top: 10vmin;
-			text-align: right;
-			li {
-				width: calc(100% / 10);
-				display: inline-block;
-				font: 2vmin/1 'Poppins';
-				text-align: center;
-				a {
-					color: #333;
-				}
-			}
-			> span {
-				position: absolute;
-				bottom: -5vmin;
-				right: 5vmin;
-				font: bold 3vmin/1 'Poppins';
-			}
+			color: #fff;
 		}
 	}
 }
 @media screen and(max-width:749px) {
 	.menu {
 		position: relative;
+		z-index: -1;
+		width: 0;
+		height: 0;
+		&.on {
+			#mob {
+				margin-left: 0;
+				> span {
+					opacity: 1;
+				}
+			}
+		}
 		#mob {
-			width: 100%;
-			position: absolute;
-			right: 0;
-			top: 10vmin;
-			text-align: right;
-			li {
-				width: calc(100% / 7);
-				display: inline-block;
-				font: 3vmin/1 'Poppins';
-				text-align: center;
-				a {
-					color: #333;
+			width: 50vw;
+			margin-left: -50vw;
+			height: 100vh;
+			background-color: #333;
+			transition: 0.5s;
+			ul {
+				position: absolute;
+				margin-top: 10vmin;
+				li {
+					width: 100%;
+					display: block;
+					font: 3vmin/1 'Poppins';
+					margin-left: 8vw;
+					margin-top: 3vh;
+					a {
+						color: #fff;
+					}
 				}
 			}
 			> span {
 				position: absolute;
-				bottom: -5vmin;
-				right: 5vmin;
-				font: bold 3vmin/1 'Poppins';
+				opacity: 0;
+				top: 3vh;
+				left: 2vmin;
+				font: bold 4vmin/1 'Poppins';
+				color: #fff;
 			}
 		}
 	}
@@ -81,26 +91,44 @@
 @media screen and(max-width:539px) {
 	.menu {
 		position: relative;
+		z-index: -1;
+		width: 0;
+		height: 0;
+		&.on {
+			#mob {
+				margin-left: 0;
+				> span {
+					opacity: 1;
+				}
+			}
+		}
 		#mob {
-			width: 100%;
-			position: absolute;
-			right: 0;
-			top: 10vmin;
-			text-align: right;
-			li {
-				width: calc(100% / 4);
-				display: inline-block;
-				font: 4vmin/1 'Poppins';
-				text-align: center;
-				a {
-					color: #333;
+			width: 70vw;
+			margin-left: -70vw;
+			height: 100vh;
+			background-color: #333;
+			transition: 0.5s;
+			ul {
+				position: absolute;
+				margin-top: 15vmin;
+				li {
+					width: 100%;
+					display: block;
+					font: 5vmin/1 'Poppins';
+					margin-left: 8vw;
+					margin-top: 3vh;
+					a {
+						color: #fff;
+					}
 				}
 			}
 			> span {
 				position: absolute;
-				bottom: -5vmin;
-				right: 5vmin;
-				font: bold 3vmin/1 'Poppins';
+				opacity: 0;
+				top: 3vh;
+				left: 2vmin;
+				font: bold 6vmin/1 'Poppins';
+				color: #fff;
 			}
 		}
 	}

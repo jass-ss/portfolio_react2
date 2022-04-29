@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import Popup2 from '../common/Popup2';
+import Popup from '../common/Popup';
 import SubHeader from '../common/SubHeader';
 import Advertisement from './Advertisement';
 import Sponsorship from './Sponsorship';
@@ -14,6 +14,7 @@ function Youtube() {
 	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	console.log(vid);
 	const [on, setOn] = useState('advertisement');
+	const pop = useRef(null);
 
 	const [ele, setEle] = useState(null);
 	const [ad, setAd] = useState(null);
@@ -31,7 +32,7 @@ function Youtube() {
 			setSps(vid.slice(1, 4));
 			setAdv(vid.slice(6, 10));
 		}
-	}, []);
+	}, [vid]);
 
 	return (
 		<>
@@ -68,14 +69,16 @@ function Youtube() {
 			</Layout>
 
 			{open ? (
-				<Popup2 setOpen={setOpen}>
+				<Popup ref={pop} open={open}>
 					<iframe
 						src={
 							`https://www.youtube.com/embed/` +
 							vid[index].snippet.resourceId.videoId
 						}
-						frameborder='0'></iframe>
-				</Popup2>
+						frameBorder='0'></iframe>
+					<span onClick={() => pop.current.close()}>close</span>{' '}
+					{/* 클릭이벤트로 setOn(false)를 호출하면 open의 값이 false가 되고, 팝업컴포넌트가 null로 변해서 팝업창 사라지는 모션이 실행되지 않음., */}
+				</Popup>
 			) : null}
 		</>
 	);

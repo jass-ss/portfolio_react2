@@ -5,14 +5,19 @@ import Header from '../common/Header';
 
 function Main() {
 	const main = useRef(null);
+	const [scr, setScr] = useState(0);
 	const pos = useRef([]);
-	const [scr, setScr] = useState();
 	const [scrolled, setScrolled] = useState(0);
 
 	const getPos = () => {
-		const secs = main.current.querySelectorAll('section');
-		pos.current = []; // 윈도우 리사이즈 이벤트가 일어나면 기존값 클리어 후 새 값 push.
-		secs.forEach((s, idx) => pos.current.push(s.offsetTop));
+		//console.log(main.current);
+		if (main.current) {
+			//useRef가 붙은 main컴포넌트에서만 실행.
+			const secs = main.current.querySelectorAll('section');
+			pos.current = []; // 윈도우 리사이즈 이벤트가 일어나면 기존값 클리어 후 새 값 push.
+			secs.forEach((s, idx) => pos.current.push(s.offsetTop)); //값이 변경되어도 렌더링x.
+			console.log(pos.current);
+		}
 	};
 
 	const activation = () => {
@@ -20,6 +25,7 @@ function Main() {
 		let scroll = window.scrollY;
 		//현재 스크롤되는 거는 값을 scrolled state에 저장
 		setScrolled(scroll);
+		console.log(scrolled);
 		const btns = main.current.querySelectorAll('.btns li');
 
 		pos.current.map((pos, idx) => {
@@ -30,27 +36,34 @@ function Main() {
 		});
 	};
 
-	useEffect(() => {}, []);
-	/*
-	useEffect(() => {
+	function scrll() {
 		const scroll = window.scrollY;
-		window.addEventListener('scroll', () => {
-			console.log(scroll);
-			setScr(scroll);
-		});
+		setScr(scroll);
+		//console.log(scr);
+	}
+
+	useEffect(() => {
+		getPos();
+		window.addEventListener('resize', getPos);
 		return () => {
-			window.removeEventListener('scroll', () => {
-				console.log(scroll);
-				setScr(scroll);
-			});
+			window.addEventListener('resize', getPos);
+			console.log('pos 클리어');
 		};
-	}, [scr]); */
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener('scroll', scrll);
+		return () => {
+			window.removeEventListener('scroll', scrll);
+			console.log('클리어');
+		};
+	}, [scr]);
 
 	return (
 		<div ref={main}>
 			<Header type={'main'} />
 			<Visual></Visual>
-			<Content></Content>
+			<Content scr={scr} pos={pos.current}></Content>
 		</div>
 	);
 }

@@ -4,8 +4,6 @@ import SubHeader from '../common/SubHeader';
 import Popup from '../common/Popup';
 import { useSelector } from 'react-redux';
 
-import axios from 'axios';
-
 const path = process.env.PUBLIC_URL;
 
 function Gallery() {

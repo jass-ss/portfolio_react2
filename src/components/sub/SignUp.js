@@ -409,7 +409,7 @@ function SignUp() {
 
 									<tr>
 										<th scope='row'>
-											<label htmlFor='coupon'>쿠폰 번호 등록</label>
+											<label htmlFor='coupon'>쿠폰 번호</label>
 										</th>
 										<td>
 											<input type='text' id='coupon' name='coupon' />
