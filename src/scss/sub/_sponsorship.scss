@@ -29,8 +29,8 @@
 			.txt_box {
 				position: absolute;
 				height: 100%;
-				left: 25%;
-				top: 10%;
+				left: 23%;
+				top: 5%;
 				padding: 2vmin;
 				> h1 {
 					font: bold 4vmin 'Poppins';
@@ -56,27 +56,63 @@
 		width: 100%;
 		margin-bottom: 25vmin;
 		margin-top: 20vmin;
-		> .pic {
-			width: 90%;
-			height: 25vmin;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		> .con {
+			width: 33%;
 			margin-bottom: 10vmin;
-			margin-left: 5vmin;
-			display: inline-block;
-			position: relative;
-			font-size: 0;
-			cursor: pointer;
-			overflow: hidden;
-			img {
-				width: 50%;
-				height: 50vmin;
-				padding: 30px;
-				margin-top: -12vmin;
+			float: left;
+			height: 50vmin;
+			&:nth-of-type(2) {
+				margin-top: 15vmin;
+				margin-bottom: 15vmin;
+				&::before {
+					width: 1px;
+					height: 75vmin;
+					background-color: #ddd;
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-40%);
+				}
+				&::after {
+					width: 1px;
+					height: 75vmin;
+					background-color: #ddd;
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 66%;
+					transform: translate(0%, -40%);
+				}
 			}
-			p {
+			> .pic {
+				width: 100%;
+				height: 40vmin;
+				padding: 1vmin;
+				display: block;
+				position: relative;
+				cursor: pointer;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 60vmin;
+					padding: 0 10px;
+					margin-top: -10vmin;
+					object-fit: cover;
+				}
+			}
+			> p {
+				display: block;
 				font: 2vmin/1.5 'Poppins';
-				position: absolute;
-				top: 15%;
-				left: 50%;
+				height: 15vmin;
+				padding: 3vmin;
+				text-align: center;
 			}
 		}
 	}
@@ -87,7 +123,7 @@
 		span {
 			font: italic 4vmin/1 'Lora';
 			position: absolute;
-			top: -6vmin;
+			top: -7vmin;
 			right: 0;
 			&::before {
 				content: '';

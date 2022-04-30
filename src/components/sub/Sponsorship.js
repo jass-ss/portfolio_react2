@@ -242,14 +242,16 @@ function Sponsorship({ ele, sps, setOpen, setIndex }) {
 			<div className='videos'>
 				{sps.map((m, idx) => {
 					return (
-						<div className='pic' key={idx}>
-							<img
-								src={m.snippet.thumbnails.standard.url}
-								onClick={() => {
-									setIndex(idx + 1);
-									setOpen(true);
-								}}
-							/>
+						<div className='con' key={idx}>
+							<div className='pic'>
+								<img
+									src={m.snippet.thumbnails.standard.url}
+									onClick={() => {
+										setIndex(idx + 1);
+										setOpen(true);
+									}}
+								/>
+							</div>
 							<p>{ele.snippet.title}</p>
 						</div>
 					);

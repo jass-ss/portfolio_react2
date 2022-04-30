@@ -47,8 +47,16 @@ function Youtube() {
 			<Layout name={'youtube'}>
 				<div className='youtube'>
 					<div className='cate'>
-						<span onClick={() => setOn('advertisement')}>ADVERTISEMENT</span>
-						<span onClick={() => setOn('sponsorship')}>SPONSORSHIP</span>
+						<span
+							className={on === 'advertisement' ? 'on' : null}
+							onClick={() => setOn('advertisement')}>
+							ADVERTISEMENT
+						</span>
+						<span
+							className={on === 'sponsorship' ? 'on' : null}
+							onClick={() => setOn('sponsorship')}>
+							SPONSORSHIP
+						</span>
 					</div>
 					{on == 'advertisement' ? (
 						<Advertisement

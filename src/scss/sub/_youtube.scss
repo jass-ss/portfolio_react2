@@ -11,7 +11,7 @@
 			height: 2px;
 			background-color: #333;
 			position: absolute;
-			bottom: -2vmin;
+			bottom: 0vmin;
 		}
 		span {
 			display: inline-block;
@@ -19,6 +19,12 @@
 			text-align: center;
 			font: bold 3vmin 'Poppins';
 			cursor: pointer;
+			&.on {
+				border: 2vmin solid #222;
+				border-left: 6vmin solid #222;
+				border-right: 6vmin solid #222;
+				padding: 1vmin 0;
+			}
 		}
 	}
 

@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import Visual from './Visual';
 import Content from './Content';
 import Header from '../common/Header';
+import Popup2 from '../common/Popup2';
 
 function Main() {
 	const main = useRef(null);
 	const [scr, setScr] = useState(0);
 	const pos = useRef([]);
-	const [scrolled, setScrolled] = useState(0);
+	const [open, setOpen] = useState();
+	const [checked, setCheck] = useState(false);
 
 	const getPos = () => {
 		//console.log(main.current);
@@ -20,7 +22,7 @@ function Main() {
 		}
 	};
 
-	const activation = () => {
+	/*	const activation = () => {
 		const base = -200;
 		let scroll = window.scrollY;
 		//현재 스크롤되는 거는 값을 scrolled state에 저장
@@ -34,7 +36,7 @@ function Main() {
 				btns[idx].classList.add('on');
 			}
 		});
-	};
+	}; */
 
 	function scrll() {
 		const scroll = window.scrollY;
@@ -44,6 +46,8 @@ function Main() {
 
 	useEffect(() => {
 		getPos();
+		const isCookie = document.cookie.indexOf('chrome');
+		isCookie === -1 ? setOpen(true) : setOpen(false);
 		window.addEventListener('resize', getPos);
 		return () => {
 			window.addEventListener('resize', getPos);
@@ -59,11 +63,53 @@ function Main() {
 		};
 	}, [scr]);
 
+	const setCookie = () => {
+		const today = new Date();
+		const day = today.getDate();
+		today.setDate(day + 1);
+		const duedate = today.toGMTString();
+		document.cookie = `chrome=chrome; path=/; expires=${duedate}`;
+	};
+
+	const isCheck = (e) => {
+		const check = e.target.checked;
+		setCheck(check);
+	};
+
 	return (
 		<div ref={main}>
 			<Header type={'main'} />
+			{open && (
+				<Popup2>
+					<p>NOTICE</p>
+					<p>
+						이 사이트는 비상업용 목적으로 제작된 가상 기업 사이트입니다. 이
+						사이트에 사용된 이미지의 출처는 smeg, unox, balmuda, unsplash 이며,
+						저작권은 해당 기업과 사진작가에게 있습니다.
+					</p>
+					<label htmlFor='cookie'>
+						<input type='checkBox' id='cookie' onClick={(e) => isCheck(e)} />
+						하루동안 열지 않기
+					</label>
+					<label htmlFor='setCookie'>
+						<input
+							type='checkBox'
+							id='setCookie'
+							onClick={() => {
+								{
+									checked && setCookie();
+								}
+								setOpen(false);
+							}}
+						/>
+						확인하였습니다
+					</label>
+				</Popup2>
+			)}
 			<Visual></Visual>
-			<Content scr={scr} pos={pos.current}></Content>
+			<Content scr={scr} pos={pos.current}>
+				test
+			</Content>
 		</div>
 	);
 }

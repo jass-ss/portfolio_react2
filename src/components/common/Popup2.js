@@ -1,10 +1,9 @@
 import React from 'react';
 
-export default function Popup({ setOpen, children }) {
+export default function Popup({ children }) {
 	return (
-		<pop className='popup2'>
-			<span onClick={() => setOpen(false)}>CLOSE</span>
+		<div className='popup2'>
 			<div className='con'>{children}</div>
-		</pop>
+		</div>
 	);
 }

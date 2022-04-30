@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import anime from '../../class/anime';
 import { useSelector } from 'react-redux';
+import Popup from '../common/Popup';
 
 const path = process.env.PUBLIC_URL;
 
 function Content({ scr, pos }) {
+	const pop = useRef(null);
 	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	const posts = JSON.parse(localStorage.getItem('posts'));
 	const base = -900;
@@ -15,6 +17,7 @@ function Content({ scr, pos }) {
 	const [news, setNews] = useState([]);
 	const [on, setOn] = useState(false);
 	const [videos, setVideos] = useState([]);
+	const [index, setIndex] = useState(0);
 	useEffect(() => {
 		if (vid) {
 			const data = vid.slice(1, 4);
@@ -236,7 +239,14 @@ function Content({ scr, pos }) {
 							return (
 								<article key={idx}>
 									<div className='wrap'>
-										<img src={v.snippet.thumbnails.standard.url} alt='' />
+										<img
+											src={v.snippet.thumbnails.standard.url}
+											alt=''
+											onClick={() => {
+												setIndex(idx);
+												pop.current.open();
+											}}
+										/>
 									</div>
 								</article>
 							);
@@ -244,6 +254,19 @@ function Content({ scr, pos }) {
 					</div>
 				</section>
 			</div>
+			<Popup ref={pop}>
+				{videos[0] && (
+					<>
+						<iframe
+							src={
+								`https://www.youtube.com/embed/` +
+								videos[index].snippet.resourceId.videoId
+							}
+							frameBorder='0'></iframe>
+						<span onClick={() => pop.current.close()}>close</span>
+					</>
+				)}
+			</Popup>
 		</main>
 	);
 }
