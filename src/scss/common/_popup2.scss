@@ -1,6 +1,4 @@
 .popup2 {
-	width: 30vw;
-	height: 20vw;
 	padding: 1vw;
 	position: fixed;
 	top: 10vw;
@@ -8,18 +6,11 @@
 	background: #080c38a4;
 	z-index: 10;
 	.con {
-		width: 100%;
-		height: 100%;
+		width: 30vw;
+		min-height: 20vw;
 		border: 1px solid #888;
 		overflow: hidden;
 		background: #fff;
-		input[type='checkbox'] {
-			margin-right: 10px;
-		}
-		label {
-			font: 1vw/1 'Poppins';
-			margin-left: 3vw;
-		}
 		p {
 			text-align: center;
 			&:nth-of-type(1) {
@@ -27,82 +18,114 @@
 				font: bold 3.5vw/1 'Poppins';
 			}
 			&:nth-of-type(2) {
-				font: 1.1vw/1.5 'Poppins';
+				font: 1.2vw/1.5 'Poppins';
 				padding: 2vw;
 			}
 		}
-	}
-}
 
-@media screen and(max-width: 900px) {
-	.popup2 {
-		width: 100%;
-		height: 100vh;
-		padding: 5vw;
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		background: #4b4b4ba4;
-		z-index: 10;
+		> .wrap {
+			width: 80%;
+			margin: 0 auto;
+			display: flex;
 
-		> span {
-			font: bold 3vmin/1 'arial';
-			color: #fff;
-			cursor: pointer;
-			position: absolute;
-			top: 10vmin;
-			right: 10vmin;
-		}
-
-		.con {
-			width: 100%;
-			height: 100%;
-			border: 1px solid #888;
-			overflow: hidden;
+			input[type='checkbox'] {
+				margin-right: 1vmin;
+			}
+			label {
+				display: inline-block;
+				text-align: center;
+				flex: 1;
+				font: 1vw/1 'Poppins';
+			}
 		}
 	}
 }
 
-@media screen and(max-width: 449px) {
+@media screen and(max-width: 899px) {
 	.popup2 {
-		width: 100%;
-		height: 100vh;
-		padding: 5vw;
+		padding: 1vw;
 		position: fixed;
-		top: 0px;
-		left: 0px;
-		background: #4b4b4ba4;
+		top: 20vw;
+		left: 10vw;
+		background: #080c38a4;
 		z-index: 10;
-
-		> span {
-			font: bold 4vmin/1 'arial';
-			color: #fff;
-			cursor: pointer;
-			position: absolute;
-			top: 20vmin;
-			right: 10vmin;
-		}
-
 		.con {
-			width: 100%;
-			height: 100%;
+			width: 40vw;
+			min-height: 20vw;
 			border: 1px solid #888;
 			overflow: hidden;
-
-			iframe {
-				width: 80%;
-				height: 80%;
-				object-fit: cover;
-				position: relative;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+			background: #fff;
+			p {
+				text-align: center;
+				&:nth-of-type(1) {
+					margin-top: 1vw;
+					font: bold 3.5vw/1 'Poppins';
+				}
+				&:nth-of-type(2) {
+					font: 2vw/1.5 'Poppins';
+					padding: 2vw;
+				}
 			}
 
-			img {
+			> .wrap {
 				width: 100%;
-				height: 100%;
-				object-fit: cover;
+				margin: 0 auto 2.5vmin;
+				display: flex;
+
+				input[type='checkbox'] {
+					margin-right: 10px;
+				}
+				label {
+					display: inline-block;
+					text-align: center;
+					flex: 1;
+					font: 1vw/1 'Poppins';
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 549px) {
+	.popup2 {
+		padding: 1vw;
+		position: fixed;
+		top: 30vw;
+		left: 5vw;
+		background: #080c38a4;
+		z-index: 10;
+		.con {
+			width: 80vw;
+			min-height: 20vw;
+			border: 1px solid #888;
+			overflow: hidden;
+			background: #fff;
+			p {
+				text-align: center;
+				&:nth-of-type(1) {
+					margin-top: 3vw;
+					font: bold 7vw/1 'Poppins';
+				}
+				&:nth-of-type(2) {
+					font: 5vw/1.5 'Poppins';
+					padding: 5vw;
+				}
+			}
+
+			> .wrap {
+				width: 100%;
+				margin: 0 auto 2.5vmin;
+				display: flex;
+
+				input[type='checkbox'] {
+					margin-right: 10px;
+				}
+				label {
+					display: inline-block;
+					text-align: center;
+					flex: 1;
+					font: 3.5vw/1 'Poppins';
+				}
 			}
 		}
 	}

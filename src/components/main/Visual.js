@@ -4,19 +4,46 @@ const path = process.env.PUBLIC_URL;
 
 function Visual() {
 	const ref = useRef(null);
-	const show = (e) => {
-		ref.current.querySelector('img').style.opacity = 0;
-		ref.current.querySelector('video').style.opacity = 1;
-		ref.current.querySelector('video').play();
+
+	const [flex, setFlex] = useState(false);
+
+	const show = (n) => {
+		const num = ref.current.querySelectorAll('.pic');
+		const ref2 = num[n];
+		ref2.querySelector('img').style.opacity = 0;
+		ref2.querySelector('video').style.opacity = 1;
+		ref2.querySelector('video').play();
 	};
-	const pause = (e) => {
-		ref.current.querySelector('img').style.opacity = 0.3;
-		ref.current.querySelector('video').style.opacity = 0;
-		ref.current.querySelector('video').pause();
+	const pause = (n) => {
+		const num = ref.current.querySelectorAll('.pic');
+		const ref2 = num[n];
+		ref2.querySelector('img').style.opacity = 0.3;
+		ref2.querySelector('video').style.opacity = 0;
+		ref2.querySelector('video').pause();
+	};
+	const more = (n, b) => {
+		console.log(b);
+		const num = ref.current.querySelectorAll('.pic');
+		const ref2 = num[n];
+		if (b) {
+			num.forEach((n) => (n.style.flex = 0));
+			ref2.style.flex = 4;
+		} else {
+			num.forEach((n) => (n.style.flex = 1));
+		}
 	};
 	return (
-		<div className='main_visual'>
-			<div className='pic one'>
+		<div className='main_visual' ref={ref}>
+			<div
+				className='pic one'
+				onMouseEnter={() => show(0)}
+				onMouseLeave={() => pause(0)}
+				onClick={() => {
+					{
+						flex ? setFlex(false) : setFlex(true);
+					}
+					more(0, flex ? false : true);
+				}}>
 				<img src={`${path}/img/store2_Moment.jpg`} alt='' />
 				<video src={`${path}/img/store2_Trim2.mp4`} muted loop></video>
 				<div className='box'>
@@ -28,7 +55,16 @@ function Visual() {
 					<span>TECHNOLOGY WITH STYLE</span>
 				</div>
 			</div>
-			<div className='pic two'>
+			<div
+				className='pic two'
+				onMouseEnter={() => show(1)}
+				onMouseLeave={() => pause(1)}
+				onClick={() => {
+					{
+						flex ? setFlex(false) : setFlex(true);
+					}
+					more(1, flex ? false : true);
+				}}>
 				<img src={`${path}/img/brandMoment.jpg`} alt='' />
 				<video src={`${path}/img/brand.mp4`} muted loop></video>
 				<div className='box'>
@@ -42,9 +78,14 @@ function Visual() {
 			</div>
 			<div
 				className='pic three'
-				ref={ref}
-				onMouseEnter={show}
-				onMouseLeave={pause}>
+				onMouseEnter={() => show(2)}
+				onMouseLeave={() => pause(2)}
+				onClick={() => {
+					{
+						flex ? setFlex(false) : setFlex(true);
+					}
+					more(2, flex ? false : true);
+				}}>
 				<img src={`${path}/img/product3_Moment.jpg`} alt='' />
 				<video src={`${path}/img/product3.mp4`} muted loop></video>
 				<div className='box'>
@@ -56,7 +97,16 @@ function Visual() {
 					<span>DISCOVER YOUR STYLE</span>
 				</div>
 			</div>
-			<div className='pic four'>
+			<div
+				className='pic four'
+				onMouseEnter={() => show(3)}
+				onMouseLeave={() => pause(3)}
+				onClick={() => {
+					{
+						flex ? setFlex(false) : setFlex(true);
+					}
+					more(3, flex ? false : true);
+				}}>
 				<img src={`${path}/img/brand2_Moment.jpg`} alt='' />
 				<video src={`${path}/img/brand2.mp4`} muted loop></video>
 				<div className='box'>

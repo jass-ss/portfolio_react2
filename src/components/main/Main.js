@@ -87,23 +87,25 @@ function Main() {
 						사이트에 사용된 이미지의 출처는 smeg, unox, balmuda, unsplash 이며,
 						저작권은 해당 기업과 사진작가에게 있습니다.
 					</p>
-					<label htmlFor='cookie'>
-						<input type='checkBox' id='cookie' onClick={(e) => isCheck(e)} />
-						하루동안 열지 않기
-					</label>
-					<label htmlFor='setCookie'>
-						<input
-							type='checkBox'
-							id='setCookie'
-							onClick={() => {
-								{
-									checked && setCookie();
-								}
-								setOpen(false);
-							}}
-						/>
-						확인하였습니다
-					</label>
+					<div className='wrap'>
+						<label htmlFor='cookie'>
+							<input type='checkBox' id='cookie' onClick={(e) => isCheck(e)} />
+							하루동안 열지 않기
+						</label>
+						<label htmlFor='setCookie'>
+							<input
+								type='checkBox'
+								id='setCookie'
+								onClick={() => {
+									{
+										checked && setCookie();
+									}
+									setOpen(false);
+								}}
+							/>
+							확인하였습니다
+						</label>
+					</div>
 				</Popup2>
 			)}
 			<Visual></Visual>

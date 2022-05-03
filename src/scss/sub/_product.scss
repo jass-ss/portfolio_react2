@@ -706,9 +706,10 @@
 				width: 100%;
 
 				.intro {
-					padding: 5vmin 5vmin 0 5vmin;
-					font: italic 2.5vmin/2 'Poppins';
-					margin-bottom: 15vmin;
+					width: 80%;
+					padding: 5vmin 5vmin 10vmin 5vmin;
+					font: italic 3vmin/2 'Poppins';
+					margin: 0 auto;
 					&::before {
 						content: '';
 						display: block;
@@ -730,11 +731,11 @@
 			& article:nth-of-type(1) {
 				//opacity: 0;
 				opacity: 1;
-				margin-top: 12vmin;
+				margin-top: 7vmin;
 				transition: all 0.4s;
 			}
 			& article:nth-of-type(2) {
-				margin-top: 30vmin;
+				margin-top: 7vmin;
 				//opacity: 0;
 				opacity: 1;
 				transition: all 0.5s 0.2s;
@@ -742,11 +743,11 @@
 
 			&.on article:nth-of-type(1) {
 				opacity: 1;
-				margin-top: 5vmin;
+				margin-top: 0vmin;
 			}
 			&.on article:nth-of-type(2) {
 				opacity: 1;
-				margin-top: 25vmin;
+				margin-top: 0vmin;
 			}
 
 			.inner {
@@ -759,22 +760,27 @@
 
 					article {
 						width: 100%;
-						padding: 0 5vmin;
+						padding: 0;
 						text-align: center;
+						position: relative;
 
 						img {
-							width: 100%;
+							width: 70%;
+							left: 0;
+							padding: 2vmin;
 							height: 45vmin;
 							object-fit: cover;
 						}
 						h2 {
-							padding: 3vmin;
-							font: bold 2.5vmin/1.5 'Poppins';
+							width: 90%;
+							padding: 1vmin;
+							margin-top: 5vmin;
+							font: bold 4vmin/1 'Poppins';
 							color: #333;
 						}
 						p {
-							padding: 0 5vmin;
-							font: normal 2vmin/1.5 'Poppins';
+							padding: 3vmin 2vmin;
+							font: normal 3vmin/1.5 'Poppins';
 							color: #333;
 						}
 					}

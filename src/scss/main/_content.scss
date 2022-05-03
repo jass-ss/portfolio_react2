@@ -113,6 +113,7 @@
 			width: 1180px;
 			height: 60vmin;
 			margin: 0 auto;
+			position: relative;
 			img {
 				width: calc(100vw - 15px);
 				height: 60vmin;
@@ -125,7 +126,7 @@
 			h1 {
 				position: absolute;
 				top: 20vmin;
-				width: 50%;
+				width: 80%;
 				margin-left: 5vmin;
 				transform: translateY(-50%);
 				font: bold 5vmin 'Poppins';
@@ -134,7 +135,7 @@
 			p {
 				position: absolute;
 				top: 50%;
-				width: 80%;
+				width: 100%;
 				transform: translateY(-50%);
 				margin-left: 5vmin;
 				font: bold 3vmin/1.5 'Poppins';
@@ -381,56 +382,57 @@
 			margin: 5vmin 5vmin 2vmin;
 			font: bold 5vmin 'Poppins';
 		}
-		.prevNews {
-			width: 100%;
-			margin-bottom: 10vmin;
-			&::after {
-				content: '';
-				display: block;
-				clear: both;
+		> .inner {
+			width: 1180px;
+			margin: 0 auto;
+			position: relative;
+			.prevNews {
+				width: 100%;
+				margin-bottom: 10vmin;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				.text {
+					border: 2px solid #666;
+					border-radius: 5px;
+					width: 30%;
+					float: left;
+					margin: 1%;
+					padding: 10px;
+					h2 {
+						font: normal 3vmin 'Poppins';
+					}
+					&:nth-of-type(1) {
+						margin-left: 3vmin;
+					}
+				}
 			}
-			.text {
-				border: 2px solid #222;
-				border-radius: 15px;
-				width: 30%;
-				float: left;
-				margin: 1%;
-				padding: 10px;
-				&:nth-of-type(1) {
-					margin-left: 5%;
-				}
-				h2 {
-					font: bold 3vmin 'Poppins';
-				}
-				p {
-					font: 2vmin 'Poppins';
-					padding: 10px 10px 0 10px;
-				}
-			}
-		}
 
-		.prevVids {
-			width: 100%;
-			&::after {
-				content: '';
-				display: block;
-				clear: both;
-			}
-			> article {
-				width: 30%;
-				float: left;
-				margin: 1%;
-				&:nth-of-type(1) {
-					margin-left: 5%;
+			.prevVids {
+				width: 100%;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
 				}
-				> .wrap {
-					width: 100%;
-					height: 25vmin;
-					overflow: hidden;
-					> img {
+				> article {
+					width: 30%;
+					float: left;
+					margin: 1%;
+					&:nth-of-type(1) {
+						margin-left: 3vmin;
+					}
+					> .wrap {
 						width: 100%;
-						height: 150%;
-						margin-top: -5vmin;
+						height: 25vmin;
+						overflow: hidden;
+						> img {
+							width: 100%;
+							height: 150%;
+							margin-top: -5vmin;
+						}
 					}
 				}
 			}
@@ -467,6 +469,7 @@
 			> .inner {
 				width: 100%;
 				margin: 0 auto;
+				padding: 0 2vmin;
 				position: relative;
 
 				.box {
@@ -550,6 +553,8 @@
 				width: 100%; //
 				height: 60vmin;
 				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
 				img {
 					width: 100%; //
 					height: 60vmin;
@@ -561,9 +566,9 @@
 				}
 				h1 {
 					position: absolute;
-					top: 30vmin; //
-					width: 100%;
-					margin-left: 0vmin; //
+					top: 20vmin; //
+					width: 80%;
+					margin-left: 5vmin; //
 					font: bold 5vmin 'Poppins';
 					color: #fff;
 				}
@@ -578,7 +583,7 @@
 				}
 				a {
 					position: absolute;
-					bottom: 20%;
+					bottom: 30%;
 					display: block;
 					font: normal 2.4vmin/1.5 'Poppins';
 					color: #fff;
@@ -621,6 +626,7 @@
 				width: 100%; //
 				position: relative;
 				margin: 0 auto;
+				padding: 0 2vmin;
 				h1 {
 					font: bold 5vmin 'Poppins';
 					color: #222;
@@ -697,6 +703,7 @@
 				width: 100%; //
 				height: 60vmin;
 				margin: 0 auto;
+				padding: 0 2vmin;
 				position: relative;
 
 				img {
@@ -749,6 +756,7 @@
 
 			> .inner {
 				width: 100%; //
+				padding: 0 2vmin;
 				position: relative;
 				margin: 0 auto;
 
@@ -759,15 +767,15 @@
 						padding-right: 10%;
 						font: bold 5vmin 'Poppins';
 						color: #222;
-						padding-top: 3vmin;
+						padding-top: 6vmin;
 						float: left;
 						margin-bottom: 3vmin;
-						padding-left: 5vmin;
+						padding-left: 2vmin;
 					}
 					h2 {
 						width: 60%;
 						padding-right: 10%;
-						padding-left: 5vmin;
+						padding-left: 2vmin;
 						font: bold 2.4vmin 'Poppins';
 						color: #777;
 						position: absolute;
@@ -775,9 +783,9 @@
 					}
 
 					p {
-						width: 60%;
+						width: 70%;
 						padding-right: 20%;
-						padding-left: 5vmin;
+						padding-left: 2vmin;
 						font: normal 2.4vmin/1.5 'Poppins';
 						height: 40vmin;
 					}
@@ -786,15 +794,16 @@
 						object-fit: cover;
 						height: 40vmin;
 						float: right;
+						padding-right: 2vmin;
 						position: absolute;
 					}
 					a {
 						position: absolute;
-						bottom: -5vmin;
-						left: 2vmin;
+						bottom: -2vmin;
+						left: 4vmin;
 						display: inline-block;
 						margin-top: 2vmin;
-						margin-left: 5vmin;
+						margin-left: 0vmin;
 						font: italic bold 2.4vmin/1.5 'Poppins';
 						color: #333;
 						transition: 0.2s;
@@ -814,7 +823,460 @@
 			position: relative;
 			margin-bottom: 15vmin;
 			h1 {
-				margin: 5vmin 5vmin 2vmin;
+				margin: 5vmin 3vmin 2vmin;
+				font: bold 5vmin 'Poppins';
+			}
+			> .inner {
+				width: 100%;
+				margin: 0 auto;
+				position: relative;
+				.prevNews {
+					width: 100%;
+					margin-bottom: 10vmin;
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					.text {
+						border-radius: 5px;
+						width: 30%;
+						float: left;
+						margin: 1%;
+						padding: 10px;
+						&:nth-of-type(1) {
+							margin-left: 3vmin;
+						}
+						h2 {
+							font: normal 3vmin 'Poppins';
+						}
+						p {
+							font: 2vmin 'Poppins';
+							padding: 10px 10px 0 10px;
+						}
+					}
+				}
+
+				.prevVids {
+					width: 100%;
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					> article {
+						width: 30%;
+						float: left;
+						margin: 1%;
+						&:nth-of-type(1) {
+							margin-left: 3vmin;
+						}
+						> .wrap {
+							width: 100%;
+							height: 25vmin;
+							overflow: hidden;
+							> img {
+								width: 100%;
+								height: 150%;
+								margin-top: -5vmin;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and(max-width:649px) {
+	.content.main {
+		width: 100%;
+		position: relative;
+
+		#service {
+			width: 100%;
+			margin: 30vmin 0 10vmin;
+			position: relative;
+
+			h1 {
+				text-align: center;
+				font: bold 6vmin 'Poppins';
+				color: #222;
+				padding-top: 3vmin;
+			}
+			h2 {
+				text-align: center;
+				font: bold 4vmin 'Poppins';
+				color: #777;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			> .inner {
+				width: 100%;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+
+				.box {
+					margin-top: 20vmin;
+					width: 100%;
+
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					&:nth-of-type(2) {
+						margin-top: 0;
+						margin-bottom: 0vmin;
+					}
+
+					&:nth-of-type(1) {
+						article {
+							&:nth-of-type(2) {
+								text-align: right;
+							}
+						}
+					}
+					&:nth-of-type(2) {
+						article {
+							&:nth-of-type(1),
+							&:nth-of-type(3) {
+								margin-top: 0%;
+								text-align: right;
+							}
+						}
+					}
+
+					article {
+						width: 100%;
+						float: none;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+						img {
+							width: 80%;
+							height: 40vmin;
+							object-fit: cover;
+							padding: 0 1vmin;
+						}
+						h3 {
+							padding: 2vmin;
+							font: bold 4vmin/1.2 'Poppins';
+							color: #222;
+						}
+						p {
+							padding: 0 3vmin;
+							min-height: 15vmin;
+							margin-bottom: 5vmin;
+							font: normal 3vmin/1.5 'Poppins';
+							color: #666;
+						}
+					}
+				}
+				a {
+					display: block;
+					position: absolute;
+					bottom: 10vmin;
+					left: 50%;
+					transform: translateX(-50%);
+					font: italic bold 2.4vmin/1.5 'Poppins';
+					color: #333;
+					transition: 0.2s;
+
+					&:hover {
+						color: #fff;
+						background: #b3b1b1ba;
+						padding: 0 1vmin;
+					}
+				}
+			}
+		}
+		#banner {
+			width: 100%;
+			position: relative;
+			.aniLogo {
+				height: 20vmin;
+				border: 1px solid black;
+				margin-left: 0;
+			}
+			> .inner {
+				width: 100%; //
+				height: 60vmin;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+				img {
+					width: 100%; //
+					height: 60vmin;
+					position: absolute;
+					left: 0;
+					z-index: -1;
+					filter: grayscale(30%);
+					object-fit: cover;
+				}
+				h1 {
+					position: absolute;
+					top: 20vmin; //
+					width: 80%;
+					margin-left: 5vmin; //
+					font: bold 5vmin 'Poppins';
+					color: #fff;
+				}
+				p {
+					position: absolute;
+					top: 50%;
+					width: 80%;
+					transform: translateY(-50%);
+					margin-left: 5vmin;
+					font: bold 3vmin/1.5 'Poppins';
+					color: #fff;
+				}
+				a {
+					position: absolute;
+					bottom: 30%;
+					display: block;
+					font: normal 2.4vmin/1.5 'Poppins';
+					color: #fff;
+					background: #666666d1;
+					padding: 0 1vmin;
+					margin-left: 5vmin;
+					i {
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+
+		#brand {
+			width: 100%;
+			margin: 20vmin 0 20vmin;
+			text-align: center;
+
+			& article {
+				filter: contrast(70%);
+				&:nth-of-type(1) {
+					transition: all 1s;
+				}
+				&:nth-of-type(2) {
+					transition: all 1s 0.3s;
+				}
+				&:nth-of-type(3) {
+					transition: all 1s 0.5s;
+				}
+			}
+
+			&.on article {
+				filter: contrast(120%) brightness(1.1);
+				&:nth-of-type(3) {
+					filter: contrast(100%) brightness(1.4);
+				}
+			}
+
+			> .inner {
+				width: 100%; //
+				position: relative;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				h1 {
+					font: bold 5vmin 'Poppins';
+					color: #222;
+					padding-top: 3vmin;
+				}
+				h2 {
+					font: bold 2.4vmin 'Poppins';
+					color: #777;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+
+				.wrap {
+					&::after {
+						display: block;
+						content: '';
+						clear: both;
+					}
+					article {
+						padding-top: 10vmin;
+						float: left;
+						width: 30%;
+						margin-right: 5%;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+
+						img {
+							width: 100%;
+							height: 30vmin;
+							object-fit: cover;
+						}
+
+						h3 {
+							font: bold 3.2vmin 'Poppins';
+							color: #222;
+							min-height: 3vmin;
+							margin: 3vmin 0;
+						}
+						p {
+							display: none;
+							font: normal 2vmin/1.5 'Poppins';
+							color: #444;
+						}
+					}
+					a {
+						position: absolute;
+						bottom: -20%;
+						left: 50%;
+						transform: translateX(-50%);
+						display: block; //a태그 위형제 요소들이 float이라서 display:block하면 제일 위로 간다.
+						margin-top: 10vmin;
+						font: italic bold 2.4vmin/1.5 'Poppins';
+						color: #333;
+						transition: 0.2s;
+
+						&:hover {
+							color: #fff;
+							background: #b3b1b1ba;
+							padding: 0 1vmin;
+						}
+					}
+				}
+			}
+		}
+
+		#banner2 {
+			width: 100%;
+			position: relative;
+			padding: 20vmin 0;
+			> .inner {
+				width: 100%; //
+				height: 60vmin;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+
+				img {
+					width: 100%; //
+					height: 60vmin;
+					position: absolute;
+					left: 0; //
+					top: 0;
+					object-fit: cover;
+					z-index: -1;
+				}
+				h1 {
+					position: absolute;
+					top: 30%;
+					width: 50%;
+					margin-left: 5vmin;
+					transform: translateY(-50%);
+					font: bold 5vmin 'Poppins';
+					color: #fff;
+				}
+				p {
+					position: absolute;
+					top: 55%;
+					width: 80%;
+					transform: translateY(-50%);
+					margin-left: 5vmin;
+					font: bold 3vmin/1.5 'Poppins';
+					color: #fff;
+				}
+				a {
+					position: absolute;
+					top: 70%;
+					display: block;
+					font: normal 2.4vmin/1.5 'Poppins';
+					color: #fff;
+					background: #666666d1;
+					padding: 0 5px;
+					margin-left: 5vmin;
+					i {
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+
+		#product {
+			width: 100%;
+			padding-bottom: 20vmin;
+			position: relative;
+
+			> .inner {
+				width: 100%; //
+				padding: 0 2vmin;
+				position: relative;
+				margin: 0 auto;
+
+				.wrap {
+					width: 100%;
+					h1 {
+						width: 60%;
+						padding-right: 10%;
+						font: bold 5vmin 'Poppins';
+						color: #222;
+						padding-top: 6vmin;
+						float: left;
+						margin-bottom: 3vmin;
+						padding-left: 2vmin;
+					}
+					h2 {
+						width: 60%;
+						padding-right: 10%;
+						padding-left: 2vmin;
+						font: bold 2.4vmin 'Poppins';
+						color: #777;
+						position: absolute;
+						top: 0;
+					}
+
+					p {
+						width: 70%;
+						padding-right: 20%;
+						padding-left: 2vmin;
+						font: normal 2.4vmin/1.5 'Poppins';
+						height: 40vmin;
+					}
+					img {
+						width: 40%;
+						object-fit: cover;
+						height: 40vmin;
+						float: right;
+						padding-right: 2vmin;
+						position: absolute;
+					}
+					a {
+						position: absolute;
+						bottom: -2vmin;
+						left: 4vmin;
+						display: inline-block;
+						margin-top: 2vmin;
+						margin-left: 0vmin;
+						font: italic bold 2.4vmin/1.5 'Poppins';
+						color: #333;
+						transition: 0.2s;
+
+						&:hover {
+							color: #fff;
+							background: #b3b1b1ba;
+							padding: 0 1vmin;
+							margin-left: 5vmin;
+						}
+					}
+				}
+			}
+		}
+		#fetch {
+			width: 100%;
+			position: relative;
+			margin-bottom: 15vmin;
+			h1 {
+				margin: 5vmin 3vmin 2vmin;
 				font: bold 5vmin 'Poppins';
 			}
 			.prevNews {
@@ -826,17 +1288,16 @@
 					clear: both;
 				}
 				.text {
-					border: 2px solid #222;
-					border-radius: 15px;
+					border-radius: 5px;
 					width: 30%;
 					float: left;
 					margin: 1%;
 					padding: 10px;
 					&:nth-of-type(1) {
-						margin-left: 5%;
+						margin-left: 3vmin;
 					}
 					h2 {
-						font: bold 3vmin 'Poppins';
+						font: normal 3vmin 'Poppins';
 					}
 					p {
 						font: 2vmin 'Poppins';
@@ -857,7 +1318,450 @@
 					float: left;
 					margin: 1%;
 					&:nth-of-type(1) {
-						margin-left: 5%;
+						margin-left: 3vmin;
+					}
+					> .wrap {
+						width: 100%;
+						height: 25vmin;
+						overflow: hidden;
+						> img {
+							width: 100%;
+							height: 150%;
+							margin-top: -5vmin;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:399px) {
+	.content.main {
+		width: 100%;
+		position: relative;
+
+		#service {
+			width: 100%;
+			margin: 30vmin 0 10vmin;
+			position: relative;
+
+			h1 {
+				text-align: center;
+				font: bold 7vmin 'Poppins';
+				color: #222;
+				padding-top: 5vmin;
+			}
+			h2 {
+				text-align: center;
+				font: bold 5vmin 'Poppins';
+				color: #777;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			> .inner {
+				width: 100%;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+
+				.box {
+					margin-top: 20vmin;
+					width: 100%;
+
+					&::after {
+						content: '';
+						display: block;
+						clear: both;
+					}
+					&:nth-of-type(2) {
+						margin-top: 0;
+						margin-bottom: 0vmin;
+					}
+
+					&:nth-of-type(1) {
+						article {
+							&:nth-of-type(2) {
+								text-align: right;
+							}
+						}
+					}
+					&:nth-of-type(2) {
+						article {
+							&:nth-of-type(1),
+							&:nth-of-type(3) {
+								margin-top: 0%;
+								text-align: right;
+							}
+						}
+					}
+
+					article {
+						width: 100%;
+						float: none;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+						img {
+							width: 80%;
+							height: 40vmin;
+							object-fit: cover;
+							padding: 0 1vmin;
+						}
+						h3 {
+							padding: 2vmin;
+							font: bold 5vmin/1.2 'Poppins';
+							color: #222;
+						}
+						p {
+							padding: 0 3vmin;
+							min-height: 15vmin;
+							margin-bottom: 5vmin;
+							font: normal 4vmin/1.5 'Poppins';
+							color: #666;
+						}
+					}
+				}
+				a {
+					display: block;
+					position: absolute;
+					bottom: 10vmin;
+					left: 50%;
+					transform: translateX(-50%);
+					font: italic bold 2.4vmin/1.5 'Poppins';
+					color: #333;
+					transition: 0.2s;
+
+					&:hover {
+						color: #fff;
+						background: #b3b1b1ba;
+						padding: 0 1vmin;
+					}
+				}
+			}
+		}
+		#banner {
+			width: 100%;
+			position: relative;
+			.aniLogo {
+				height: 20vmin;
+				border: 1px solid black;
+				margin-left: 0;
+			}
+			> .inner {
+				width: 100%; //
+				height: 60vmin;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+				img {
+					width: 100%; //
+					height: 60vmin;
+					position: absolute;
+					left: 0;
+					z-index: -1;
+					filter: grayscale(30%);
+					object-fit: cover;
+				}
+				h1 {
+					position: absolute;
+					top: 20vmin; //
+					width: 80%;
+					margin-left: 5vmin; //
+					font: bold 7vmin 'Poppins';
+					color: #fff;
+				}
+				p {
+					position: absolute;
+					top: 50%;
+					width: 80%;
+					transform: translateY(-50%);
+					margin-left: 5vmin;
+					font: bold 5vmin/1.5 'Poppins';
+					color: #fff;
+				}
+				a {
+					position: absolute;
+					bottom: 30%;
+					display: block;
+					font: normal 3.5vmin/1.5 'Poppins';
+					color: #fff;
+					background: #666666d1;
+					padding: 0 1vmin;
+					margin-left: 5vmin;
+					i {
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+
+		#brand {
+			width: 100%;
+			margin: 20vmin 0 20vmin;
+			text-align: center;
+
+			& article {
+				filter: contrast(70%);
+				&:nth-of-type(1) {
+					transition: all 1s;
+				}
+				&:nth-of-type(2) {
+					transition: all 1s 0.3s;
+				}
+				&:nth-of-type(3) {
+					transition: all 1s 0.5s;
+				}
+			}
+
+			&.on article {
+				filter: contrast(120%) brightness(1.1);
+				&:nth-of-type(3) {
+					filter: contrast(100%) brightness(1.4);
+				}
+			}
+
+			> .inner {
+				width: 100%; //
+				position: relative;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				h1 {
+					font: bold 5vmin 'Poppins';
+					color: #222;
+					padding-top: 3vmin;
+				}
+				h2 {
+					font: bold 2.4vmin 'Poppins';
+					color: #777;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+
+				.wrap {
+					&::after {
+						display: block;
+						content: '';
+						clear: both;
+					}
+					article {
+						padding-top: 10vmin;
+						float: left;
+						width: 30%;
+						margin-right: 5%;
+						&:nth-of-type(3) {
+							margin-right: 0;
+						}
+
+						img {
+							width: 100%;
+							height: 30vmin;
+							object-fit: cover;
+						}
+
+						h3 {
+							font: bold 3.2vmin 'Poppins';
+							color: #222;
+							min-height: 3vmin;
+							margin: 3vmin 0;
+						}
+						p {
+							display: none;
+							font: normal 2vmin/1.5 'Poppins';
+							color: #444;
+						}
+					}
+					a {
+						position: absolute;
+						bottom: -20%;
+						left: 50%;
+						transform: translateX(-50%);
+						display: block; //a태그 위형제 요소들이 float이라서 display:block하면 제일 위로 간다.
+						margin-top: 10vmin;
+						font: italic bold 2.4vmin/1.5 'Poppins';
+						color: #333;
+						transition: 0.2s;
+
+						&:hover {
+							color: #fff;
+							background: #b3b1b1ba;
+							padding: 0 1vmin;
+						}
+					}
+				}
+			}
+		}
+
+		#banner2 {
+			width: 100%;
+			position: relative;
+			padding: 20vmin 0;
+			> .inner {
+				width: 100%; //
+				height: 60vmin;
+				margin: 0 auto;
+				padding: 0 2vmin;
+				position: relative;
+
+				img {
+					width: 100%; //
+					height: 60vmin;
+					position: absolute;
+					left: 0; //
+					top: 0;
+					object-fit: cover;
+					z-index: -1;
+				}
+				h1 {
+					position: absolute;
+					top: 30%;
+					width: 50%;
+					margin-left: 5vmin;
+					transform: translateY(-50%);
+					font: bold 7vmin 'Poppins';
+					color: #fff;
+				}
+				p {
+					position: absolute;
+					top: 55%;
+					width: 80%;
+					transform: translateY(-50%);
+					margin-left: 5vmin;
+					font: bold 5vmin/1.5 'Poppins';
+					color: #fff;
+				}
+				a {
+					position: absolute;
+					top: 70%;
+					display: block;
+					font: normal 3.5vmin/1.5 'Poppins';
+					color: #fff;
+					background: #666666d1;
+					padding: 0 5px;
+					margin-left: 5vmin;
+					i {
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+
+		#product {
+			width: 100%;
+			padding-bottom: 20vmin;
+			position: relative;
+
+			> .inner {
+				width: 100%; //
+				padding: 0 2vmin;
+				position: relative;
+				margin: 0 auto;
+
+				.wrap {
+					width: 100%;
+					h1 {
+						width: 60%;
+						padding-right: 10%;
+						font: bold 5vmin 'Poppins';
+						color: #222;
+						padding-top: 6vmin;
+						float: left;
+						margin-bottom: 3vmin;
+						padding-left: 2vmin;
+					}
+					h2 {
+						width: 60%;
+						padding-right: 10%;
+						padding-left: 2vmin;
+						font: bold 2.4vmin 'Poppins';
+						color: #777;
+						position: absolute;
+						top: 0;
+					}
+
+					p {
+						width: 70%;
+						padding-right: 20%;
+						padding-left: 2vmin;
+						font: normal 2.4vmin/1.5 'Poppins';
+						height: 40vmin;
+					}
+					img {
+						width: 40%;
+						object-fit: cover;
+						height: 40vmin;
+						float: right;
+						padding-right: 2vmin;
+						position: absolute;
+					}
+					a {
+						position: absolute;
+						bottom: -2vmin;
+						left: 4vmin;
+						display: inline-block;
+						margin-top: 2vmin;
+						margin-left: 0vmin;
+						font: italic bold 2.4vmin/1.5 'Poppins';
+						color: #333;
+						transition: 0.2s;
+
+						&:hover {
+							color: #fff;
+							background: #b3b1b1ba;
+							padding: 0 1vmin;
+							margin-left: 5vmin;
+						}
+					}
+				}
+			}
+		}
+		#fetch {
+			width: 100%;
+			position: relative;
+			margin-bottom: 15vmin;
+			h1 {
+				margin: 5vmin 3vmin 2vmin;
+				font: bold 5vmin 'Poppins';
+			}
+			.prevNews {
+				width: 100%;
+				margin-bottom: 10vmin;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				.text {
+					border-radius: 5px;
+					width: 30%;
+					float: left;
+					margin: 1%;
+					padding: 5px !important;
+					height: 100px;
+					h2 {
+						font: normal 3vmin 'Poppins';
+					}
+				}
+			}
+
+			.prevVids {
+				width: 100%;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				> article {
+					width: 30%;
+					float: left;
+					margin: 1%;
+					&:nth-of-type(1) {
+						margin-left: 3vmin;
 					}
 					> .wrap {
 						width: 100%;

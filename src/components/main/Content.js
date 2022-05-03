@@ -18,6 +18,7 @@ function Content({ scr, pos }) {
 	const [on, setOn] = useState(false);
 	const [videos, setVideos] = useState([]);
 	const [index, setIndex] = useState(0);
+	const [open, setOpen] = useState(false);
 	useEffect(() => {
 		if (vid) {
 			const data = vid.slice(1, 4);
@@ -222,35 +223,42 @@ function Content({ scr, pos }) {
 				</section>
 
 				<section id='fetch'>
-					<div className='prevNews'>
-						<h1>LATEST NEWS</h1>
-						{news.map((m, idx) => {
-							return (
-								<div className='text' key={idx}>
-									<h2>{m.title}</h2>
-									<p>{m.text}</p>
-								</div>
-							);
-						})}
-					</div>
-					<div className='prevVids'>
-						<h1>YOUTUBE CLIP</h1>
-						{videos.map((v, idx) => {
-							return (
-								<article key={idx}>
-									<div className='wrap'>
-										<img
-											src={v.snippet.thumbnails.standard.url}
-											alt=''
+					<div className='inner'>
+						<div className='prevNews'>
+							<h1>LATEST NEWS</h1>
+							{news.map((m, idx) => {
+								return (
+									<div className='text' key={idx}>
+										<h2
 											onClick={() => {
-												setIndex(idx);
-												pop.current.open();
-											}}
-										/>
+												open ? setOpen(false) : setOpen(true);
+											}}>
+											{m.title}
+										</h2>
+										{/*open ? <p>{m.text}</p> : null*/}
 									</div>
-								</article>
-							);
-						})}
+								);
+							})}
+						</div>
+						<div className='prevVids'>
+							<h1>YOUTUBE CLIP</h1>
+							{videos.map((v, idx) => {
+								return (
+									<article key={idx}>
+										<div className='wrap'>
+											<img
+												src={v.snippet.thumbnails.standard.url}
+												alt=''
+												onClick={() => {
+													setIndex(idx);
+													pop.current.open();
+												}}
+											/>
+										</div>
+									</article>
+								);
+							})}
+						</div>
 					</div>
 				</section>
 			</div>

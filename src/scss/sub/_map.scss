@@ -145,9 +145,9 @@
 			z-index: 2;
 			button {
 				width: 25%;
-				height: 5vmin;
+				height: 7vmin;
 				border: none;
-				font: 1.5vmin/2 'Poppins';
+				font: bold 1.5vmin/2 'Poppins';
 				cursor: pointer;
 				border-right: rgb(255, 255, 255) solid 1px;
 			}
@@ -155,7 +155,7 @@
 	}
 }
 
-@media screen and (max-width: 539px) {
+@media screen and (max-width: 649px) {
 	.mapCompo {
 		width: 100%;
 		margin: 30vmin auto 0;
