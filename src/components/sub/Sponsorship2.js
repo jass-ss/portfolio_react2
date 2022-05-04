@@ -6,13 +6,13 @@ import { Anim } from '../../class/anime';
 
 const path = process.env.PUBLIC_URL;
 
-function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
+function Sponsorship({ ele, sps, setOpen, setIndex }) {
 	const slide = useRef(null);
 	const [idx, setIdx] = useState(false);
 	const [imgs, setImgs] = useState();
 	const mobile = useRef(false);
-	const size = useRef(0);
 
+	const size = useRef(0);
 	let vw = size.current;
 	//let vw = 0;
 	console.log('s', vw);
@@ -216,41 +216,46 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 
 	return (
 		<div className='sponsorship'>
-			<h1>COOKING TV SHOW</h1>
-			<p>
-				we sponsored a TV show with our kitchen appliances. check the youtube
-				and our product
-			</p>
-			<div className='main'>
+			<article className='main'>
 				<div className='pic'>
 					<img
-						src={
-							sps[0] ? `${sps[vidIndex].snippet.thumbnails.standard.url}` : null
-						}
-						alt=''
 						onClick={() => {
+							setIndex(0);
 							setOpen(true);
 						}}
+						src={ele ? ele.snippet.thumbnails.standard.url : null}
+						alt=''
 					/>
 				</div>
-				<div className='info'>
-					<h2>KITCHEN MAKE OVER!</h2>
-					<p>{sps[0] ? `${sps[vidIndex].snippet.title}` : null}</p>
-					<div className='videos'>
-						{sps.map((m, idx) => {
-							return (
-								<div className='pic' key={idx}>
-									<img
-										src={m.snippet.thumbnails.standard.url}
-										onClick={() => {
-											setIndex(idx);
-										}}
-									/>
-								</div>
-							);
-						})}
+				<div className='txt'>
+					<div className='txt_box'>
+						<h1>COOKING TV SHOW</h1>
+						<h2>SPONSORSHIP</h2>
+						<p>
+							we sponsored a TV show with our kitchen appliances. check the
+							youtube and our product
+						</p>
 					</div>
 				</div>
+			</article>
+
+			<div className='videos'>
+				{sps.map((m, idx) => {
+					return (
+						<div className='con' key={idx}>
+							<div className='pic'>
+								<img
+									src={m.snippet.thumbnails.standard.url}
+									onClick={() => {
+										setIndex(idx + 1);
+										setOpen(true);
+									}}
+								/>
+							</div>
+							<p>{ele.snippet.title}</p>
+						</div>
+					);
+				})}
 			</div>
 
 			<div className='frame'>

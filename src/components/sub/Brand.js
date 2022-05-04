@@ -2,6 +2,11 @@ import React from 'react';
 import Member from '../sub/Member';
 import Map from '../sub/Map';
 import SubHeader from '../common/SubHeader';
+import { Swiper, SwiperSlide } from 'swiper/react'; // basic
+import { Pagination, Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const path = process.env.PUBLIC_URL;
 
@@ -64,24 +69,43 @@ function Brand() {
 							fugit quae.
 						</p>
 					</div>
-					<div className='pics'>
-						<div className='pic'>
-							<img src={`${path}/img/people1.jpg`} alt='' />
-							<p>Operations</p>
+					<Swiper
+						slidesPerView={1}
+						spaceBetween={30}
+						loop={true}
+						pagination={{
+							clickable: true,
+						}}
+						navigation={true}
+						modules={[Pagination, Navigation]}
+						className='mySwiper'>
+						<div className='pics'>
+							<SwiperSlide>
+								<div className='pic'>
+									<img src={`${path}/img/people1.jpg`} alt='' />
+									<p>Operations</p>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className='pic'>
+									<img src={`${path}/img/people2.png`} alt='' />
+									<p>Design</p>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className='pic'>
+									<img src={`${path}/img/people4.jpg`} alt='' />
+									<p>Administration</p>
+								</div>
+							</SwiperSlide>
+							<SwiperSlide>
+								<div className='pic'>
+									<img src={`${path}/img/people3.jpg`} alt='' />
+									<p>Human Resources</p>
+								</div>
+							</SwiperSlide>
 						</div>
-						<div className='pic'>
-							<img src={`${path}/img/people2.png`} alt='' />
-							<p>Design</p>
-						</div>
-						<div className='pic'>
-							<img src={`${path}/img/people4.jpg`} alt='' />
-							<p>Administration</p>
-						</div>
-						<div className='pic'>
-							<img src={`${path}/img/people3.jpg`} alt='' />
-							<p>Human Resources</p>
-						</div>
-					</div>
+					</Swiper>
 				</article>
 
 				<div className='teamWork'>

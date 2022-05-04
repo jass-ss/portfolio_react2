@@ -16,7 +16,7 @@ function Youtube() {
 	const [on, setOn] = useState('advertisement');
 	const pop = useRef(null);
 
-	//	const [ele, setEle] = useState(null);
+	const [ele, setEle] = useState(null);
 	const [ad, setAd] = useState(null);
 	const [sps, setSps] = useState([]);
 	const [adv, setAdv] = useState([]);
@@ -27,16 +27,13 @@ function Youtube() {
 	useEffect(() => {
 		console.log(vid);
 		if (vid) {
-			//	setEle(vid[0]);
+			setEle(vid[0]);
 			setAd(vid[11]);
-			setSps(vid.slice(0, 3));
-			setAdv(vid.slice(3));
+			setSps(vid.slice(1, 4));
+			setAdv(vid.slice(6, 10));
 		}
 	}, [vid]);
 
-	useEffect(() => {
-		console.log(open);
-	}, [open]);
 	return (
 		<>
 			<SubHeader img={`${path}/img/banner00.png`}>
@@ -48,33 +45,46 @@ function Youtube() {
 			</SubHeader>
 
 			<Layout name={'youtube'}>
-				<Advertisement
-					ad={ad}
-					adv={adv}
-					setOpen={setOpen}
-					setIndex={setIndex}></Advertisement>
-				<Sponsorship
-					//	ele={ele}
-					sps={sps}
-					vidIndex={index}
-					setOpen={setOpen}
-					setIndex={setIndex}></Sponsorship>
+				<div className='youtube'>
+					<div className='cate'>
+						<span
+							className={on === 'advertisement' ? 'on' : null}
+							onClick={() => setOn('advertisement')}>
+							ADVERTISEMENT
+						</span>
+						<span
+							className={on === 'sponsorship' ? 'on' : null}
+							onClick={() => setOn('sponsorship')}>
+							SPONSORSHIP
+						</span>
+					</div>
+					{on == 'advertisement' ? (
+						<Advertisement
+							ad={ad}
+							adv={adv}
+							setOpen={setOpen}
+							setIndex={setIndex}
+						/>
+					) : (
+						<Sponsorship
+							ele={ele}
+							sps={sps}
+							setOpen={setOpen}
+							setIndex={setIndex}
+						/>
+					)}
+				</div>
 			</Layout>
 
 			{open ? (
-				<Popup ref={pop} open={open} setOpen={setOpen}>
+				<Popup ref={pop} open={open}>
 					<iframe
 						src={
 							`https://www.youtube.com/embed/` +
 							vid[index].snippet.resourceId.videoId
 						}
 						frameBorder='0'></iframe>
-					<span
-						onClick={() => {
-							pop.current.close();
-						}}>
-						close
-					</span>
+					<span onClick={() => pop.current.close()}>close</span>{' '}
 					{/* 클릭이벤트로 setOn(false)를 호출하면 open의 값이 false가 되고, 팝업컴포넌트가 null로 변해서 팝업창 사라지는 모션이 실행되지 않음., */}
 				</Popup>
 			) : null}

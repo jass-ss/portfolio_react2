@@ -1,122 +1,89 @@
 .sponsorship {
 	width: 100%;
-	.main {
-		display: flex;
+	position: relative;
+	margin-top: 20vmin;
+	> h1 {
+		font: bold 8vmin/1 'Poppins';
 		position: relative;
-		margin: 3vmin 0 27vmin;
-		height: 45vmin;
-		> .pic {
-			width: 50%;
-			padding: 10px;
-			position: relative;
-			overflow: hidden;
-			img {
-				width: 100%;
-				height: 180%;
-				margin-top: -30%;
-				object-fit: cover;
-			}
-		}
-		.txt {
-			width: 70%;
-			height: 95%;
-			position: absolute;
-			right: 0;
-			bottom: -10%;
-			text-align: left;
-			background-color: #ededed;
-			z-index: -1;
-			.txt_box {
-				position: absolute;
-				height: 100%;
-				left: 23%;
-				top: 5%;
-				padding: 2vmin;
-				> h1 {
-					font: bold 4vmin 'Poppins';
-					margin-top: 5vmin;
-					margin-bottom: 4vmin;
-					margin-left: 5vmin;
-				}
-				h2 {
-					font: bold 2vmin 'Poppins';
-					position: absolute;
-					left: 2vmin;
-					top: 3vmin;
-					margin-left: 5vmin;
-				}
-				> p {
-					font: 3vmin/1.5 'Lora';
-					margin-left: 5vmin;
-				}
-			}
-		}
-	}
-	.videos {
-		width: 100%;
-		margin-bottom: 25vmin;
-		margin-top: 20vmin;
-		&::after {
+		text-align: right;
+		margin-bottom: 2vmin;
+		margin-right: 2vmin;
+		&::before {
 			content: '';
 			display: block;
-			clear: both;
+			position: absolute;
+			background-color: #ddd;
+			width: 5px;
+			height: 17vmin;
+			top: 0%;
+			right: -1vmin;
+			z-index: -1;
 		}
-		> .con {
-			width: 33%;
-			margin-bottom: 10vmin;
-			float: left;
-			height: 50vmin;
-			&:nth-of-type(2) {
-				margin-top: 15vmin;
-				margin-bottom: 15vmin;
-				&::before {
-					width: 1px;
-					height: 75vmin;
-					background-color: #ddd;
-					content: '';
-					display: block;
-					position: absolute;
-					top: 50%;
-					transform: translateY(-40%);
-				}
-				&::after {
-					width: 1px;
-					height: 75vmin;
-					background-color: #ddd;
-					content: '';
-					display: block;
-					position: absolute;
-					top: 50%;
-					left: 66%;
-					transform: translate(0%, -40%);
-				}
-			}
-			> .pic {
+	}
+	> p {
+		font: 3vmin/1 'Poppins';
+		margin-right: 3vmin;
+		text-align: right;
+	}
+	&::after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+	> .main {
+		position: relative;
+		width: 100%;
+		margin-top: 5vmin;
+		margin-bottom: 25vmin;
+		display: flex;
+		h2 {
+		}
+		p {
+			width: 100%;
+		}
+		> .pic {
+			width: 50%;
+			position: relative;
+			img {
 				width: 100%;
-				height: 40vmin;
-				padding: 1vmin;
-				display: block;
-				position: relative;
-				cursor: pointer;
-				overflow: hidden;
-				img {
-					width: 100%;
-					height: 60vmin;
-					padding: 0 10px;
-					margin-top: -10vmin;
-					object-fit: cover;
-				}
 			}
-			> p {
-				display: block;
-				font: 2vmin/1.5 'Poppins';
-				height: 15vmin;
-				padding: 3vmin;
-				text-align: center;
+		}
+		> .info {
+			width: 50%;
+			.videos {
+				width: 100%;
+				position: absolute;
+				bottom: 1vmin;
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				> .pic {
+					width: calc(50% / 3);
+					height: 10vmin;
+					float: left;
+					position: relative;
+					cursor: pointer;
+					overflow: hidden;
+					img {
+						width: 100%;
+						height: 20vmin;
+						padding: 0 10px;
+						margin-top: -5vmin;
+						object-fit: cover;
+					}
+					> p {
+						display: block;
+						font: 2vmin/1.5 'Poppins';
+						height: 15vmin;
+						padding: 3vmin;
+						text-align: center;
+					}
+				}
 			}
 		}
 	}
-
 	.frame {
 		width: 100%;
 		position: relative;
