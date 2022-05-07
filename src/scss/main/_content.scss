@@ -24,7 +24,7 @@
 		}
 
 		> .inner {
-			width: 1180px;
+			width: 100%;
 			margin: 0 auto;
 			position: relative;
 
@@ -183,7 +183,7 @@
 		}
 
 		> .inner {
-			width: 1180px;
+			width: 100%;
 			position: relative;
 			margin: 0 auto;
 			h1 {
@@ -234,20 +234,23 @@
 					}
 				}
 				a {
+					width: 0px;
 					position: absolute;
+					overflow: hidden;
+					height: calc(2.4vmin * 1.5);
 					bottom: -20%;
 					left: 50%;
 					transform: translateX(-50%);
 					display: block; //a태그 위형제 요소들이 float이라서 display:block하면 제일 위로 간다.
 					margin-top: 10vmin;
 					font: italic bold 2.4vmin/1.5 'Poppins';
-					color: #333;
-					transition: 0.2s;
+					color: #fff;
+					background-color: #b3b1b1ba;
+					transition: 1s;
 
 					&:hover {
 						color: #fff;
 						background: #b3b1b1ba;
-						padding: 0 1vmin;
 					}
 				}
 			}
@@ -265,12 +268,13 @@
 			position: relative;
 
 			img {
-				width: calc((100vw - 1180px) / 2 + 1180px);
+				width: 0;
 				height: 60vmin;
 				position: absolute;
 				left: calc((100vw - 1180px) / -2);
 				top: 0;
 				object-fit: cover;
+				transition: 1.5s;
 				z-index: -1;
 			}
 			h1 {
@@ -297,9 +301,9 @@
 				display: block;
 				font: normal 2.4vmin/1.5 'Poppins';
 				color: #fff;
-				background: #666666d1;
 				padding: 0 5px;
 				margin-left: 5vmin;
+				transition: 0.5s 0.5s;
 				i {
 					padding: 0 5px;
 				}
@@ -313,7 +317,7 @@
 		position: relative;
 
 		> .inner {
-			width: 1180px;
+			width: 100%;
 			position: relative;
 			margin: 0 auto;
 
@@ -352,6 +356,8 @@
 					height: 40vmin;
 					float: right;
 					position: absolute;
+					opacity: 0;
+					transition: 0.5s 0.5s;
 				}
 				a {
 					position: absolute;
@@ -383,7 +389,7 @@
 			font: bold 5vmin 'Poppins';
 		}
 		> .inner {
-			width: 1180px;
+			width: 100%;
 			margin: 0 auto;
 			position: relative;
 			.prevNews {
@@ -526,7 +532,7 @@
 				a {
 					display: block;
 					position: absolute;
-					bottom: -10vmin;
+					bottom: 0vmin;
 					left: 50%;
 					transform: translateX(-50%);
 					font: italic bold 2.4vmin/1.5 'Poppins';

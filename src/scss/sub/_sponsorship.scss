@@ -1,7 +1,7 @@
 .sponsorship {
 	width: 100%;
 	position: relative;
-	margin-top: 20vmin;
+	margin-top: 25vmin;
 	> h1 {
 		font: bold 8vmin/1 'Poppins';
 		position: relative;
@@ -33,59 +33,85 @@
 	> .main {
 		position: relative;
 		width: 100%;
-		margin-top: 5vmin;
-		margin-bottom: 25vmin;
+		margin-top: 15vmin;
+		margin-bottom: 30vmin;
 		display: flex;
-		h2 {
-		}
-		p {
-			width: 100%;
-		}
 		> .pic {
 			width: 50%;
+			height: 40vmin;
+			overflow: hidden;
 			position: relative;
 			img {
-				width: 100%;
+				width: 90%;
+				height: 60vmin;
+				position: absolute;
+				padding: 2.5vmin;
+				top: -10vmin;
+				right: 0;
 			}
 		}
 		> .info {
 			width: 50%;
+			position: relative;
+			&::after {
+				width: 100%;
+				height: 75%;
+				background: rgba(218, 212, 204, 0.466);
+				display: block;
+				content: '';
+				position: absolute;
+				bottom: 0%;
+				left: -3vmin;
+				z-index: -1;
+			}
+
+			> h2 {
+				margin-top: 20%;
+				font: bold 4vmin/1 'Poppins';
+				margin-left: 2vmin;
+			}
+			> p {
+				font: 2vmin/1 'Poppins';
+				margin-left: 2vmin;
+				margin-top: 1vmin;
+			}
 			.videos {
 				width: 100%;
 				position: absolute;
-				bottom: 1vmin;
+				bottom: 3vmin;
 				&::after {
 					content: '';
 					display: block;
 					clear: both;
 				}
-				> .pic {
-					width: calc(50% / 3);
-					height: 10vmin;
+				> .pics {
+					width: 30%;
 					float: left;
 					position: relative;
 					cursor: pointer;
-					overflow: hidden;
-					img {
-						width: 100%;
-						height: 20vmin;
-						padding: 0 10px;
-						margin-top: -5vmin;
-						object-fit: cover;
-					}
 					> p {
 						display: block;
+						margin-left: 2vmin;
 						font: 2vmin/1.5 'Poppins';
-						height: 15vmin;
-						padding: 3vmin;
-						text-align: center;
+					}
+					> .pic {
+						height: 10vmin;
+						overflow: hidden;
+						> img {
+							width: 100%;
+							height: 20vmin;
+							padding: 0 10px;
+							margin-top: -5vmin;
+							object-fit: cover;
+						}
 					}
 				}
 			}
 		}
 	}
 	.frame {
-		width: 100%;
+		width: 1180px;
+		margin: 0 auto;
 		position: relative;
 		span {
 			font: italic 4vmin/1 'Lora';
@@ -104,9 +130,11 @@
 			}
 		}
 		.pics {
-			width: 100%;
+			width: 1180px;
 			overflow: hidden;
+			position: relative;
 			.slide {
+				position: relative;
 				width: calc((1180px / 3) * 7);
 				margin-left: calc(1180px / -3);
 				img {

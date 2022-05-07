@@ -51,8 +51,8 @@ function Content({ scr, pos }) {
 							<div
 								className='box'
 								style={
-									scr >= pos[1] + base
-										? { transform: 'translateY(-100px)' }
+									scr >= pos[0] - pos[0] * 0.2
+										? { transform: 'translateY(-20%)' }
 										: null
 								}>
 								<article className='odd'>
@@ -84,9 +84,7 @@ function Content({ scr, pos }) {
 							<div
 								className='box'
 								style={
-									scr >= pos[1] + (base + 300)
-										? { transform: 'translateY(-100px)' }
-										: null
+									scr >= pos[0] * 1.8 ? { transform: 'translateY(-20%)' } : null
 								}>
 								<article className='even'>
 									<img src={`${path}/img/detail2.jpg`} alt='kitchen' />
@@ -124,11 +122,16 @@ function Content({ scr, pos }) {
 					<div
 						className='aniLogo'
 						style={
-							scr <= pos[3] && scr >= pos[2] + base
-								? { width: `${(scr - 2000) * 0.1}%` }
+							scr <= pos[1] + 400 && scr >= pos[1] * 0.8
+								? {
+										width:
+											`${(scr - pos[1] * 0.8) * 0.15}` >= 100
+												? '100%'
+												: `${(scr - pos[1] * 0.8) * 0.15}%`,
+								  }
 								: null
 						}>
-						<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+						<p> Lorem ipsum dolor, sit amet consectetur elit</p>
 					</div>
 					<div className='inner'>
 						<article>
@@ -179,7 +182,9 @@ function Content({ scr, pos }) {
 								</p>
 							</article>
 
-							<a href='#'>
+							<a
+								href='#'
+								style={scr >= pos[2] + 100 ? { width: '20vmin' } : null}>
 								view more <FontAwesomeIcon icon={faArrowRightLong} />
 							</a>
 						</div>
@@ -189,13 +194,29 @@ function Content({ scr, pos }) {
 				<section id='banner2'>
 					<div className='inner'>
 						<article>
-							<img src={`${path}/img/chrome_banner2.jpg`} alt='' />
+							<img
+								src={`${path}/img/chrome_banner2.jpg`}
+								alt=''
+								style={
+									scr >= pos[3] + 200
+										? { width: 'calc((100vw - 1180px) / 2 + 1180px)' }
+										: null
+								}
+							/>
 							<h1>PROJECTS OF ART</h1>
 							<p>
 								the worlds of high design and fashion meet and merge with chrome
 								kitchen to create unique domestic appliances
 							</p>
-							<a href='#'>
+							<a
+								href='#'
+								style={
+									scr >= pos[3] + 200
+										? {
+												background: '#666666d1',
+										  }
+										: null
+								}>
 								view more <FontAwesomeIcon icon={faArrowRightLong} />
 							</a>
 						</article>
@@ -210,6 +231,7 @@ function Content({ scr, pos }) {
 							<img
 								src={`${path}/img/becca-tapert-RjmGzTg4_mw-unsplash.jpg`}
 								alt=''
+								style={scr >= pos[4] - 100 ? { opacity: '1' } : null}
 							/>
 							<p>
 								Cook, heat, conserve: a tour of the kitchen between technology
@@ -262,7 +284,7 @@ function Content({ scr, pos }) {
 					</div>
 				</section>
 			</div>
-			<Popup ref={pop}>
+			<Popup ref={pop} setOpen={setOpen}>
 				{videos[0] && (
 					<>
 						<iframe

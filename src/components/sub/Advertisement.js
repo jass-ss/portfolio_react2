@@ -29,11 +29,11 @@ function Advertisement({ ad, adv, setIndex, setOpen }) {
 									}}
 								/>
 							</div>
-							<h1 className='title'>
+							<p className='title'>
 								{title.length > 50
 									? title.slice(0, 40) + '...'
 									: a.snippet.title}
-							</h1>
+							</p>
 						</article>
 					</React.Fragment>
 				);

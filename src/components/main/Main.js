@@ -16,8 +16,9 @@ function Main() {
 		if (main.current) {
 			//useRef가 붙은 main컴포넌트에서만 실행.
 			const secs = main.current.querySelectorAll('section');
+			const visHeight = main.current.querySelector('.main_visual').offsetHeight; //메인비쥬얼 높이크기.
 			pos.current = []; // 윈도우 리사이즈 이벤트가 일어나면 기존값 클리어 후 새 값 push.
-			secs.forEach((s, idx) => pos.current.push(s.offsetTop)); //값이 변경되어도 렌더링x.
+			secs.forEach((s, idx) => pos.current.push(s.offsetTop + visHeight)); //값이 변경되어도 렌더링x.
 			console.log(pos.current);
 		}
 	};

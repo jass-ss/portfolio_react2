@@ -4,7 +4,7 @@
 	position: relative;
 
 	> .inner {
-		width: 1180px;
+		width: 70%;
 		margin: 0 auto;
 		position: relative;
 		padding: 2vmin;
@@ -90,7 +90,7 @@
 				display: block;
 				position: absolute;
 				top: 50%;
-				left: -60%;
+				right: 0%;
 				transform: translateY(-50%);
 				content: '';
 				width: 100vw;

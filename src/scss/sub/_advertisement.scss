@@ -237,6 +237,15 @@
 		width: 45%;
 		margin-left: 5%;
 		float: left;
+		h2 {
+			font: bold 6vmin/1 'Poppins';
+			margin-left: 2vmin;
+		}
+		p {
+			font: 2vmin/1 'Poppins';
+			margin-left: 2vmin;
+			margin-top: 2vmin;
+		}
 		.pic {
 			width: 100%;
 			height: 30vh;
@@ -246,6 +255,7 @@
 				object-fit: cover;
 				width: 100%;
 				height: 50vh;
+				padding: 2vmin;
 				margin-top: -10vh;
 			}
 		}

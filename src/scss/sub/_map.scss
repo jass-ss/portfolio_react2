@@ -1,5 +1,5 @@
 .mapCompo {
-	width: 1180px;
+	width: 70%;
 	margin: 30vmin auto;
 	> span {
 		font: bold 4vmin/1 'Poppins';
@@ -28,8 +28,7 @@
 			right: 0%;
 			font: 2vmin/1 'Poppins';
 			h1 {
-				margin-top: 7vmin;
-				margin-left: 5vmin;
+				margin: 7vmin 0vmin 3vmin 5vmin;
 			}
 			form {
 				width: 70%;
@@ -43,17 +42,19 @@
 				}
 				input[type='text'] {
 					width: 120%;
-					height: 4vmin;
+					height: 3vmin;
 					font: 1.5vmin/1 'Poppins';
-					margin: 1vmin 0;
+					margin: 1vmin 0 0 2vmin;
 				}
 				select {
-					margin-left: 5vmin;
+					margin-left: 2vmin;
 					margin-top: 1vmin;
+					height: 3vmin;
+					width: 120%;
 				}
 				input[type='submit'] {
 					margin-top: 5vmin;
-					width: 35vmin;
+					width: 40vmin;
 					height: 5vmin;
 					position: absolute;
 					left: 0;

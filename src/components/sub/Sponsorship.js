@@ -239,13 +239,16 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 					<div className='videos'>
 						{sps.map((m, idx) => {
 							return (
-								<div className='pic' key={idx}>
-									<img
-										src={m.snippet.thumbnails.standard.url}
-										onClick={() => {
-											setIndex(idx);
-										}}
-									/>
+								<div className='pics' key={idx}>
+									<p>{'0' + idx}</p>
+									<div className='pic'>
+										<img
+											src={m.snippet.thumbnails.standard.url}
+											onClick={() => {
+												setIndex(idx);
+											}}
+										/>
+									</div>
 								</div>
 							);
 						})}

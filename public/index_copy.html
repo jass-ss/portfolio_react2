@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a592819a30c1c97bf844e1b73a78ea"></script>
+  <title>React App</title>
+</head>
+<style>
+  .mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.616);
+    opacity: 0;
+    transition: all 1s;
+    z-index: 10;
+  }
+
+  .mask.on {
+    opacity: 1;
+  }
+</style>
+
+<body>
+  <div class="mask on"></div>
+  <div class="pics">
+    <img src="/portpolio_react2/img/store2_Moment.jpg" alt="">
+    <img src="/portpolio_react2/img/brandMoment.jpg" alt="">
+    <img src="/portpolio_react2/img/product3_Moment.jpg" alt="">
+    <img src="/portpolio_react2/img/brand2_Moment.jpg" alt="">
+    <img src="/portpolio_react2/img/detail0.jpg" alt="area induction">
+    <img src="/portpolio_react2/img/detail3.jpg" alt="small appliances in the room">
+    <img src="/portpolio_react2/img/detail4.jpg" alt="stand mixer">
+    <img src="/portpolio_react2/img/detail2.jpg" alt="kitchen">
+    <img src="/portpolio_react2/img/product3.jpg" alt="steal kitchen">
+    <img src="/portpolio_react2/img/detail1.jpg" alt="area induction">
+    <img src="/portpolio_react2/img/chrome2.jpg" alt="opened pot">
+    <img src="/portpolio_react2/img/brand3.jpg" alt="eco-company">
+    <img src="/portpolio_react2/img/brand4.jpg" alt="a man who's cooking">
+    <img src="/portpolio_react2/img/brand2.jpg" alt="cleaning system">
+    <img src="/portpolio_react2/img/chrome_banner2.jpg" alt="">
+    <img src="/portpolio_react2/img/becca-tapert-RjmGzTg4_mw-unsplash.jpg" alt="">
+    <img src="/portpolio_react2/img/banner14.jpg" alt="">
+    <img src="/portpolio_react2/img/banner12.jpg" alt="">
+    <img src="/portpolio_react2/img/chrome.jpg" alt="">
+    <img src="/portpolio_react2/img/banner00.jpg" alt="">
+    <img src="/portpolio_react2/img/banner00.png" alt="">
+    <img src="/portpolio_react2/img/banner23.jpg" alt="">
+    <img src="/portpolio_react2/img/banner222.jpg" alt="">
+
+  </div>
+
+  <div class="vids">
+    <video src="/portpolio_react2/img/store2_Trim2.mp4"></video>
+    <video src="/portpolio_react2/img/brand.mp4"></video>
+    <video src="/portpolio_react2/img/product3.mp4"></video>
+    <video src="/portpolio_react2/img/brand2.mp4"></video>
+  </div>
+
+  <div id="root"></div>
+
+  <script defer>
+    const pic = document.querySelector('.pics');
+    const vid = document.querySelector('.vids')
+    const pics = document.querySelectorAll('.pics img');
+    const vids = document.querySelectorAll('.vids video');
+    const mask = document.querySelector('.mask')
+    console.log(pics)
+    console.log(vids)
+
+    Promise.race([loadVids(), loadPics()]).then((res) => {
+      // alert(res)
+      mask.classList.remove('on');
+      setTimeout(() => {
+        mask.remove();
+        pic.remove();
+        vid.remove();
+      }, 1000)
+    })
+
+    function loadPics() {
+      return new Promise((res, rej) => {
+        let count = 0;
+        console.log('s')
+        pics.forEach(p => {
+          p.onload = () => {
+            count++;
+            if (count == pics.length) {
+              console.log(count)
+              return res(true)
+            };
+          }
+        })
+      }).catch(console.log('count'))
+    };
+    function loadVids() {
+      return new Promise((res, rej) => {
+        let count = 0;
+        console.log('s')
+        vids.forEach(v => {
+          v.onloaddata = () => {
+            count++;
+            if (count == vids.length) return res(true);
+          }
+        })
+      }).catch(console.log('no'))
+    };
+  </script>
+</body>
+
+</html>
