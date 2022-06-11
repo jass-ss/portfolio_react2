@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/portpolio_react2/static/css/main.6c41849a.css",
+    "main.css": "/portpolio_react2/static/css/main.6be1696a.css",
     "main.js": "/portpolio_react2/static/js/main.4c8e91eb.js",
     "index.html": "/portpolio_react2/index.html",
-    "main.6c41849a.css.map": "/portpolio_react2/static/css/main.6c41849a.css.map",
+    "main.6be1696a.css.map": "/portpolio_react2/static/css/main.6be1696a.css.map",
     "main.4c8e91eb.js.map": "/portpolio_react2/static/js/main.4c8e91eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c41849a.css",
+    "static/css/main.6be1696a.css",
     "static/js/main.4c8e91eb.js"
   ]
 }
