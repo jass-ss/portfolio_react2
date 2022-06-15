@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Member from '../sub/Member';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 import Map from '../sub/Map';
 import SubHeader from '../common/SubHeader';
 import { Swiper, SwiperSlide } from 'swiper/react'; // basic
@@ -11,14 +15,59 @@ import 'swiper/css/navigation';
 const path = process.env.PUBLIC_URL;
 
 function Brand() {
+	const winWidth = window.innerWidth; //모바일 접속시에만 사용. 브라우저 화면에 따라 변경되는 값이 필요하면 resize() 이벤트 걸어야 한다.
+	const ref = useRef(null);
+	let press = false;
+	let n = 0;
+	let s;
+	let end;
+	let moving;
+	const mouseMove = (e) => {
+		if (press) {
+			const move = e.changedTouches[0].clientX;
+			moving = s - move;
+			if (moving < 0) {
+				//마우스 왼쪽으로 드래그. pics의 marginLeft - 됨.
+				//	n--;
+				console.log(n);
+				if (n === 0) {
+					//n = 0;
+					moving = 0;
+				}
+			} else if (moving > 0) {
+				//n++;
+				console.log(n);
+				if (n === -2) {
+					moving = 0;
+				}
+			}
+			const ratio = moving * (-100 / winWidth) * 1.5;
+			ref.current.style.marginLeft = `${n * 100 + ratio}%`;
+		}
+	};
+	const slideMove = (e) => {
+		press = false;
+		end = e.changedTouches[0].clientX;
+		if (s - end > 0) {
+			n--;
+			if (n < -2) n = -2;
+		} else if (s - end < 0) {
+			n++;
+			if (n > 0) n = 0;
+		}
+		console.log(n);
+		ref.current.style.marginLeft = `${n * 100}%`;
+	};
 	return (
 		<section className='content brand'>
 			<SubHeader img={`${path}/img/banner12.jpg`}>
-				<h2>BRAND</h2>
-				<p>
-					Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam aliquid,
-					incidunt magni alias saepe quidem
-				</p>
+				<div className='textBox'>
+					<h2>BRAND</h2>
+					<p>
+						Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam
+						aliquid, incidunt magni alias saepe quidem
+					</p>
+				</div>
 			</SubHeader>
 			<div className='inner'>
 				<figure className='logo'>
@@ -34,32 +83,60 @@ function Brand() {
 					</p>
 				</figure>
 				<div className='story'>
-					<article>
-						<img src={`${path}/img/eco.jpg`} alt='' />
-						<h2>ECOFRIENDLY</h2>
-						<p>
-							High performance and low consumption, highest energy efficiency
-							class rating
-						</p>
-					</article>
-
-					<article>
-						<img src={`${path}/img/test.jpg`} alt='' />
-						<h2>EFFICIENT</h2>
-						<p>
-							onstant and strict control tests throughout the entire production
-							process testify
-						</p>
-					</article>
-
-					<article>
-						<img src={`${path}/img/mecanic2.jpg`} alt='' />
-						<h2>SUSTAINABILITY</h2>
-						<p>Quality, Health, Safety and Environment policy</p>
-					</article>
+					<div
+						className='pics'
+						ref={ref}
+						onTouchStart={(e) => {
+							press = true;
+							s = e.changedTouches[0].clientX;
+							console.log(n);
+						}}
+						onTouchEnd={(e) => slideMove(e)}
+						onTouchMove={(e) => mouseMove(e)}
+						onClick={() => alert(winWidth)}>
+						<article>
+							<img src={`${path}/img/eco.jpg`} alt='' />
+							<h2>ECOFRIENDLY</h2>
+							<p>
+								High performance and low consumption, highest energy efficiency
+								class rating
+							</p>
+						</article>
+						<article>
+							<img src={`${path}/img/test.jpg`} alt='' />
+							<h2>EFFICIENT</h2>
+							<p>
+								onstant and strict control tests throughout the entire
+								production process testify
+							</p>
+						</article>
+						<article>
+							<img src={`${path}/img/mecanic2.jpg`} alt='' />
+							<h2>SUSTAINABILITY</h2>
+							<p>Quality, Health, Safety and Environment policy</p>
+						</article>
+					</div>
+					<FontAwesomeIcon
+						icon={faAngleLeft}
+						className='prev'
+						onClick={() => {
+							n++;
+							if (n == 1) n = 0;
+							ref.current.style.marginLeft = `${n * 100}%`;
+						}}
+					/>
+					<FontAwesomeIcon
+						icon={faAngleRight}
+						className='next'
+						onClick={() => {
+							n--;
+							if (n == -3) n = -2;
+							ref.current.style.marginLeft = `${n * 100}%`;
+						}}
+					/>
 				</div>
-
 				<Member />
+
 				<article className='team'>
 					<div className='txt'>
 						<h1>OUR TEAM</h1>

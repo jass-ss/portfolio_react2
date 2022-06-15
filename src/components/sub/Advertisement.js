@@ -17,17 +17,14 @@ function Advertisement({ ad, adv, setIndex, setOpen }) {
 				const title = a.snippet.title;
 				return (
 					<React.Fragment key={idx}>
-						<article>
+						<article
+							onClick={() => {
+								setIndex(idx + 3);
+								setOpen('ads');
+							}}>
 							<h2>{0 + `${3 + idx}` + "'s"}</h2>
 							<div className='pic'>
-								<img
-									src={a.snippet.thumbnails.standard.url}
-									alt=''
-									onClick={() => {
-										setIndex(idx + 3);
-										setOpen(true);
-									}}
-								/>
+								<img src={a.snippet.thumbnails.standard.url} alt='' />
 							</div>
 							<p className='title'>
 								{title.length > 50

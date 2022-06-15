@@ -4,6 +4,9 @@ import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import anime from '../../class/anime';
 import { useSelector } from 'react-redux';
 import Popup from '../common/Popup';
+import Sec_brand from './Sec_brand';
+import Sec_service from './Sec_service';
+import Sec_banner from './Sec_banner';
 
 const path = process.env.PUBLIC_URL;
 
@@ -44,151 +47,15 @@ function Content({ scr, pos }) {
 		<main className='content main'>
 			<div className='inner'>
 				<section id='service'>
-					<h1>ABOUT CHROME KITCHEN</h1>
-					<h2>PRODUCT</h2>
-					<div className='inner'>
-						<div className='wrap'>
-							<div
-								className='box'
-								style={
-									scr >= pos[0] - pos[0] * 0.2
-										? { transform: 'translateY(-20%)' }
-										: null
-								}>
-								<article className='odd'>
-									<img src={`${path}/img/detail0.jpg`} alt='area induction' />
-									<h3>DETAILS AND CHROMING</h3>
-									<p>
-										choose between classic and stainless steel and enamelled
-										steal, shaped glass and even cooper.
-									</p>
-								</article>
-								<article className='odd'>
-									<img
-										src={`${path}/img/detail3.jpg`}
-										alt='small appliances in the room'
-									/>
-									<h3>MICROLIVING: SPACE-SAVING APPLIANCES</h3>
-									<p>For a confortable living, even in limited spaces.</p>
-								</article>
-
-								<article className='odd'>
-									<img src={`${path}/img/detail4.jpg`} alt='stand mixer' />
-									<h3>THE ART OF COOKING</h3>
-									<p>
-										All the necessary instruments to create magic in the kitchen
-									</p>
-								</article>
-							</div>
-
-							<div
-								className='box'
-								style={
-									scr >= pos[0] * 1.8 ? { transform: 'translateY(-20%)' } : null
-								}>
-								<article className='even'>
-									<img src={`${path}/img/detail2.jpg`} alt='kitchen' />
-									<h3>CONNECTED HOUSEHOLD APPLIANCES</h3>
-									<p>
-										The new generation of connected CHROME KITCHEN appliances.
-									</p>
-								</article>
-								<article className='even'>
-									<img src={`${path}/img/product3.jpg`} alt='steal kitchen' />
-									<h3>AN INCREDIBLE RANGE OF MATERIALS AND COLORS</h3>
-									<p>
-										Glass, stainless steel, copper and a palette of 13 enamel
-										colours: how and why the choice of materials matters.
-									</p>
-								</article>
-								<article className='even'>
-									<img src={`${path}/img/detail1.jpg`} alt='area induction' />
-									<h3>AREA INDUCTION HOB: SAFETY AND FLEXIBILITY</h3>
-									<p>
-										To cook with practicality and safety, without giving up an
-										elegant contemporary design
-									</p>
-								</article>
-							</div>
-
-							<a href='subpage.html'>
-								view more <FontAwesomeIcon icon={faArrowRightLong} />
-							</a>
-						</div>
-					</div>
+					<Sec_service pos={pos} path={path} scr={scr}></Sec_service>
 				</section>
 
 				<section id='banner'>
-					<div
-						className='aniLogo'
-						style={
-							scr <= pos[1] + 400 && scr >= pos[1] * 0.8
-								? {
-										width:
-											`${(scr - pos[1] * 0.8) * 0.15}` >= 100
-												? '100%'
-												: `${(scr - pos[1] * 0.8) * 0.15}%`,
-								  }
-								: null
-						}>
-						<p> Lorem ipsum dolor, sit amet consectetur elit</p>
-					</div>
-					<div className='inner'>
-						<article>
-							<img src={`${path}/img/chrome2.jpg`} alt='opened pot' />
-							<h1>DISCOVER YOUR STYLE.</h1>
-							<p>
-								A complete offering for high technology collections, articulated
-								in a rich palette of colours
-							</p>
-							<a href='#'>
-								view more <FontAwesomeIcon icon={faArrowRightLong} />
-							</a>
-						</article>
-					</div>
+					<Sec_banner pos={pos} path={path} scr={scr}></Sec_banner>
 				</section>
 
 				<section id='brand'>
-					<div className='inner'>
-						<h1>BEYOND THE KITCHEN</h1>
-						<h2>BRAND STORY</h2>
-						<div className='wrap'>
-							<article>
-								<img src={`${path}/img/brand3.jpg`} alt='eco-company' />
-								<h3>ECOFRIENDLY PRODUCTS</h3>
-								<p>
-									Special focus is placed on obtaining the highest energy
-									efficiency class rating in order to help the environment and
-									improve quality of life.
-								</p>
-							</article>
-
-							<article>
-								<img src={`${path}/img/brand4.jpg`} alt="a man who's cooking" />
-								<h3>HOME OFFICE: MAKE YOUR WORK SMART</h3>
-								<p>
-									With our domestic appliances, home is the perfect working
-									space with a stylish atmosphere
-								</p>
-							</article>
-
-							<article>
-								<img src={`${path}/img/brand2.jpg`} alt='cleaning system' />
-								<h3>SENSE.Klean</h3>
-								<p>
-									SENSE.Klean™ technology estimates the degree of dirt and
-									suggests the best automatic cleaning mode according to actual
-									use.
-								</p>
-							</article>
-
-							<a
-								href='#'
-								style={scr >= pos[2] + 100 ? { width: '20vmin' } : null}>
-								view more <FontAwesomeIcon icon={faArrowRightLong} />
-							</a>
-						</div>
-					</div>
+					<Sec_brand pos={pos} path={path} scr={scr}></Sec_brand>
 				</section>
 
 				<section id='banner2'>
@@ -198,8 +65,8 @@ function Content({ scr, pos }) {
 								src={`${path}/img/chrome_banner2.jpg`}
 								alt=''
 								style={
-									scr >= pos[3] + 200
-										? { width: 'calc((100vw - 1180px) / 2 + 1180px)' }
+									scr >= pos[2] + (pos[3] - pos[2]) * 0.5
+										? { width: '100%' }
 										: null
 								}
 							/>
@@ -211,7 +78,7 @@ function Content({ scr, pos }) {
 							<a
 								href='#'
 								style={
-									scr >= pos[3] + 200
+									scr >= pos[3]
 										? {
 												background: '#666666d1',
 										  }
@@ -231,7 +98,7 @@ function Content({ scr, pos }) {
 							<img
 								src={`${path}/img/becca-tapert-RjmGzTg4_mw-unsplash.jpg`}
 								alt=''
-								style={scr >= pos[4] - 100 ? { opacity: '1' } : null}
+								style={scr >= pos[3] ? { opacity: '1' } : null}
 							/>
 							<p>
 								Cook, heat, conserve: a tour of the kitchen between technology
@@ -247,20 +114,26 @@ function Content({ scr, pos }) {
 				<section id='fetch'>
 					<div className='inner'>
 						<div className='prevNews'>
-							<h1>LATEST NEWS</h1>
-							{news.map((m, idx) => {
-								return (
-									<div className='text' key={idx}>
-										<h2
-											onClick={() => {
-												open ? setOpen(false) : setOpen(true);
-											}}>
-											{m.title}
-										</h2>
-										{/*open ? <p>{m.text}</p> : null*/}
-									</div>
-								);
-							})}
+							<div className='wrapper1'>
+								<h1>LATEST NEWS</h1>
+							</div>
+							<div className='wrapper2'>
+								{news.map((m, idx) => {
+									return (
+										<div className='text' key={idx}>
+											<div className='wrap'>
+												<h2
+													onClick={() => {
+														open ? setOpen(false) : setOpen(true);
+													}}>
+													{m.title}
+												</h2>
+												{/*open ? <p>{m.text}</p> : null*/}
+											</div>
+										</div>
+									);
+								})}
+							</div>
 						</div>
 						<div className='prevVids'>
 							<h1>YOUTUBE CLIP</h1>

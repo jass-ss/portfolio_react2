@@ -11,7 +11,7 @@
 		position: relative;
 		z-index: -1;
 
-		> h2 {
+		h2 {
 			font: bold 15vmin/1 'Poppins';
 			color: #333;
 			position: absolute;
@@ -49,20 +49,20 @@
 			position: relative;
 			z-index: -1;
 
-			> h2 {
-				font: bold 15vmin/1 'Poppins';
+			h2 {
+				font: bold 10vmin/1 'Poppins';
 				color: #333;
 				position: absolute;
-				bottom: 20vmin;
-				left: 5vmin;
+				bottom: 12vmin;
+				left: 10vmin;
 			}
 
 			p {
 				font: bold 3vmin/1.5 'Lora';
 				color: #333;
 				position: absolute;
-				bottom: 10vmin;
-				right: 10vmin;
+				bottom: 3vmin;
+				left: 10vmin;
 				width: 80%;
 			}
 		}
@@ -77,42 +77,54 @@
 @media screen and(max-width:449px) {
 	.subHeader {
 		width: 100%;
-		height: 50vh;
+		height: 100vmin;
 
 		.sub_inner {
 			width: 100%;
-			height: 50vh;
+			height: 100vmin;
 			margin: -11vmin auto;
-			padding: 5vmin;
+			padding: 0vmin;
 			position: relative;
 			z-index: -1;
 
-			> h2 {
-				font: bold 18vmin/1 'Poppins';
-				color: #fff;
+			.textBox {
+				width: 100%;
+				background-color: rgba(34, 34, 34, 0.411);
 				position: absolute;
-				bottom: 20vh;
-				left: 5vmin;
-				z-index: 1;
-			}
+				bottom: 0vmin;
+				left: 0vmin;
+				height: 35vmin;
+				h2 {
+					font: bold 10vmin/1 'Poppins';
+					color: #fff;
+					position: relative;
+					bottom: 0vmin;
+					margin-top: 5%;
+					margin-bottom: 2vmin;
+					margin-left: 5vmin;
+					left: 0vmin;
+					z-index: 1;
+				}
 
-			p {
-				font: 5vmin/1.5 'Lora';
-				color: #fff;
-				position: absolute;
-				bottom: 15vmin;
-				right: auto;
-				left: 5vmin;
-				width: 80%;
+				p {
+					font: 3.5vmin/1.2 'Lora';
+					color: #fff;
+					position: relative;
+					bottom: 0vmin;
+					right: auto;
+					left: 0vmin;
+					margin-left: 5vmin;
+					width: 80%;
+				}
 			}
 		}
 		img {
 			width: 100%;
-			height: 50vh;
+			height: 100vmin;
 			object-fit: cover;
 			position: relative;
 			z-index: -3;
-			margin-top: -50vh;
+			margin-top: -89vmin;
 		}
 	}
 }

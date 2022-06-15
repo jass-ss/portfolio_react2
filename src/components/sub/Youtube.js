@@ -39,12 +39,14 @@ function Youtube() {
 	}, [open]);
 	return (
 		<>
-			<SubHeader img={`${path}/img/banner00.png`}>
-				<h2>YOUTUBE</h2>
-				<p>
-					Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam aliquid,
-					incidunt magni alias saepe quidem
-				</p>
+			<SubHeader img={`${path}/img/banner331.jpg`}>
+				<div className='textBox'>
+					<h2>YOUTUBE</h2>
+					<p>
+						Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam
+						aliquid, incidunt magni alias saepe quidem
+					</p>
+				</div>
 			</SubHeader>
 
 			<Layout name={'youtube'}>
@@ -56,7 +58,7 @@ function Youtube() {
 				<Sponsorship
 					//	ele={ele}
 					sps={sps}
-					vidIndex={index}
+					//vidIndex={index}
 					setOpen={setOpen}
 					setIndex={setIndex}></Sponsorship>
 			</Layout>

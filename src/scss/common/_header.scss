@@ -2,7 +2,7 @@ header {
 	width: 100%;
 	height: 11vmin;
 	position: relative;
-	z-index: 5;
+	z-index: 10;
 	> h1 {
 		position: absolute;
 		top: 5vmin;
@@ -71,13 +71,13 @@ header {
 	}
 }
 
-@media screen and (max-width: 1179px) {
+/*@media screen and (max-width: 1179px) {
 	header.main {
 		height: 11vmin;
 		h1 {
 			top: 3vmin;
 			left: 6vmin;
-			a {
+			> a {
 				top: 0vmin;
 				color: #333;
 				font: bold 4vmin/1 'arial';
@@ -94,16 +94,15 @@ header {
 			font: bold 4vmin/0 'arial';
 		}
 	}
-}
+} */
 
-@media screen and (max-width: 539px) {
+@media screen and (max-width: 1179px) {
 	header.main {
 		height: 11vmin;
 		h1 {
-			top: 3vh;
-			left: 7vmin;
-			a {
-				top: 0vmin;
+			top: 7vmin;
+			left: 12vmin;
+			> a {
 				font: bold 6vmin/1 'arial';
 			}
 		}
@@ -111,10 +110,33 @@ header {
 			display: none;
 		}
 		.icon {
-			top: 3vh;
+			top: 7vmin;
 			display: block;
-			right: 3vmin;
-			font: bold 6vmin/0 'arial';
+			left: 5vmin;
+			font: bold 6.5vmin/0 'arial';
+		}
+	}
+	header.sub {
+		height: 11vmin;
+		h1 {
+			top: 7vmin;
+			left: 12vmin;
+			> a {
+				display: none;
+				font: bold 6vmin/1 'arial';
+			}
+		}
+		#gnb {
+			display: none;
+		}
+		.icon {
+			top: 7vmin;
+			display: block;
+			left: 5vmin;
+			font: bold 6.5vmin/0 'arial';
+			background: rgba(255, 255, 255, 0.808);
+			padding: 2%;
+			border-radius: 15%;
 		}
 	}
 }

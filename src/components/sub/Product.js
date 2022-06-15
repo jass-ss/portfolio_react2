@@ -1,6 +1,8 @@
 import React from 'react';
 import SubHeader from '../common/SubHeader';
-import Layout from '../common/Layout';
+import ProdSlide from './ProdSlide';
+import ProdTech from './ProdTech';
+//import Layout from '../common/Layout';
 
 const path = process.env.PUBLIC_URL;
 
@@ -8,11 +10,13 @@ function Product() {
 	return (
 		<>
 			<SubHeader img={`${path}/img/banner14.jpg`}>
-				<h2>PRODUCT</h2>
-				<p>
-					Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam aliquid,
-					incidunt magni alias saepe quidem
-				</p>
+				<div className='textBox'>
+					<h2>PRODUCT</h2>
+					<p>
+						Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam
+						aliquid, incidunt magni alias saepe quidem
+					</p>
+				</div>
 			</SubHeader>
 			<section className='content product'>
 				<section className='one on'>
@@ -26,52 +30,8 @@ function Product() {
 					</div>
 				</section>
 
-				<section className='two1'>
-					<div className='inner'>
-						<div className='wrapper'>
-							<article>
-								<img src={`${path}/img/product6.png`} alt='silver stove' />
-								<h2>A QUESTION OF STYLE</h2>
-								<p>
-									Every collection has a soul. Which recounts a very personal
-									experience - that of the person who lives with it.
-								</p>
-							</article>
-
-							<article>
-								<img src={`${path}/img/product4.jpg`} alt='' />
-								<h2>CLEAN LINES AND RIGOROUS LOGIC</h2>
-								<p>
-									translate into the pleasure of living and working in a
-									well-organised, functional and yet not austere kitchen. you
-									can make the most of your space
-								</p>
-							</article>
-						</div>
-					</div>
-				</section>
-
-				<section className='two2'>
-					<div className='inner'>
-						<div className='wrapper'>
-							<article>
-								<img src={`${path}/img/product2.jpg`} alt='hand mixer' />
-								<h2>MANAGING EACH PREPARATION WITH SIMPLICITY</h2>
-								<p>
-									In these mechanical and laborious procedures, to achieve
-									excellence, it is better to help our hands
-								</p>
-							</article>
-
-							<article>
-								<img src={`${path}/img/product5.jpg`} alt='shining stove' />
-								<h2>GLOSSY FINISH</h2>
-								<p>
-									perfect to catalyze as much light as possible in the kitchen
-								</p>
-							</article>
-						</div>
-					</div>
+				<section className='two'>
+					<ProdSlide path={path}></ProdSlide>
 				</section>
 
 				<section className='three'>
@@ -149,51 +109,7 @@ function Product() {
 				</section>
 
 				<section className='five'>
-					<div className='inner'>
-						<div className='wrapper'>
-							<article>
-								<img
-									src={`${path}/img/service1.jpg`}
-									alt=' free service for 1 year'
-								/>
-								<h2>1 Year of dedicated care</h2>
-							</article>
-
-							<article>
-								<img
-									src={`${path}/img/service2.jpg`}
-									alt="a man who's checking"
-								/>
-								<h2>Planned maintenance program</h2>
-							</article>
-
-							<article>
-								<img
-									src={`${path}/img/service3.jpg`}
-									alt='a car with service partner'
-								/>
-								<h2>Repairing service: whenever and wherever you want.</h2>
-							</article>
-						</div>
-
-						<div id='mail'>
-							<p>Sign up to our product newsletter</p>
-							<form action='#' id='mailForm'>
-								<fieldset>
-									<legend className='h'>메일링 신청</legend>
-									<div>
-										<input
-											type='text'
-											id='mailBox'
-											placeholder='your Email'
-											required
-										/>
-										<input type='submit' id='submit' value='submit' />
-									</div>
-								</fieldset>
-							</form>
-						</div>
-					</div>
+					<ProdTech path={path}></ProdTech>
 				</section>
 			</section>
 		</>

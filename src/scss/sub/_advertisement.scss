@@ -206,24 +206,25 @@
 	width: 100%;
 	position: relative;
 	> h1 {
-		font: bold 8vmin/1 'Poppins';
+		font: 5vmin 'Poppins';
 		margin-bottom: 2vmin;
-		margin-left: 1vmin;
+		margin-left: 5%;
 		&::before {
 			content: '';
 			display: block;
+			background-color: #333;
+			height: 1px;
 			position: absolute;
-			background-color: #ddd;
-			width: 5px;
-			height: 17vmin;
-			top: 0%;
-			left: 0%;
+			left: 5%;
+			top: -2vmin;
+			width: 50%;
 			z-index: -1;
 		}
 	}
 	> p {
-		font: 3vmin/1 'Poppins';
-		margin-left: 2vmin;
+		font: italic 2.5vmin/2 'Lora';
+		margin-left: 5%;
+		margin-bottom: 5vmin;
 	}
 	&::after {
 		clear: both;
@@ -232,31 +233,224 @@
 	}
 
 	> article {
+		cursor: pointer;
 		position: relative;
-		margin-top: 10%;
-		width: 45%;
-		margin-left: 5%;
+		width: 23%;
+		height: 25vmin;
+		margin-left: 1%;
+		margin-bottom: 5%;
+		//border: 10px solid salmon;
 		float: left;
+		&::before {
+			content: '';
+			display: block;
+			width: calc(100% - 4vmin);
+			height: calc(100% - 4vmin);
+			transform: translate(2vmin, 2vmin);
+			background-color: rgba(51, 51, 51, 0.438);
+			position: absolute;
+			z-index: 1;
+		}
+		&:nth-of-type(1) {
+			margin-left: 5%;
+		}
 		h2 {
 			font: bold 6vmin/1 'Poppins';
-			margin-left: 2vmin;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			color: #fff;
 		}
 		p {
 			font: 2vmin/1 'Poppins';
-			margin-left: 2vmin;
-			margin-top: 2vmin;
+			margin: 2vmin 2vmin 2vmin 3vmin;
+			max-height: 2vmin;
+			display: none;
 		}
 		.pic {
 			width: 100%;
-			height: 30vh;
+			height: 100%;
 			position: relative;
 			overflow: hidden;
 			> img {
 				object-fit: cover;
 				width: 100%;
-				height: 50vh;
-				padding: 2vmin;
-				margin-top: -10vh;
+				height: 200%;
+				margin-top: -50%;
+				filter: grayscale(50%);
+			}
+		}
+	}
+}
+
+@media screen and(max-width:1179px) {
+	.advertisement {
+		width: 100%;
+		position: relative;
+		> h1 {
+			font: 5vmin 'Poppins';
+			margin-bottom: 2vmin;
+			margin-left: 2vmin;
+			&::before {
+				content: '';
+				display: block;
+				background-color: #333;
+				height: 1px;
+				position: absolute;
+				left: 2vmin;
+				top: -2vmin;
+				width: 50%;
+				z-index: -1;
+			}
+		}
+		> p {
+			font: italic 2.5vmin/2 'Lora';
+			margin-left: 2vmin;
+			margin-bottom: 5vmin;
+		}
+		&::after {
+			clear: both;
+			display: block;
+			content: '';
+		}
+
+		> article {
+			cursor: pointer;
+			position: relative;
+			width: 23%;
+			height: 25vmin;
+			margin-left: 1%;
+			margin-bottom: 5%;
+			//border: 10px solid salmon;
+			float: left;
+			&::before {
+				content: '';
+				display: block;
+				width: calc(100% - 4vmin);
+				height: calc(100% - 4vmin);
+				transform: translate(2vmin, 2vmin);
+				background-color: rgba(51, 51, 51, 0.438);
+				position: absolute;
+				z-index: 1;
+			}
+			&:nth-of-type(1) {
+				margin-left: 2vmin;
+			}
+			h2 {
+				font: bold 6vmin/1 'Poppins';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				color: #fff;
+			}
+			p {
+				font: 2vmin/1 'Poppins';
+				margin: 2vmin 2vmin 2vmin 3vmin;
+				max-height: 2vmin;
+				display: none;
+			}
+			.pic {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				> img {
+					object-fit: cover;
+					width: 100%;
+					height: 200%;
+					margin-top: -50%;
+					filter: grayscale(50%);
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width:549px) {
+	.advertisement {
+		width: 100%;
+		position: relative;
+		> h1 {
+			font: 5vmin 'Poppins';
+			margin-bottom: 2vmin;
+			margin-left: 2vmin;
+			&::before {
+				content: '';
+				display: block;
+				background-color: #333;
+				height: 1px;
+				position: absolute;
+				left: 2vmin;
+				top: -2vmin;
+				width: 50%;
+				z-index: -1;
+			}
+		}
+		> p {
+			font: italic 3vmin/1.5 'Lora';
+			margin-left: 2vmin;
+			margin-bottom: 10vmin;
+		}
+		&::after {
+			clear: both;
+			display: block;
+			content: '';
+		}
+
+		> article {
+			position: relative;
+			width: 45%;
+			height: 35vmin;
+			margin-right: 2%;
+			margin-bottom: 3%;
+			cursor: pointer;
+			//border: 10px solid salmon;
+			float: left;
+			&::before {
+				content: '';
+				display: block;
+				width: calc(100% - 6vmin);
+				height: calc(100% - 6vmin);
+				transform: translate(3vmin, 3vmin);
+				background-color: rgba(51, 51, 51, 0.438);
+				position: absolute;
+				z-index: 1;
+			}
+			&:nth-of-type(1),
+			&:nth-of-type(3) {
+				margin-left: 3vmin;
+			}
+			h2 {
+				font: bold 6vmin/1 'Poppins';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				color: #fff;
+			}
+			p {
+				font: 2vmin/1 'Poppins';
+				margin: 2vmin 2vmin 2vmin 3vmin;
+				max-height: 2vmin;
+				display: none;
+			}
+			.pic {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				> img {
+					object-fit: cover;
+					width: 100%;
+					height: 200%;
+					margin-top: -50%;
+					filter: grayscale(50%);
+				}
 			}
 		}
 	}

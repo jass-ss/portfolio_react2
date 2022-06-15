@@ -104,12 +104,14 @@ function SignUp() {
 
 	return (
 		<>
-			<SubHeader img={`${path}/img/banner222.jpg`}>
-				<h2>Sign_UP</h2>
-				<p>
-					Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam aliquid,
-					incidunt magni alias saepe quidem
-				</p>
+			<SubHeader img={`${path}/img/banner33.jpg`}>
+				<div className='textBox'>
+					<h2>Sign_UP</h2>
+					<p>
+						Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam
+						aliquid, incidunt magni alias saepe quidem
+					</p>
+				</div>
 			</SubHeader>
 			<Layout name={'join'}>
 				<div className='wrap'>

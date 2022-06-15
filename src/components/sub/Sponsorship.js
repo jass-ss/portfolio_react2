@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Layout from '../common/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import {
+	faAngleLeft,
+	faAngleRight,
+	faCirclePlay,
+} from '@fortawesome/free-solid-svg-icons';
 import { Anim } from '../../class/anime';
 
 const path = process.env.PUBLIC_URL;
 
-function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
+function Sponsorship({ sps, setOpen, setIndex }) {
 	const slide = useRef(null);
 	const [idx, setIdx] = useState(false);
+	const [vidIndex, setVidIndex] = useState(0);
 	const [imgs, setImgs] = useState();
 	const mobile = useRef(false);
 	const size = useRef(0);
@@ -65,11 +70,6 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 	};
 
 	const prev = () => {
-		/*	slide.current.style.marginLeft = 'calc( -90vw / 3)';
-		slide.current.append(slide.current.firstElementChild);
-		slide.current.style.marginLeft = 0; */
-		//console.log((90 * vw) / -3);
-
 		if (matchMedia('screen and (max-width: 549px)').matches) {
 			if (!click) return;
 			click = false;
@@ -110,10 +110,12 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 		} else {
 			console.log(click);
 			vw = window.innerWidth / 100;
-			vw >= 11.8 ? (img = 1180 / 3) : (img = (90 * vw) / 3);
+			vw >= 11.8 ? (img = (0.7 * vw * 0.85) / 3) : (img = (0.85 * vw) / 3);
+
+			//  width 549px를 넘으면
 			if (slide.current.style.marginLeft === 'auto') {
 				slide.current.append(slide.current.firstElementChild);
-				slide.current.style.marginLeft = `${-img}px`;
+				slide.current.style.marginLeft = `${-img * 100}px`;
 			}
 
 			if (!click) return;
@@ -121,21 +123,18 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 			console.log(img);
 			new Anim(slide.current, {
 				prop: 'margin-left',
-				value: -img * 2,
+				value: -img * 200,
 				duration: 400,
 				callback: () => {
 					click = true;
+					slide.current.style.marginLeft = `${-img * 100}px`;
 					slide.current.append(slide.current.firstElementChild);
-					slide.current.style.marginLeft = `${-img}px`;
 				},
 			});
 		}
 	};
 
 	const next = () => {
-		/*	slide.current.style.marginLeft = 'calc( 90vw / 3)';
-		slide.current.prepend(slide.current.lastElementChild);
-		slide.current.style.marginLeft = 0; */
 		if (matchMedia('screen and (max-width: 549px)').matches) {
 			if (!click) return;
 			click = false;
@@ -176,11 +175,14 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 		} else {
 			console.log(click);
 			vw = window.innerWidth / 100;
-			vw >= 11.8 ? (img = 1180 / 3) : (img = (90 * vw) / 3);
+			vw >= 11.8 ? (img = (0.7 * vw * 0.85) / 3) : (img = (0.85 * vw) / 3);
+
+			//  width 549px를 넘으면
 			if (slide.current.style.marginLeft === 'auto') {
 				slide.current.prepend(slide.current.lastElementChild);
-				slide.current.style.marginLeft = `${-img}px`;
+				slide.current.style.marginLeft = `${-img * 100}px`;
 			}
+
 			if (!click) return;
 			click = false;
 			new Anim(slide.current, {
@@ -190,7 +192,7 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 				callback: () => {
 					click = true;
 					slide.current.prepend(slide.current.lastElementChild);
-					slide.current.style.marginLeft = `${-img}px`;
+					slide.current.style.marginLeft = `${-img * 100}px`;
 				},
 			});
 		}
@@ -221,39 +223,48 @@ function Sponsorship({ vidIndex, sps, setOpen, setIndex }) {
 				we sponsored a TV show with our kitchen appliances. check the youtube
 				and our product
 			</p>
-			<div className='main'>
-				<div className='pic'>
-					<img
-						src={
-							sps[0] ? `${sps[vidIndex].snippet.thumbnails.standard.url}` : null
-						}
-						alt=''
-						onClick={() => {
-							setOpen(true);
-						}}
-					/>
-				</div>
-				<div className='info'>
-					<h2>KITCHEN MAKE OVER!</h2>
-					<p>{sps[0] ? `${sps[vidIndex].snippet.title}` : null}</p>
-					<div className='videos'>
-						{sps.map((m, idx) => {
-							return (
-								<div className='pics' key={idx}>
-									<p>{'0' + idx}</p>
-									<div className='pic'>
-										<img
-											src={m.snippet.thumbnails.standard.url}
-											onClick={() => {
-												setIndex(idx);
-											}}
-										/>
+			<div className='box'>
+				<div className='main'>
+					<div className='pic'>
+						<div className='wrapper'>
+							<img
+								src={
+									sps[0]
+										? `${sps[vidIndex].snippet.thumbnails.standard.url}`
+										: null
+								}
+								alt=''
+								onClick={() => setOpen(true)}
+							/>
+							<FontAwesomeIcon
+								icon={faCirclePlay}
+								className='circlePlay'
+								onClick={() => setOpen(true)}
+							/>
+						</div>
+					</div>
+					<div className='info'>
+						<div className='videos'>
+							{sps.map((m, idx) => {
+								return (
+									<div className='pics' key={idx}>
+										<p>{'0' + idx}</p>
+										<div className='pic'>
+											<img
+												src={m.snippet.thumbnails.standard.url}
+												onClick={() => {
+													setIndex(idx);
+													setVidIndex(idx);
+												}}
+											/>
+										</div>
 									</div>
-								</div>
-							);
-						})}
+								);
+							})}
+						</div>
 					</div>
 				</div>
+				<p>{sps[0] ? `${sps[vidIndex].snippet.title}` : null} </p>
 			</div>
 
 			<div className='frame'>

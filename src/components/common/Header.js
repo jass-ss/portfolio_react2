@@ -7,7 +7,12 @@ import Menu from '../common/Menu';
 function Header({ type }) {
 	const active = { color: '#aaa' };
 	const [on, setOn] = useState(false);
-	const color = { color: '#fff', position: 'fixed', top: '3vh' };
+	const color = {
+		display: 'block',
+		color: '#fff',
+		position: 'fixed',
+		top: '7vmin',
+	};
 
 	return (
 		<header className={type}>

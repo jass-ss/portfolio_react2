@@ -14,6 +14,7 @@ function Gallery() {
 	const pop = useRef(null);
 
 	useEffect(() => {
+		console.log(pics);
 		if (pics) {
 			setArr(pics);
 		}
@@ -22,33 +23,37 @@ function Gallery() {
 	return (
 		<>
 			<SubHeader img={`${path}/img/banner00.jpg`}>
-				<h2>GALLERY</h2>
-				<p>
-					Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam aliquid,
-					incidunt magni alias saepe quidem
-				</p>
+				<div className='textBox'>
+					<h2>GALLERY</h2>
+					<p>
+						Lorem ipsum dolor sit amet consecte adipisicing elit. Numquam
+						aliquid, incidunt magni alias saepe quidem
+					</p>
+				</div>
 			</SubHeader>
 			<Layout name={'gallery'}>
 				<div className='g_list'>
 					<h1>DETAIL CUT</h1>
 					<p>improve your performance and give shape to your ambitions</p>
-					{items.map((item, idx) => {
-						return (
-							<article key={idx}>
-								<img
-									src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`}
-									alt=''
-									onClick={() => {
-										setIndex(idx);
-										setLoading(true);
-										//setOpen(true);
-										pop.current.open();
-									}}
-								/>
-								<h2>{item.title}</h2>
-							</article>
-						);
-					})}
+					<div className='wrapper'>
+						{items.map((item, idx) => {
+							return (
+								<article key={idx}>
+									<img
+										src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`}
+										alt=''
+										onClick={() => {
+											setIndex(idx);
+											setLoading(true);
+											//setOpen(true);
+											pop.current.open();
+										}}
+									/>
+									<h2>{item.title}</h2>
+								</article>
+							);
+						})}
+					</div>
 					<p className='last'>
 						"We believe that making a succesful business is both a science and a
 						passion."
