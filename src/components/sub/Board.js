@@ -15,8 +15,8 @@ function Board() {
 	const [val, setVal] = useState();
 
 	useEffect(() => {
-		const res = JSON.parse(localStorage.getItem('posts'));
-		if (res) setData(res);
+		const data = JSON.parse(localStorage.getItem('posts'));
+		if (data) setData(data);
 	}, []);
 	useEffect(() => {
 		console.log('data', data);
@@ -48,9 +48,6 @@ function Board() {
 	};
 
 	const del = (index) => {
-		if (index === null) {
-			return;
-		}
 		const newData = data.filter((_, idx) => idx !== index);
 		console.log(newData);
 		setData(newData);
@@ -109,7 +106,7 @@ function Board() {
 							<div
 								className='box'
 								onClick={(e) => {
-									setIndex(idx);
+									//setIndex(idx);
 									handleOpen(e, idx);
 								}}>
 								<React.Fragment key={idx}>
@@ -121,7 +118,6 @@ function Board() {
 								<div className='hidden_box'>
 									{update ? (
 										<div className='writeBox'>
-											{' '}
 											<div className='title'>
 												<label htmlFor='title'>title: </label>
 												<input
@@ -129,7 +125,7 @@ function Board() {
 													name='title'
 													ref={input}
 													defaultValue={val.title}></input>
-											</div>{' '}
+											</div>
 											<div className='text'>
 												<label htmlFor='text'>text: </label>
 												<textarea

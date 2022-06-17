@@ -7,12 +7,13 @@ export default function* rootSaga() {
 }
 
 export function* callFlickr() {
-	console.log('??');
+	console.log('saga run');
 	yield takeLatest(FLICKR.start, returnFlickr);
 }
 export function* returnFlickr() {
 	try {
 		const response = yield call(getFlickr);
+		//console.log('flickr', response);
 		yield put({
 			type: FLICKR.success,
 			payload: response.data.photos.photo,

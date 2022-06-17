@@ -7,6 +7,7 @@ function Sec_service({ pos, scr, path }) {
 	const ref2 = useRef(null);
 	const dot = [0, 1, 2];
 	const [mobile, setMoblie] = useState(false);
+
 	useEffect(() => {
 		if (matchMedia('screen and (max-width: 649px)').matches) {
 			setMoblie(true);

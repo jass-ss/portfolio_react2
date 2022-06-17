@@ -61,9 +61,7 @@ function App() {
 					},
 				])
 			);
-		} else {
-			console.log('had');
-		}
+		} //else {console.log('had');}
 	}, []);
 
 	return (

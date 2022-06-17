@@ -473,13 +473,13 @@
 			height: 60vmin;
 			display: flex;
 			flex-direction: column;
-			margin-top: 35vmin;
+			margin-top: 42vmin;
 			margin-bottom: 22vmin;
 			> p {
-				width: 70%;
-				font: 2.5vmin/1 'Lora';
+				width: 90%;
+				font: 3vmin/1.2 'Lora';
 				margin-left: 5vmin;
-				margin-top: 1vmin;
+				margin-top: 3vmin;
 			}
 			.main {
 				position: relative;
@@ -528,23 +528,12 @@
 					width: 100%;
 					height: 100%;
 					position: relative;
-					/* &::after {
-					width: 100%;
-					height: 85%;
-					background: rgba(218, 212, 204, 0.466);
-					display: block;
-					content: '';
-					position: absolute;
-					bottom: 0%;
-					left: -3vmin;
-					z-index: -1;
-				} */
 
 					.videos {
 						width: 95%;
 						height: 100%;
 						margin-left: 4%;
-						margin-top: 24%;
+						margin-top: calc(15.5% - 1vmin);
 						&::after {
 							content: '';
 							display: block;
@@ -552,8 +541,7 @@
 						}
 						> .pics {
 							width: calc((100% / 3) - 1vmin);
-							height: calc(50% - 1vmin);
-							//	border: 1px solid;
+							height: calc(70% - 1vmin);
 							float: left;
 							overflow: hidden;
 							margin-right: 1.5vmin;
@@ -581,7 +569,7 @@
 								height: 100%;
 								> img {
 									position: absolute;
-									top: -25%;
+									top: -30%;
 									width: 100%;
 									height: 150%;
 									object-fit: cover;

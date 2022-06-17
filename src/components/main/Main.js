@@ -58,6 +58,7 @@ function Main() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', scrll);
+		console.log(scr);
 		return () => {
 			window.removeEventListener('scroll', scrll);
 			console.log('클리어');

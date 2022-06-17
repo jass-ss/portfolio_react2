@@ -14,14 +14,12 @@ function Content({ scr, pos }) {
 	const pop = useRef(null);
 	const vid = useSelector((state) => state.youtubeReducer.youtube);
 	const posts = JSON.parse(localStorage.getItem('posts'));
-	const base = -900;
-	console.log(pos[1] + base);
 
 	const [news, setNews] = useState([]);
-	const [on, setOn] = useState(false);
 	const [videos, setVideos] = useState([]);
 	const [index, setIndex] = useState(0);
 	const [open, setOpen] = useState(false);
+
 	useEffect(() => {
 		if (vid) {
 			const data = vid.slice(1, 4);
@@ -33,15 +31,8 @@ function Content({ scr, pos }) {
 		}
 	}, [vid]);
 
-	console.log(videos);
 	console.log(scr);
-	useEffect(() => {
-		console.log('시작');
-		if (scr >= pos[1]) {
-			setOn(true);
-			console.log('111111111111');
-		}
-	}, []);
+	console.log(videos);
 
 	return (
 		<main className='content main'>

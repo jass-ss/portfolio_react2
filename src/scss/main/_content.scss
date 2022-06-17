@@ -353,7 +353,7 @@
 					padding-right: 20%;
 					padding-left: 5vmin;
 					font: normal 2.4vmin/1.5 'Poppins';
-					height: 40vmin;
+					min-height: 30vmin;
 				}
 				img {
 					width: 40%;
@@ -367,7 +367,6 @@
 				a {
 					position: absolute;
 					bottom: -5vmin;
-					left: 5vmin;
 					display: inline-block;
 					margin-top: 2vmin;
 					margin-left: 5vmin;
